@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.5.4">
+<meta name="uls-version" content="0.5.5">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -569,6 +569,21 @@ img,svg,video{max-width:100%}
 .req-none{background:#fff4e5;border-left:4px solid var(--red);padding:12px 14px;border-radius:8px;font-weight:600;color:var(--ink);font-size:16px!important}
 #pickHint.need{color:var(--red-d);font-weight:700}
 
+/* Bereichs-Schalter: robust bei Übersetzung (v0.5.5) */
+.sw-l{min-width:0;overflow-wrap:anywhere;hyphens:auto}
+.sw-st{display:none}
+@media (max-width:760px){
+  .switches,.picker .switches{grid-template-columns:1fr!important;gap:10px!important}
+  .sw{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:12px 14px!important;min-height:64px;font-size:17px!important;line-height:1.25}
+  .sw:hover{transform:none}
+  .sw .knob{width:44px;height:44px;flex:none}
+  .sw .knob svg{width:24px;height:24px}
+  .sw-l{flex:1}
+  .sw-st{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;border:2px solid var(--line);color:transparent;transition:background-color .2s,border-color .2s}
+  .sw-st svg{width:16px;height:16px}
+  .sw[aria-pressed="true"] .sw-st{background:var(--red);border-color:var(--red);color:#fff}
+}
+
 </style>
 </head>
 <body>
@@ -593,7 +608,7 @@ img,svg,video{max-width:100%}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.5.4</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.5.5</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -917,11 +932,11 @@ img,svg,video{max-width:100%}
   <section class="picker frame" aria-labelledby="h-pick">
     <h2 id="h-pick" class="vh">Was planen Sie?</h2>
     <div class="switches" id="calcSw">
-      <button class="sw" aria-pressed="false" data-k="wp" data-calc="wp"><span class="knob"><svg><use href="#i-heat"/></svg></span>Wärme&shy;pumpe</button>
-      <button class="sw" aria-pressed="false" data-k="pv" data-calc="pv"><span class="knob"><svg><use href="#i-sun"/></svg></span>Photo&shy;voltaik</button>
-      <button class="sw" aria-pressed="false" data-k="klima" data-calc="klima"><span class="knob"><svg><use href="#i-snow"/></svg></span>Klima&shy;anlage</button>
-      <button class="sw" aria-pressed="false" data-k="smart" data-calc="smart"><span class="knob"><svg><use href="#i-home"/></svg></span>Smart Home</button>
-      <button class="sw" aria-pressed="false" data-k="elektro" data-calc="elektro"><span class="knob"><svg><use href="#i-bolt"/></svg></span>Elektro</button>
+      <button class="sw" aria-pressed="false" data-k="wp" data-calc="wp"><span class="knob"><svg><use href="#i-heat"/></svg></span><span class="sw-l">Wärme&shy;pumpe</span><span class="sw-st" aria-hidden="true"><svg><use href="#i-check"/></svg></span></button>
+      <button class="sw" aria-pressed="false" data-k="pv" data-calc="pv"><span class="knob"><svg><use href="#i-sun"/></svg></span><span class="sw-l">Photo&shy;voltaik</span><span class="sw-st" aria-hidden="true"><svg><use href="#i-check"/></svg></span></button>
+      <button class="sw" aria-pressed="false" data-k="klima" data-calc="klima"><span class="knob"><svg><use href="#i-snow"/></svg></span><span class="sw-l">Klima&shy;anlage</span><span class="sw-st" aria-hidden="true"><svg><use href="#i-check"/></svg></span></button>
+      <button class="sw" aria-pressed="false" data-k="smart" data-calc="smart"><span class="knob"><svg><use href="#i-home"/></svg></span><span class="sw-l">Smart Home</span><span class="sw-st" aria-hidden="true"><svg><use href="#i-check"/></svg></span></button>
+      <button class="sw" aria-pressed="false" data-k="elektro" data-calc="elektro"><span class="knob"><svg><use href="#i-bolt"/></svg></span><span class="sw-l">Elektro</span><span class="sw-st" aria-hidden="true"><svg><use href="#i-check"/></svg></span></button>
     </div>
     <noscript><p style="font-size:18px;margin-top:18px"><b>Der Rechner braucht JavaScript.</b> Rufen Sie uns an: 09343 65545 – wir rechnen gern mit Ihnen.</p></noscript><p class="hint" id="pickHint">Tippen Sie auf einen Schalter, um den Bereich einzuschalten.</p>
   </section>
@@ -1178,7 +1193,7 @@ img,svg,video{max-width:100%}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.5.4</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.5.5</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
