@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Elektrotechnik Ulshöfer GmbH;;;;
+FN:Elektrotechnik Ulshöfer GmbH
+ORG:Elektrotechnik Ulshöfer GmbH
+TEL;TYPE=WORK,VOICE:+49934365545
+TEL;TYPE=WORK,FAX:+49934365546
+EMAIL;TYPE=WORK:info@elektro-ulshoefer.de
+ADR;TYPE=WORK:;;Fabrikstraße 3;Lauda-Königshofen;;97922;Deutschland
+URL:https://www.elektro-ulshoefer.de
+END:VCARD
