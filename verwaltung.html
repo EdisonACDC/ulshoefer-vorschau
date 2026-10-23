@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plancia privata – Ulshöfer</title>
+<style>
+:root{--red:#E2001A;--red-d:#B5001A;--lime:#DCDA00;--ink:#1d1d1b;--muted:#555;--tone:#f2f2f2;--tone-2:#e4e4e4;--ok:#1f7a45;--face:"Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;font-family:var(--face);font-size:16px;line-height:1.5;color:var(--ink);background:#fff}
+h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.1}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.top{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;padding:14px 24px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.top h1{font-size:22px;margin-right:auto}
+.top h1 small{display:block;font-size:13px;font-weight:400;color:#cfcfcf;letter-spacing:0;margin-top:2px}
+.status{font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px;background:#3a3a3a}
+.status.dirty{background:var(--lime);color:var(--ink)}
+.status.saved{background:var(--ok)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border-radius:999px;border:0;font:700 15px/1 var(--face);cursor:pointer;text-decoration:none;background:var(--red);color:#fff;transition:background-color .15s,transform .15s}
+.btn:hover{background:var(--red-d)}.btn:active{transform:scale(.97)}
+.btn-light{background:#fff;color:var(--ink)}.btn-light:hover{background:var(--tone-2)}
+.btn-tone{background:var(--tone);color:var(--ink)}.btn-tone:hover{background:var(--tone-2)}
+.btn-sm{min-height:34px;padding:0 12px;font-size:14px}
+.wrap{max-width:1180px;margin:0 auto;padding:24px}
+.intro{background:var(--tone);padding:18px 22px;margin-bottom:22px;font-size:15px}
+.intro b{color:var(--red-d)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tab{border:0;background:var(--tone);min-height:44px;padding:0 18px;border-radius:999px;font:700 15px var(--face);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.tab:hover{background:var(--tone-2)}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.tab .dot{width:10px;height:10px;border-radius:50%;background:var(--ok)}
+.tab .dot.off{background:#aaa}
+.panel h2{font-size:32px;margin-bottom:6px}
+.panel>p{color:var(--muted);margin:0 0 20px}
+.card{background:var(--tone);padding:22px;margin-bottom:18px}
+.card h3{font-size:20px;margin-bottom:4px}
+.card .hint{font-size:14px;color:var(--muted);margin:0 0 14px}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:8px 24px}
+.f{display:grid;grid-template-columns:minmax(0,1fr) 120px 44px;gap:10px;align-items:center;padding:4px 0}
+.f.wide{grid-template-columns:minmax(0,1fr) 240px}
+.f label{font-size:15px}
+.f .u{font-size:14px;color:var(--muted)}
+input,select{font:15px var(--face);color:var(--ink);background:#fff;border:2px solid var(--tone-2);border-radius:0;min-height:40px;padding:6px 10px;width:100%}
+input[type=number]{text-align:right}
+input:focus,select:focus{border-color:var(--ink);outline:0}
+input.ch,select.ch{border-color:var(--red);background:#fff4f5}
+table{width:100%;border-collapse:collapse;background:#fff}
+th{font-size:13px;text-align:left;padding:8px;color:var(--muted);font-weight:700;background:#fafafa}
+td{padding:4px;border-top:1px solid var(--tone-2);vertical-align:middle}
+td input,td select{min-height:36px;border-color:transparent}
+td input[type=number]{width:110px}
+td select{min-width:130px}
+td:nth-child(2) input{min-width:260px}
+td input:hover,td select:hover{border-color:var(--tone-2)}
+td.act{white-space:nowrap;width:1%}
+.ib{border:0;background:var(--tone);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;line-height:1}
+.ib:hover{background:var(--tone-2)}
+.ib.del:hover{background:var(--red);color:#fff}
+.tbl-acts{margin-top:10px}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;padding:14px 16px;margin-bottom:8px;cursor:pointer}
+.sw b{font-size:17px}
+.sw small{display:block;color:var(--muted);font-size:14px}
+.sw input{position:absolute;opacity:0;width:1px;height:1px}
+.sw .knob{flex:none;width:58px;height:32px;border-radius:999px;background:#bbb;position:relative;transition:background-color .2s}
+.sw .knob::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s}
+.sw input:checked+.knob{background:var(--ok)}
+.sw input:checked+.knob::after{transform:translateX(26px)}
+.sw input:focus-visible+.knob{outline:3px solid var(--ink);outline-offset:2px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.where{font-size:13px;color:#cfcfcf}
+@media (max-width:700px){.top{position:static}}
+.lang{display:flex;gap:4px}.lang button{all:unset;cursor:pointer;padding:6px 10px;border-radius:6px;font-weight:700;font-size:14px;color:#cfcfcf;border:1px solid #555}.lang button[aria-pressed="true"]{background:#fff;color:#111;border-color:#fff}
+.testnote{background:#fff4e5;border-left:4px solid #E2001A;padding:12px 14px;border-radius:8px;margin:0 0 16px;font-size:15px}
+.startbox{background:var(--tone);padding:36px;max-width:760px}
+.startbox h2{font-size:32px;margin-bottom:12px}
+.startbox p{font-size:17px}
+.startbox .row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.startbox .small{font-size:14px;color:var(--muted)}
+@media (max-width:700px){.f{grid-template-columns:1fr 110px 36px}.f.wide{grid-template-columns:1fr}.top{padding:12px 16px}.wrap{padding:16px}table{display:block;overflow-x:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1><span id="hTitle">Plancia privata</span><small><span id="hVer">Plancia v0.5.2</span> · <span id="hSub">Prezzi, manodopera e macchinari del calcolatore</span> · Elektrotechnik Ulshöfer</small></h1>
+  <div class="lang" role="group" aria-label="Sprache / Lingua"><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div>
+  <span class="status" id="status">Nessuna modifica</span>
+  <button class="btn" id="save" hidden>Salva nel sito</button>
+  <a class="btn btn-light" id="openSite" href="./" target="_blank" rel="noopener" hidden>Apri il sito</a>
+  <button class="btn btn-light" id="download" hidden>Scarica copia</button>
+  <button class="btn btn-light" id="undo" hidden>Annulla ultimo salvataggio</button>
+  <span class="where" id="where"></span>
+</header>
+
+<main class="wrap">
+  <div class="startbox" id="startbox">
+    <div id="startText"></div>
+    <div class="row"><button class="btn" id="pick">Scegli il file</button><button class="btn btn-tone" id="resume" hidden></button></div>
+    <p class="small" id="pickNote"></p>
+    <input type="file" id="fileIn" accept=".html,text/html" hidden>
+  </div>
+  <div id="editor" hidden>
+  <div class="intro" id="intro"></div>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div id="panels"></div>
+  </div>
+</main>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+(function(){
+"use strict";
+const $=(s,c=document)=>c.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let CFG=null,ORIG='',SITE='',fh=null,fname='ulshoefer-v0.5.3.html';
+const DE={"Generale": "Allgemein", "Pulsanti visibili sul sito": "Sichtbare Bereiche auf der Website", "Spento = il settore non compare nel calcolatore, nella fascia gialla e nel footer. La descrizione nei servizi resta, con il pulsante \"Beratung anfragen\".": "Aus = der Bereich erscheint nicht im Rechner, im Schnellwahl-Band und im Footer. Die Beschreibung unter Leistungen bleibt, mit dem Button „Beratung anfragen“.", "Pompa di calore": "Wärmepumpe", "Fotovoltaico": "Photovoltaik", "Climatizzazione": "Klimaanlage", "Domotica": "Smart Home", "Impianto elettrico": "Elektroinstallation", "Manodopera e preventivo": "Arbeitslohn und Angebot", "Tariffa oraria tecnico": "Stundensatz Monteur", "Uscita / trasferta (una volta per preventivo)": "Anfahrt (einmal pro Angebot)", "IVA": "MwSt.", "Forbice di prezzo \"da… a…\" ±": "Preisspanne „von … bis …“ ±", "Validità del preventivo": "Gültigkeit des Angebots", "giorni": "Tage", "Incentivi KfW (pompa di calore, programma 458)": "KfW-Förderung (Wärmepumpe, Programm 458)", "Regole KfW dal 21.07.2026. Il bonus velocità clima scende: 12 % dal 1.2.2027, 8 % dal 1.8.2027. Costi ammissibili −750 € ogni 1.2 e 1.8.": "KfW-Regeln seit 21.07.2026. Der Klimageschwindigkeitsbonus sinkt: 12 % ab 1.2.2027, 8 % ab 1.8.2027. Förderfähige Kosten −750 € jeweils zum 1.2. und 1.8.", "Contributo base": "Grundförderung", "Bonus velocità clima": "Klimageschwindigkeitsbonus", "Contributo massimo": "Höchstfördersatz", "Massimo con reddito fino a 30.000 €": "Höchstsatz bei Einkommen bis 30.000 €", "Costi ammissibili massimi": "Max. förderfähige Kosten", "Macchine mono-split (kit interna + esterna)": "Single-Split-Geräte (Set Innen- + Außengerät)", "Il sito sceglie la macchina più piccola che basta per la stanza, nella classe scelta dal cliente; a parità, la più economica.": "Die Website wählt das kleinste Gerät, das für den Raum reicht, in der vom Kunden gewählten Klasse; bei gleicher Leistung das günstigste.", "Unità interne multi-split": "Multi-Split-Innengeräte", "Unità esterne multi-split": "Multi-Split-Außengeräte", "Attacchi": "Anschlüsse", "n.": "Stk.", "Manodopera (ore)": "Arbeitszeit (Stunden)", "Montaggio mono-split completo": "Montage Single-Split komplett", "Montaggio multi-split: base": "Montage Multi-Split: Grundpauschale", "… per ogni unità interna": "… je Innengerät", "Tubazione extra, per metro": "Zusätzliche Leitung, pro Meter", "Carotaggio, per foro": "Kernbohrung, pro Loch", "Pompa condensa, per pezzo": "Kondensatpumpe, pro Stück", "Linea elettrica dedicata": "Eigener Stromkreis", "Staffa a terra / tetto": "Boden-/Dachkonsole", "Materiali (netto)": "Material (netto)", "Kit base mono-split (3 m tubo, staffa, canalina)": "Grundmaterial Single-Split (3 m Leitung, Konsole, Kanal)", "Kit base per unità interna multi": "Grundmaterial je Multi-Innengerät", "Tubazione extra, al metro": "Zusätzliche Leitung, pro Meter", "Staffa a terra": "Bodenkonsole", "Supporto tetto piano": "Flachdachgestell", "Pompa condensa": "Kondensatpumpe", "Linea dedicata (materiale)": "Eigener Stromkreis (Material)", "Altro": "Sonstiges", "Contratto manutenzione annuo (lordo)": "Wartungsvertrag pro Jahr (brutto)", "Potenza per m² di stanza": "Leistung pro m² Raumfläche", "Macchine (pompe di calore aria-acqua)": "Geräte (Luft-Wasser-Wärmepumpen)", "Il sito sceglie la macchina più piccola che copre il fabbisogno; il cliente può filtrare per marca.": "Die Website wählt das kleinste Gerät, das die Heizlast deckt; der Kunde kann nach Hersteller filtern.", "Montaggio, bilanciamento idraulico, messa in funzione": "Montage, hydraulischer Abgleich, Inbetriebnahme", "Smontaggio caldaia a gasolio": "Demontage Ölkessel", "Smontaggio caldaia a gas": "Demontage Gaskessel", "Smontaggio stufe ad accumulo": "Demontage Nachtspeicheröfen", "Sostituzione radiatore, per pezzo": "Heizkörpertausch, pro Stück", "Quadro contatore": "Zählerschrank", "Pacchetto idraulico (puffer, bollitore, raccordi)": "Hydraulikpaket (Puffer, Warmwasserspeicher, Anschlüsse)", "Smaltimento gasolio e pulizia serbatoio": "Entsorgung Heizöl und Tankreinigung", "Smaltimento caldaia a gas": "Entsorgung Gaskessel", "Smaltimento stufe ad accumulo": "Entsorgung Nachtspeicheröfen", "Radiatore bassa temperatura": "Niedertemperatur-Heizkörper", "Posto contatore pompa di calore": "Zählerplatz Wärmepumpe", "Calcolo": "Berechnung", "Acqua calda: potenza in più per persona": "Warmwasser: Zusatzleistung pro Person", "Moduli": "Module", "Il sito usa il PRIMO modulo della lista: con ↑ lo porti in cima.": "Die Website verwendet das ERSTE Modul der Liste: mit ↑ nach oben schieben.", "Prezzo per modulo": "Preis pro Modul", "Inverter": "Wechselrichter", "Viene scelto il più piccolo che arriva almeno all’80 % della potenza dei moduli.": "Gewählt wird der kleinste, der mindestens 80 % der Modulleistung erreicht.", "Accumuli": "Speicher", "Il cliente sceglie tra questi accumuli (o nessuno).": "Der Kunde wählt aus diesen Speichern (oder keinen).", "Ore installazione": "Montagestunden", "Montaggio: base fissa": "Montage: Grundpauschale", "… per ogni modulo": "… je Modul", "Installazione accumulo": "Montage Speicher", "Funzione emergenza": "Notstromfunktion", "Struttura e fissaggi, per modulo": "Unterkonstruktion, pro Modul", "Cavi DC/AC, protezioni, minuteria": "DC/AC-Kabel, Schutz, Kleinmaterial", "Ponteggio / anticaduta": "Gerüst / Absturzsicherung", "Adeguamento quadro contatore": "Anpassung Zählerschrank", "Pratiche gestore e registro (MaStR)": "Anmeldung Netzbetreiber und MaStR", "Commutatore emergenza": "Notstrom-Umschalter", "Calcolo resa": "Ertragsberechnung", "Produzione annua per kWp (a sud)": "Jahresertrag pro kWp (Süd)", "Prezzo corrente del cliente": "Strompreis des Kunden", "Tariffa di immissione": "Einspeisevergütung", "Sistema Loxone": "System Loxone", "Sistema radio": "System Funk", "Sistema KNX": "System KNX", "Nome mostrato al cliente": "Name für den Kunden", "Hardware (0 = nessuna)": "Hardware (0 = keine)", "Ore di configurazione": "Stunden Einrichtung", "Centrale / dotazione base": "Zentrale / Grundausstattung", "Luce, per stanza": "Licht, pro Raum", "Riscaldamento, per stanza": "Heizung, pro Raum", "Tapparella, per pezzo": "Rollladen, pro Stück", "Pacchetto sicurezza": "Sicherheitspaket", "Impianto al m²": "Installation pro m²", "Nuova costruzione – materiale al m²": "Neubau – Material pro m²", "Nuova costruzione – ore al m²": "Neubau – Stunden pro m²", "Rifacimento completo – materiale al m²": "Komplettsanierung – Material pro m²", "Rifacimento completo – ore al m²": "Komplettsanierung – Stunden pro m²", "Rifacimento parziale – materiale al m²": "Teilsanierung – Material pro m²", "Rifacimento parziale – ore al m²": "Teilsanierung – Stunden pro m²", "Voci singole": "Einzelpositionen", "Quadro contatore nuovo – materiale": "Neuer Zählerschrank – Material", "Quadro contatore nuovo – ore": "Neuer Zählerschrank – Stunden", "Presa di rete – materiale": "Netzwerkdose – Material", "Presa di rete – ore": "Netzwerkdose – Stunden", "Scaricatore sovratensioni – materiale": "Überspannungsschutz – Material", "Scaricatore sovratensioni – ore": "Überspannungsschutz – Stunden", "E-CHECK – materiale": "E-CHECK – Material", "E-CHECK – ore": "E-CHECK – Stunden", "Marca": "Hersteller", "Modello": "Modell", "Potenza": "Leistung", "Capacità": "Kapazität", "Prezzo netto": "Nettopreis", "Classe": "Klasse", "visibile": "sichtbar", "nascosto": "ausgeblendet", "riga": "Zeile", "Sposta su": "Nach oben", "Elimina": "Löschen", "+ Aggiungi riga": "+ Zeile hinzufügen", "Visibile sul sito": "Auf der Website sichtbar", "Pulsante": "Button", "Nessuna modifica": "Keine Änderungen", "Modifiche non salvate": "Ungespeicherte Änderungen", "Salvato ✓": "Gespeichert ✓", "Premi di nuovo × per eliminare la riga": "Zum Löschen nochmals × drücken", "Salva nel sito": "Speichern", "Scarica copia": "Kopie herunterladen", "Annulla ultimo salvataggio": "Letzte Speicherung rückgängig", "Apri il sito": "Website öffnen", "Plancia privata": "Preisverwaltung", "Prezzi, manodopera e macchinari del calcolatore": "Preise, Arbeitszeit und Geräte des Angebotsrechners", "Ripristina prezzi originali": "Originalpreise wiederherstellen"};
+let LANG=(()=>{try{const l=localStorage.getItem('uls-admin-lang');if(l)return l}catch(e){}return /^it/i.test(navigator.language||'')?'it':'de'})();
+const tr=x=>LANG==='de'&&DE[x]!=null?DE[x]:x;
+const WEB=/^https?:$/.test(location.protocol);
+const TXT={
+ it:{
+  start:'<h2>Apri il sito da modificare</h2><p>Scegli il file del sito con il <b>numero di versione più alto</b> (es. <b>ulshoefer-v0.5.3.html</b>) nella cartella <b>Download</b>. La plancia legge prezzi, manodopera e macchinari da quel file e, quando premi <b>Salva nel sito</b>, li scrive dentro lo stesso file.</p>',
+  pick:'Scegli il file del sito (ulshoefer-v…html)',note:'Usa Chrome o Edge. Il browser ti chiederà il permesso di modificare il file: conferma con "Salva modifiche" / "Consenti".',
+  intro:'Tutti i prezzi sono <b>netti</b>: l\'IVA la aggiunge il sito. La manodopera si calcola come <b>ore × tariffa oraria</b> e nel preventivo appare come voce separata. Dopo le modifiche premi <b>Salva nel sito</b>, poi apri (o ricarica con <b>F5</b>) lo stesso file del sito nel browser. Questa pagina resta sul tuo computer: <b>non caricarla sul server</b>.',
+  webintro:'<div class="testnote"><b>Modalità test online.</b> Le modifiche si salvano <b>in questo browser</b>. Premi <b>Salva</b>, poi <b>Apri il sito</b> (nello stesso browser): il calcolatore usa subito i nuovi prezzi. Gli altri visitatori vedono i prezzi originali.</div>Tutti i prezzi sono <b>netti</b>: l\'IVA la aggiunge il sito. La manodopera si calcola come <b>ore × tariffa oraria</b> e nel preventivo appare come voce separata.',
+  loading:'Carico i prezzi del sito…',loadfail:'Non riesco a leggere i prezzi del sito. Ricarica la pagina.',
+  notsite:'Questo file non è il sito Ulshöfer (manca la configurazione).',denied:'Permesso negato',notfound:'File non trovato: sceglilo di nuovo',cont:'Continua con ',
+  file:'File: ',ver:' · versione sito v',dl:f=>'Scaricato: sostituisci '+f+' in Download con questo file',saved:'Salvato ✓ Ricarica il sito (F5) per vedere i nuovi prezzi',
+  savedweb:'Salvato ✓ Apri o ricarica il sito in questo browser per vedere i nuovi prezzi',saveFail:'Salvataggio diretto non riuscito: scarico il file',
+  noprev:'Nessuna versione precedente',restored:'Ripristinata la versione precedente',reset:'Prezzi originali ripristinati',dlsite:'Scarica sito aggiornato',title:'Plancia privata – Ulshöfer',online:'Test online'
+ },
+ de:{
+  start:'<h2>Website-Datei öffnen</h2><p>Wählen Sie die Website-Datei mit der <b>höchsten Versionsnummer</b> (z. B. <b>ulshoefer-v0.5.3.html</b>) im Ordner <b>Downloads</b>. Die Verwaltung liest Preise, Arbeitszeiten und Geräte aus dieser Datei und schreibt sie beim <b>Speichern</b> wieder hinein.</p>',
+  pick:'Website-Datei wählen (ulshoefer-v…html)',note:'Bitte Chrome oder Edge verwenden. Der Browser fragt nach der Erlaubnis, die Datei zu ändern: mit „Änderungen speichern“ / „Zulassen“ bestätigen.',
+  intro:'Alle Preise sind <b>netto</b>, die MwSt. rechnet die Website dazu. Der Arbeitslohn wird als <b>Stunden × Stundensatz</b> berechnet und im Angebot als eigene Position ausgewiesen. Nach Änderungen <b>Speichern</b> drücken und die Website-Datei im Browser neu laden (<b>F5</b>). Diese Seite bleibt auf Ihrem Computer und gehört <b>nicht auf den Server</b>.',
+  webintro:'<div class="testnote"><b>Online-Testmodus.</b> Änderungen werden <b>in diesem Browser</b> gespeichert. <b>Speichern</b> drücken, dann <b>Website öffnen</b> (im selben Browser): Der Rechner verwendet sofort die neuen Preise. Andere Besucher sehen weiterhin die Originalpreise.</div>Alle Preise sind <b>netto</b>, die MwSt. rechnet die Website dazu. Der Arbeitslohn wird als <b>Stunden × Stundensatz</b> berechnet und im Angebot als eigene Position ausgewiesen.',
+  loading:'Preise der Website werden geladen…',loadfail:'Die Preise der Website konnten nicht gelesen werden. Bitte Seite neu laden.',
+  notsite:'Diese Datei ist nicht die Ulshöfer-Website (Konfiguration fehlt).',denied:'Zugriff verweigert',notfound:'Datei nicht gefunden: bitte neu wählen',cont:'Weiter mit ',
+  file:'Datei: ',ver:' · Website-Version v',dl:f=>'Heruntergeladen: '+f+' im Download-Ordner durch diese Datei ersetzen',saved:'Gespeichert ✓ Website neu laden (F5), um die neuen Preise zu sehen',
+  savedweb:'Gespeichert ✓ Website in diesem Browser öffnen oder neu laden, um die neuen Preise zu sehen',saveFail:'Direktes Speichern nicht möglich: Datei wird heruntergeladen',
+  noprev:'Keine frühere Version vorhanden',restored:'Frühere Version wiederhergestellt',reset:'Originalpreise wiederhergestellt',dlsite:'Aktualisierte Website herunterladen',title:'Preisverwaltung – Ulshöfer',online:'Online-Test'
+ }};
+const X=k=>TXT[LANG][k];let SITEVER='';
+function whereText(){$('#where').textContent=WEB?(SITEVER?(LANG==='de'?'Website-Version v':'Versione sito v')+SITEVER:''):X('file')+fname+(SITEVER?X('ver')+SITEVER:'')}
+function applyLang(){
+  document.documentElement.lang=LANG;document.title=X('title');
+  $('#hTitle').textContent=tr('Plancia privata');$('#hSub').textContent=tr('Prezzi, manodopera e macchinari del calcolatore');
+  $('#hVer').textContent=(LANG==='de'?'Verwaltung':'Plancia')+' v0.5.3'+(WEB?' · '+X('online'):'');
+  $('#startText').innerHTML=WEB?'<h2>'+X('loading')+'</h2>':X('start');$('#pick').textContent=X('pick');$('#pickNote').textContent=WEB?'':X('note');
+  $('#intro').innerHTML=WEB?X('webintro'):X('intro');
+  $('#save').textContent=(!WEB&&!fh&&CFG)?X('dlsite'):tr('Salva nel sito');$('#download').textContent=tr('Scarica copia');$('#undo').textContent=WEB?tr('Ripristina prezzi originali'):tr('Annulla ultimo salvataggio');$('#openSite').textContent=tr('Apri il sito');
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===LANG));
+  if(CFG){render();whereText()}
+}
+document.querySelector('.lang').addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(!b)return;LANG=b.dataset.lang;try{localStorage.setItem('uls-admin-lang',LANG)}catch(x){}applyLang()});
+
+const get=(p)=>p.split('.').reduce((o,k)=>o==null?o:o[k],CFG);
+const set=(p,v)=>{const ks=p.split('.');let o=CFG;ks.slice(0,-1).forEach(k=>{o=o[k]});o[ks[ks.length-1]]=v};
+
+const DEV=(kw)=>[['hersteller','Marca','text'],['modell','Modello','text'],[kw||'kw',kw==='kwh'?'Capacità':'Potenza','num',kw==='kwh'?'kWh':'kW'],['preis','Prezzo netto','num','€']];
+const KL=[['hersteller','Marca','text'],['modell','Modello','text'],['kw','Potenza','num','kW'],['klasse','Classe','sel',{std:'Standard',pre:'Premium'}],['preis','Prezzo netto','num','€']];
+const comp=(sys)=>[['zentrale','Centrale / dotazione base'],['licht','Luce, per stanza'],['heizung','Riscaldamento, per stanza'],['rollladen','Tapparella, per pezzo'],['sicherheit','Pacchetto sicurezza']].flatMap(([k,l])=>[[`smart.${sys}.${k}.preis`,`${l} – materiale`,'€'],[`smart.${sys}.${k}.h`,`${l} – ore`,'h']]);
+
+const TABS=[
+ {id:'generale',t:'Generale',sez:[
+   {tipo:'toggles',t:'Pulsanti visibili sul sito',hint:'Spento = il settore non compare nel calcolatore, nella fascia gialla e nel footer. La descrizione nei servizi resta, con il pulsante "Beratung anfragen".',items:[['wp','Pompa di calore','Wärmepumpe'],['pv','Fotovoltaico','Photovoltaik'],['klima','Climatizzazione','Klimaanlage'],['smart','Domotica','Smart Home'],['elektro','Impianto elettrico','Elektroinstallation']]},
+   {tipo:'campi',t:'Manodopera e preventivo',campi:[['allgemein.stundensatz','Tariffa oraria tecnico','€/h'],['allgemein.anfahrt','Uscita / trasferta (una volta per preventivo)','€'],['allgemein.mwst','IVA','%'],['allgemein.spanne','Forbice di prezzo "da… a…" ±','%'],['allgemein.gueltig_tage','Validità del preventivo','giorni']]},
+   {tipo:'campi',t:'Incentivi KfW (pompa di calore, programma 458)',hint:'Regole KfW dal 21.07.2026. Il bonus velocità clima scende: 12 % dal 1.2.2027, 8 % dal 1.8.2027. Costi ammissibili −750 € ogni 1.2 e 1.8.',campi:[['foerderung.grund','Contributo base','%'],['foerderung.kgb','Bonus velocità clima','%'],['foerderung.max','Contributo massimo','%'],['foerderung.max_einkommen','Massimo con reddito fino a 30.000 €','%'],['foerderung.kosten_max','Costi ammissibili massimi','€']]}
+ ]},
+ {id:'klima',t:'Climatizzazione',k:'klima',sez:[
+   {tipo:'tabella',t:'Macchine mono-split (kit interna + esterna)',hint:'Il sito sceglie la macchina più piccola che basta per la stanza, nella classe scelta dal cliente; a parità, la più economica.',path:'klima.geraete_single',col:KL},
+   {tipo:'tabella',t:'Unità interne multi-split',path:'klima.innengeraete_multi',col:KL},
+   {tipo:'tabella',t:'Unità esterne multi-split',path:'klima.aussengeraete_multi',col:[['hersteller','Marca','text'],['modell','Modello','text'],['anschluesse','Attacchi','num','n.'],['kw','Potenza','num','kW'],['preis','Prezzo netto','num','€']]},
+   {tipo:'campi',t:'Manodopera (ore)',campi:[['klima.arbeit.single_h','Montaggio mono-split completo','h'],['klima.arbeit.multi_basis_h','Montaggio multi-split: base','h'],['klima.arbeit.multi_je_innen_h','… per ogni unità interna','h'],['klima.arbeit.leitung_m_h','Tubazione extra, per metro','h'],['klima.arbeit.kernbohrung_h','Carotaggio, per foro','h'],['klima.arbeit.pumpe_h','Pompa condensa, per pezzo','h'],['klima.arbeit.stromkreis_h','Linea elettrica dedicata','h'],['klima.arbeit.konsole_h','Staffa a terra / tetto','h']]},
+   {tipo:'campi',t:'Materiali (netto)',campi:[['klima.material.grund_single','Kit base mono-split (3 m tubo, staffa, canalina)','€'],['klima.material.grund_je_innen','Kit base per unità interna multi','€'],['klima.material.leitung_m','Tubazione extra, al metro','€'],['klima.material.bodenkonsole','Staffa a terra','€'],['klima.material.dachgestell','Supporto tetto piano','€'],['klima.material.kernbohrung','Carotaggio, per foro','€'],['klima.material.pumpe','Pompa condensa','€'],['klima.material.stromkreis','Linea dedicata (materiale)','€']]},
+   {tipo:'campi',t:'Altro',campi:[['klima.wartung_jahr','Contratto manutenzione annuo (lordo)','€'],['klima.kw_je_m2','Potenza per m² di stanza','kW']]}
+ ]},
+ {id:'wp',t:'Pompa di calore',k:'wp',sez:[
+   {tipo:'tabella',t:'Macchine (pompe di calore aria-acqua)',hint:'Il sito sceglie la macchina più piccola che copre il fabbisogno; il cliente può filtrare per marca.',path:'wp.geraete',col:DEV()},
+   {tipo:'campi',t:'Manodopera (ore)',campi:[['wp.arbeit.montage_h','Montaggio, bilanciamento idraulico, messa in funzione','h'],['wp.arbeit.demontage_oel_h','Smontaggio caldaia a gasolio','h'],['wp.arbeit.demontage_gas_h','Smontaggio caldaia a gas','h'],['wp.arbeit.demontage_ns_h','Smontaggio stufe ad accumulo','h'],['wp.arbeit.heizkoerper_h','Sostituzione radiatore, per pezzo','h'],['wp.arbeit.zaehler_h','Quadro contatore','h']]},
+   {tipo:'campi',t:'Materiali (netto)',campi:[['wp.material.hydraulik_paket','Pacchetto idraulico (puffer, bollitore, raccordi)','€'],['wp.material.entsorgung_oel','Smaltimento gasolio e pulizia serbatoio','€'],['wp.material.entsorgung_gas','Smaltimento caldaia a gas','€'],['wp.material.entsorgung_ns','Smaltimento stufe ad accumulo','€'],['wp.material.heizkoerper','Radiatore bassa temperatura','€'],['wp.material.zaehler','Posto contatore pompa di calore','€']]},
+   {tipo:'campi',t:'Calcolo',campi:[['wp.ww_kw_je_person','Acqua calda: potenza in più per persona','kW']]}
+ ]},
+ {id:'pv',t:'Fotovoltaico',k:'pv',sez:[
+   {tipo:'tabella',t:'Moduli',hint:'Il sito usa il PRIMO modulo della lista: con ↑ lo porti in cima.',path:'pv.module',col:[['hersteller','Marca','text'],['modell','Modello','text'],['wp','Potenza','num','Wp'],['preis','Prezzo per modulo','num','€']]},
+   {tipo:'tabella',t:'Inverter',hint:"Viene scelto il più piccolo che arriva almeno all’80 % della potenza dei moduli.",path:'pv.wechselrichter',col:DEV()},
+   {tipo:'tabella',t:'Accumuli',hint:'Il cliente sceglie tra questi accumuli (o nessuno).',path:'pv.speicher',col:DEV('kwh')},
+   {tipo:'campi',t:'Wallbox',campi:[['pv.wallbox.hersteller','Marca','txt'],['pv.wallbox.modell','Modello','txt'],['pv.wallbox.preis','Prezzo netto','€'],['pv.wallbox.h','Ore installazione','h']]},
+   {tipo:'campi',t:'Manodopera (ore)',campi:[['pv.arbeit.basis_h','Montaggio: base fissa','h'],['pv.arbeit.je_modul_h','… per ogni modulo','h'],['pv.arbeit.speicher_h','Installazione accumulo','h'],['pv.arbeit.notstrom_h','Funzione emergenza','h']]},
+   {tipo:'campi',t:'Materiali (netto)',campi:[['pv.material.unterkonstruktion_je_modul','Struttura e fissaggi, per modulo','€'],['pv.material.kabel_kleinmaterial','Cavi DC/AC, protezioni, minuteria','€'],['pv.material.geruest','Ponteggio / anticaduta','€'],['pv.material.zaehlerschrank','Adeguamento quadro contatore','€'],['pv.material.anmeldung','Pratiche gestore e registro (MaStR)','€'],['pv.material.notstrom','Commutatore emergenza','€']]},
+   {tipo:'campi',t:'Calcolo resa',campi:[['pv.ertrag_je_kwp','Produzione annua per kWp (a sud)','kWh'],['pv.strompreis','Prezzo corrente del cliente','€/kWh'],['pv.einspeisung','Tariffa di immissione','€/kWh']]}
+ ]},
+ {id:'smart',t:'Domotica',k:'smart',sez:[
+   {tipo:'campi',t:'Sistema Loxone',campi:[['smart.loxone.name','Nome mostrato al cliente','txt'],...comp('loxone')]},
+   {tipo:'campi',t:'Sistema radio',campi:[['smart.funk.name','Nome mostrato al cliente','txt'],...comp('funk')]},
+   {tipo:'campi',t:'Sistema KNX',campi:[['smart.knx.name','Nome mostrato al cliente','txt'],...comp('knx')]},
+   {tipo:'campi',t:'Home Assistant',campi:[['smart.home_assistant.preis','Hardware (0 = nessuna)','€'],['smart.home_assistant.h','Ore di configurazione','h']]}
+ ]},
+ {id:'elektro',t:'Impianto elettrico',k:'elektro',sez:[
+   {tipo:'campi',t:'Impianto al m²',campi:[['elektro.neu.material_m2','Nuova costruzione – materiale al m²','€'],['elektro.neu.h_je_m2','Nuova costruzione – ore al m²','h'],['elektro.san.material_m2','Rifacimento completo – materiale al m²','€'],['elektro.san.h_je_m2','Rifacimento completo – ore al m²','h'],['elektro.teil.material_m2','Rifacimento parziale – materiale al m²','€'],['elektro.teil.h_je_m2','Rifacimento parziale – ore al m²','h']]},
+   {tipo:'campi',t:'Voci singole',campi:[['elektro.zaehlerschrank.preis','Quadro contatore nuovo – materiale','€'],['elektro.zaehlerschrank.h','Quadro contatore nuovo – ore','h'],['elektro.lan.preis','Presa di rete – materiale','€'],['elektro.lan.h','Presa di rete – ore','h'],['elektro.ueberspannung.preis','Scaricatore sovratensioni – materiale','€'],['elektro.ueberspannung.h','Scaricatore sovratensioni – ore','h'],['elektro.echeck.preis','E-CHECK – materiale','€'],['elektro.echeck.h','E-CHECK – ore','h']]},
+   {tipo:'campi',t:'Wallbox',campi:[['elektro.wallbox.hersteller','Marca','txt'],['elektro.wallbox.modell','Modello','txt'],['elektro.wallbox.preis','Prezzo netto','€'],['elektro.wallbox.h','Ore installazione','h']]}
+ ]}
+];
+
+/* ---------- Render ---------- */
+let cur='generale';
+function tabDot(t){if(!t.k)return'';return `<span class="dot${CFG.aktiv[t.k]?'':' off'}" title="${tr(CFG.aktiv[t.k]?'visibile':'nascosto')}"></span>`}
+function renderTabs(){$('#tabs').innerHTML=TABS.map(t=>`<button class="tab" role="tab" aria-selected="${t.id===cur}" data-t="${t.id}">${tabDot(t)}${esc(tr(t.t))}</button>`).join('')}
+function field([p,l,u]){const v=get(p);const txt=u==='txt';const ch=JSON.stringify(v)!==JSON.stringify(origGet(p));
+  return txt?`<div class="f wide"><label for="f-${p}">${esc(tr(l))}</label><input id="f-${p}" data-p="${p}" data-t="text" value="${esc(v)}" class="${ch?'ch':''}"></div>`
+            :`<div class="f"><label for="f-${p}">${esc(tr(l))}</label><input id="f-${p}" type="number" step="any" min="0" data-p="${p}" value="${esc(v)}" class="${ch?'ch':''}"><span class="u">${esc(LANG==='de'&&u==='giorni'?'Tage':u)}</span></div>`}
+let ORIGOBJ=null;const origGet=p=>p.split('.').reduce((o,k)=>o==null?o:o[k],ORIGOBJ);
+function table(s){const rows=get(s.path);
+  return `<table><thead><tr>${s.col.map(c=>`<th>${esc(tr(c[1]))}${c[3]&&typeof c[3]==='string'?' ('+esc(tr(c[3]))+')':''}</th>`).join('')}<th></th></tr></thead><tbody>${rows.map((r,i)=>`<tr>${s.col.map(c=>{const v=r[c[0]];const a=`data-path="${s.path}" data-i="${i}" data-k="${c[0]}" aria-label="${esc(tr(c[1]))} ${tr('riga')} ${i+1}"`;
+    if(c[2]==='sel')return `<td><select ${a}>${Object.entries(c[3]).map(([k,l])=>`<option value="${k}"${k===v?' selected':''}>${l}</option>`).join('')}</select></td>`;
+    return `<td><input ${a} ${c[2]==='num'?'type="number" step="any" min="0"':''} value="${esc(v)}"></td>`}).join('')}<td class="act"><button class="ib" data-up="${s.path}" data-i="${i}" title="${tr('Sposta su')}" aria-label="${tr('Sposta su')} ${tr('riga')} ${i+1}">↑</button> <button class="ib del" data-del="${s.path}" data-i="${i}" title="${tr('Elimina')}" aria-label="${tr('Elimina')} ${tr('riga')} ${i+1}">×</button></td></tr>`).join('')}</tbody></table>
+    <div class="tbl-acts"><button class="btn btn-tone btn-sm" data-add="${s.path}">${tr('+ Aggiungi riga')}</button></div>`}
+function renderPanel(){
+  const t=TABS.find(x=>x.id===cur);
+  let h=`<section class="panel"><h2>${esc(tr(t.t))}</h2>`;
+  if(t.k)h+=`<label class="sw"><span><b>${tr('Visibile sul sito')}</b><small>${LANG==='de'?'Zeigt den Button':'Mostra il pulsante'} "${esc({wp:'Wärmepumpe',pv:'Photovoltaik',klima:'Klimaanlage',smart:'Smart Home',elektro:'Elektro'}[t.k])}" ${LANG==='de'?'im Rechner':'nel calcolatore'}</small></span><input type="checkbox" data-aktiv="${t.k}"${CFG.aktiv[t.k]?' checked':''}><span class="knob"></span></label>`;
+  for(const s of t.sez){
+    h+=`<div class="card"><h3>${esc(tr(s.t))}</h3>${s.hint?`<p class="hint">${esc(tr(s.hint))}</p>`:'<p class="hint"></p>'}`;
+    if(s.tipo==='toggles')h+=s.items.map(([k,l,de])=>`<label class="sw"><span><b>${esc(tr(l))}</b><small>${tr('Pulsante')} "${esc(de)}"</small></span><input type="checkbox" data-aktiv="${k}"${CFG.aktiv[k]?' checked':''}><span class="knob"></span></label>`).join('');
+    if(s.tipo==='campi')h+=`<div class="fields">${s.campi.map(field).join('')}</div>`;
+    if(s.tipo==='tabella')h+=table(s);
+    h+='</div>';
+  }
+  $('#panels').innerHTML=h+'</section>';
+}
+function render(){renderTabs();renderPanel();dirty()}
+$('#tabs').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(!b)return;cur=b.dataset.t;render();scrollTo({top:0})});
+
+/* ---------- Bearbeiten ---------- */
+$('#panels').addEventListener('input',e=>{const el=e.target;
+  if(el.dataset.p){set(el.dataset.p,el.dataset.t==='text'?el.value:(el.value===''?0:+el.value));el.classList.toggle('ch',JSON.stringify(get(el.dataset.p))!==JSON.stringify(origGet(el.dataset.p)))}
+  if(el.dataset.path){const row=get(el.dataset.path)[+el.dataset.i];row[el.dataset.k]=el.type==='number'?(el.value===''?0:+el.value):el.value}
+  dirty();});
+$('#panels').addEventListener('change',e=>{const el=e.target;
+  if(el.dataset.aktiv){CFG.aktiv[el.dataset.aktiv]=el.checked;renderTabs();$$('[data-aktiv="'+el.dataset.aktiv+'"]').forEach(x=>x.checked=el.checked)}
+  if(el.tagName==='SELECT'&&el.dataset.path){get(el.dataset.path)[+el.dataset.i][el.dataset.k]=el.value}
+  dirty();});
+function $$(s){return [...document.querySelectorAll(s)]}
+$('#panels').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.add){const arr=get(b.dataset.add);const tmpl=arr[arr.length-1]||{};const n={};for(const k in tmpl)n[k]=typeof tmpl[k]==='number'?0:'';if(!Object.keys(n).length){n.hersteller='';n.modell='';n.preis=0}if('klasse' in tmpl)n.klasse='std';arr.push(n);renderPanel();dirty();const ins=$$(`[data-path="${b.dataset.add}"][data-i="${arr.length-1}"]`);if(ins[0])ins[0].focus()}
+  if(b.dataset.del){const arr=get(b.dataset.del);const r=arr[+b.dataset.i];if(!confirmDel(r))return;arr.splice(+b.dataset.i,1);renderPanel();dirty()}
+  if(b.dataset.up){const arr=get(b.dataset.up),i=+b.dataset.i;if(i>0){[arr[i-1],arr[i]]=[arr[i],arr[i-1]];renderPanel();dirty()}}
+});
+let delArm=null;
+function confirmDel(r){const key=JSON.stringify(r);if(delArm===key){delArm=null;return true}delArm=key;toast(tr('Premi di nuovo × per eliminare la riga'));setTimeout(()=>{if(delArm===key)delArm=null},4000);return false}
+
+/* ---------- Status ---------- */
+function dirty(){if(!CFG)return;const d=JSON.stringify(CFG)!==lastSaved;const s=$('#status');s.textContent=tr(d?'Modifiche non salvate':(savedOnce?'Salvato ✓':'Nessuna modifica'));s.className='status'+(d?' dirty':savedOnce?' saved':'')}
+let lastSaved='',savedOnce=false;
+addEventListener('beforeunload',e=>{if(CFG&&JSON.stringify(CFG)!==lastSaved){e.preventDefault();e.returnValue=''}});
+let tt=null;function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,3800)}
+
+/* ---------- Laden / Speichern (Datei ulshoefer-vorschau.html) ---------- */
+const M1='/*ULS_CONFIG_START*/',M2='/*ULS_CONFIG_END*/';
+function parseSite(text){const i=text.indexOf(M1),j=text.indexOf(M2);if(i<0||j<0)throw new Error('marker');const blk=text.slice(i+M1.length,j);const a=blk.indexOf('{',blk.indexOf('window.ULS_CONFIG')),b=blk.lastIndexOf('}');return JSON.parse(blk.slice(a,b+1))}
+function blockText(){
+  CFG.stand=new Date().toISOString().slice(0,10);
+  return `\n/* =====================================================================\n   KONFIGURATION – Angebotsrechner Elektrotechnik Ulshöfer GmbH\n   Modificare con la plancia privata (ulshoefer-admin.html)\n   Salvato il ${new Date().toLocaleString('it-IT')}\n   ===================================================================== */\nwindow.ULS_CONFIG = ${JSON.stringify(CFG,null,2)};\n`;
+}
+function newSite(){const i=SITE.indexOf(M1),j=SITE.indexOf(M2);return SITE.slice(0,i+M1.length)+blockText()+SITE.slice(j)}
+function load(text,name){
+  let c;try{c=parseSite(text)}catch(e){toast(X('notsite'));return}
+  if(c.smart&&!c.smart.loxone)c.smart.loxone={name:'Loxone (Miniserver, Tree/Air)',zentrale:{preis:900,h:12},licht:{preis:160,h:1.5},heizung:{preis:120,h:1},rollladen:{preis:140,h:1.5},sicherheit:{preis:600,h:5}};
+  SITE=text;fname=name||fname;CFG=c;ORIG=JSON.stringify(c);ORIGOBJ=JSON.parse(ORIG);lastSaved=ORIG;savedOnce=false;
+  $('#startbox').hidden=true;$('#editor').hidden=false;$('#save').hidden=false;$('#download').hidden=false;const vm=text.match(/name="uls-version" content="([^"]+)"/);SITEVER=vm?vm[1]:'';$('#openSite').hidden=!WEB;applyLang();
+}
+const idb=(mode,fn)=>new Promise((res,rej)=>{const r=indexedDB.open('uls-admin',2);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('h'))r.result.createObjectStore('h')};r.onsuccess=()=>{const tx=r.result.transaction('h',mode);const st=tx.objectStore('h');const q=fn(st);tx.oncomplete=()=>res(q&&q.result);tx.onerror=()=>rej(tx.error)};r.onerror=()=>rej(r.error)});
+async function openHandle(h){
+  if((await h.queryPermission({mode:'readwrite'}))!=='granted'&&(await h.requestPermission({mode:'readwrite'}))!=='granted'){toast(X('denied'));return}
+  fh=h;const f=await h.getFile();load(await f.text(),f.name);
+}
+$('#pick').addEventListener('click',async()=>{
+  if(window.showOpenFilePicker){try{const [h]=await showOpenFilePicker({id:'ulshoefer',types:[{description:'Sito Ulshöfer',accept:{'text/html':['.html']}}]});try{await idb('readwrite',s=>s.put(h,'site'))}catch(e){}await openHandle(h)}catch(e){if(e.name!=='AbortError'){console.error(e);$('#fileIn').click()}}}
+  else $('#fileIn').click();
+});
+$('#fileIn').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;fh=null;load(await f.text(),f.name);applyLang()});
+(async()=>{if(WEB)return;try{const h=await idb('readonly',s=>s.get('site'));if(h){const r=$('#resume');r.hidden=false;r.textContent=X('cont')+h.name;r.onclick=()=>openHandle(h).catch(()=>toast(X('notfound')))}}catch(e){}})();
+function download(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([newSite()],{type:'text/html'}));a.download=fname;document.body.appendChild(a);a.click();a.remove();lastSaved=JSON.stringify(CFG);savedOnce=true;dirty();toast(X('dl')(fname))}
+async function save(){
+  if(!CFG)return;
+  if(WEB){try{CFG.stand=new Date().toISOString().slice(0,10);localStorage.setItem('uls-test-config',JSON.stringify(CFG));lastSaved=JSON.stringify(CFG);savedOnce=true;dirty();$('#undo').hidden=false;toast(X('savedweb'))}catch(e){toast(X('saveFail'));download()}return}
+  if(!fh){download();return}
+  try{
+    const cur=await (await fh.getFile()).text();
+    try{await idb('readwrite',s=>s.put(cur,'backup'))}catch(e){}
+    SITE=cur;const out=newSite();
+    const w=await fh.createWritable();await w.write(out);await w.close();SITE=out;
+    lastSaved=JSON.stringify(CFG);savedOnce=true;dirty();$('#undo').hidden=false;
+    toast(X('saved'));
+  }catch(e){if(e&&e.name==='AbortError')return;console.error(e);toast(X('saveFail'));download()}
+}
+async function undo(){
+  if(WEB){try{localStorage.removeItem('uls-test-config')}catch(e){}CFG=JSON.parse(ORIG);lastSaved=ORIG;savedOnce=false;$('#undo').hidden=true;render();toast(X('reset'));return}
+  if(!fh)return;const old=await idb('readonly',s=>s.get('backup'));if(!old){toast(X('noprev'));return}
+  const w=await fh.createWritable();await w.write(old);await w.close();load(old,fname);toast(X('restored'));
+}
+$('#save').addEventListener('click',save);
+$('#download').addEventListener('click',()=>{if(CFG)download()});
+$('#undo').addEventListener('click',undo);
+addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();save()}});
+applyLang();
+if(WEB){$('#pick').hidden=true;$('#resume').hidden=true;
+  fetch('./index.html',{cache:'no-store'}).then(r=>r.text()).then(t=>{fname='ulshoefer-website.html';load(t,fname);
+    let test=null;try{test=JSON.parse(localStorage.getItem('uls-test-config')||'null')}catch(e){}
+    if(test&&test.allgemein){CFG=test;lastSaved=JSON.stringify(CFG);savedOnce=true;$('#undo').hidden=false;render()}
+  }).catch(()=>{$('#startText').innerHTML='<h2>'+X('loadfail')+'</h2>'})}
+})();
+</script>
+</body>
+</html>
