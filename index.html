@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.9.6">
+<meta name="uls-version" content="0.9.7">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -804,7 +804,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.9.6</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.9.7</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1311,6 +1311,7 @@ body.chat-open .chat-fab{display:none}
           <label class="chip"><input type="radio" name="kl-ins" value="1" checked><span>durchschnittlich</span></label>
           <label class="chip"><input type="radio" name="kl-ins" value="1.2"><span>Altbau</span></label></div></div>
         <div class="q"><label for="kl-brand">Hersteller</label><select class="fld" id="kl-brand"><option value="">Unsere Empfehlung</option></select></div>
+        <div class="q"><label for="kl-bau">Bauart des Innengeräts</label><select class="fld" id="kl-bau"><option value="wand">Wandgerät (am häufigsten)</option><option value="truhe">Truhengerät / Bodenkonsole</option><option value="kassette">Deckenkassette</option><option value="kanal">Kanalgerät (unsichtbar in der Decke)</option></select><p class="help" id="kl-baunote" hidden></p></div>
         <div class="q"><span class="ql">Geräteklasse</span><div class="chips">
           <label class="chip"><input type="radio" name="kl-cls" value="std" checked><span>Standard</span></label>
           <label class="chip"><input type="radio" name="kl-cls" value="pre"><span>Premium, extra leise</span></label></div></div>
@@ -1599,7 +1600,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.6</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.7</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -1686,7 +1687,8 @@ window.ULS_CONFIG = {
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%202%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B10E2KVG-E%20-%20RAS-10E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%202%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B10E2KVG-E%20-%20RAS-10E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1703,7 +1705,8 @@ window.ULS_CONFIG = {
         "schall": 20,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%203%2C30%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B13E2KVG-E%20-%20RAS-13E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%203%2C30%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B13E2KVG-E%20-%20RAS-13E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1720,7 +1723,8 @@ window.ULS_CONFIG = {
         "schall": 21,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%204%2C20%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B16E2KVG-E%20-%20RAS-16E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%204%2C20%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B16E2KVG-E%20-%20RAS-16E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1737,7 +1741,8 @@ window.ULS_CONFIG = {
         "schall": 26,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%205%2C00%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B18E2KVG-E%20-%20RAS-18E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%205%2C00%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B18E2KVG-E%20-%20RAS-18E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1754,7 +1759,8 @@ window.ULS_CONFIG = {
         "schall": 29,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%206%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B24E2KVG-E%20-%20RAS-24E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%206%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B24E2KVG-E%20-%20RAS-24E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1771,7 +1777,8 @@ window.ULS_CONFIG = {
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B10P2KVSG-E%20-%20RAS-10P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B10P2KVSG-E%20-%20RAS-10P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1788,7 +1795,8 @@ window.ULS_CONFIG = {
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B13P2KVSG-E%20-%20RAS-13P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B13P2KVSG-E%20-%20RAS-13P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1805,7 +1813,8 @@ window.ULS_CONFIG = {
         "schall": 22,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%204%2C60%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B16P2KVSG-E%20-%20RAS-16P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%204%2C60%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B16P2KVSG-E%20-%20RAS-16P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1822,7 +1831,8 @@ window.ULS_CONFIG = {
         "schall": 26,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%205%2C00%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B18P2KVSG-E%20-%20RAS-18P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%205%2C00%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B18P2KVSG-E%20-%20RAS-18P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1839,7 +1849,8 @@ window.ULS_CONFIG = {
         "schall": 27,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%206%2C10%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B22P2KVSG-E%20-%20RAS-22P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%206%2C10%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B22P2KVSG-E%20-%20RAS-22P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1856,7 +1867,8 @@ window.ULS_CONFIG = {
         "schall": 28,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%207%2C00%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B24P2KVSG-E%20-%20RAS-24P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%207%2C00%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B24P2KVSG-E%20-%20RAS-24P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1873,7 +1885,8 @@ window.ULS_CONFIG = {
         "schall": 24,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B10S4KVPG-E%20-%20RAS-10S4AVPG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B10S4KVPG-E%20-%20RAS-10S4AVPG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1890,7 +1903,8 @@ window.ULS_CONFIG = {
         "schall": 26,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B13S4KVPG-E%20-%20RAS-13S4AVPG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B13S4KVPG-E%20-%20RAS-13S4AVPG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -1907,7 +1921,368 @@ window.ULS_CONFIG = {
         "schall": 25,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%205%2C00%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B18S4KVPG-E%20-%20RAS-18S4AVPG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%205%2C00%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B18S4KVPG-E%20-%20RAS-18S4AVPG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B10B2KVG-E2 / RAS-10B2AVG-E2",
+        "kw": 2.5,
+        "klasse": "std",
+        "preis": 890,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20%E2%80%93%20CLASSIC%202%20-%202%2C50%20kW%20-%20R32%20-%20SET152%20-%20Home%20RAS-B10B2KVG-E2%20-%20RAS-10B2AVG-E2%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B13B2KVG-E2 / RAS-13B2AVG-E2",
+        "kw": 3.3,
+        "klasse": "std",
+        "preis": 990,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20%E2%80%93%20CLASSIC%202%20-%203%2C30%20kW%20-%20R32%20-%20SET152%20-%20Home%20RAS-B13B2KVG-E2%20-%20RAS-13B2AVG-E2%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B16B2KVG-E2 / RAS-16B2AVG-E2",
+        "kw": 4.2,
+        "klasse": "std",
+        "preis": 1250,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20%E2%80%93%20CLASSIC%202%20-%204%2C20%20kW%20-%20R32%20-%20SET152%20-%20Home%20RAS-B16B2KVG-E2%20-%20RAS-16B2AVG-E2%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B18B2KVG-E2 / RAS-18B2AVG-E2",
+        "kw": 5.0,
+        "klasse": "std",
+        "preis": 1450,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20%E2%80%93%20CLASSIC%202%20-%205%2C00%20kW%20-%20R32%20-%20SET152%20-%20Home%20RAS-B18B2KVG-E2%20-%20RAS-18B2AVG-E2%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B24B2KVG-E2 / RAS-24B2AVG-E2",
+        "kw": 6.5,
+        "klasse": "std",
+        "preis": 1890,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 29,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20%E2%80%93%20CLASSIC%202%20-%206%2C50%20kW%20-%20R32%20-%20SET152%20-%20Home%20RAS-B24B2KVG-E2%20-%20RAS-24B2AVG-E2%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B10P2KVSGB-E / RAS-10P2AVSG-E",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 1490,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 8.6,
+        "scop": 5.1,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20BLACK%20-%202%2C50%20kW%20-%20R32%20-%20SET161%20-%20Home%20RAS-B10P2KVSGB-E%20-%20RAS-10P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B13P2KVSGB-E / RAS-13P2AVSG-E",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 1650,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 8.6,
+        "scop": 5.1,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20BLACK%20-%203%2C50%20kW%20-%20R32%20-%20SET161%20-%20Home%20RAS-B13P2KVSGB-E%20-%20RAS-13P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B16P2KVSGB-E / RAS-16P2AVSG-E",
+        "kw": 4.6,
+        "klasse": "pre",
+        "preis": 1890,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 7.8,
+        "scop": 4.6,
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20BLACK%20-%204%2C60%20kW%20-%20R32%20-%20SET161%20-%20Home%20RAS-B16P2KVSGB-E%20-%20RAS-16P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B18P2KVSGB-E / RAS-18P2AVSG-E",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 2090,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 7.3,
+        "scop": 4.6,
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20BLACK%20-%205%2C00%20kW%20-%20R32%20-%20SET161%20-%20Home%20RAS-B18P2KVSGB-E%20-%20RAS-18P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B22P2KVSGB-E / RAS-22P2AVSG-E",
+        "kw": 6.1,
+        "klasse": "pre",
+        "preis": 2390,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 7.3,
+        "scop": 4.6,
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20BLACK%20-%206%2C10%20kW%20-%20R32%20-%20SET161%20-%20Home%20RAS-B22P2KVSGB-E%20-%20RAS-22P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B24P2KVSGB-E / RAS-24P2AVSG-E",
+        "kw": 7.0,
+        "klasse": "pre",
+        "preis": 2590,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 6.3,
+        "scop": 4.1,
+        "schall": 28,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20BLACK%20-%207%2C00%20kW%20-%20R32%20-%20SET161%20-%20Home%20RAS-B24P2KVSGB-E%20-%20RAS-24P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Haori RAS-B10N4KVRG-E2 / RAS-10P2AVSG-E",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 1690,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-haori.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 8.5,
+        "scop": 5.1,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/HAORI%20-%202%2C50%20kW%20-%20R32%20-%20SET93%20-%20Home%20RAS-B10N4KVRG-E2%20-%20RAS-10P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Haori RAS-B13N4KVRG-E1 / RAS-13P2AVSG-E",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 1890,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-haori.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 8.7,
+        "scop": 5.1,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/HAORI%20-%203%2C50%20kW%20-%20R32%20-%20SET93%20-%20Home%20RAS-B13N4KVRG-E1%20-%20RAS-13P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Haori RAS-B16N4KVRG-E1 / RAS-16P2AVSG-E",
+        "kw": 4.6,
+        "klasse": "pre",
+        "preis": 2190,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-haori.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 7.8,
+        "scop": 4.6,
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/HAORI%20-%204%2C60%20kW%20-%20R32%20-%20SET93%20-%20Home%20RAS-B16N4KVRG-E1%20-%20RAS-16P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 Wood RAS-B10S4KVDG-E / RAS-10S4AVPG-E",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 2490,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai-wood.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 10.7,
+        "scop": 5.3,
+        "schall": 24,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WOOD%20-%202%2C50%20kW%20-%20R32%20-%20SET144%20-%20Home%20RAS-B10S4KVDG-E%20-%20RAS-10S4AVPG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 Wood RAS-B13S4KVDG-E / RAS-13S4AVPG-E",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 2690,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai-wood.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 9.7,
+        "scop": 5.2,
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WOOD%20-%203%2C50%20kW%20-%20R32%20-%20SET144%20-%20Home%20RAS-B13S4KVDG-E%20-%20RAS-13S4AVPG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 Wood RAS-B18S4KVDG-E / RAS-18S4AVPG-E",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 3190,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai-wood.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.6,
+        "scop": 4.8,
+        "schall": 25,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WOOD%20-%205%2C00%20kW%20-%20R32%20-%20SET144%20-%20Home%20RAS-B18S4KVDG-E%20-%20RAS-18S4AVPG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Konsole RAS-B10J2FVG-E1 / RAS-10P2AVSG-E",
+        "kw": 2.5,
+        "klasse": "std",
+        "preis": 1490,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-konsole.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.2,
+        "scop": 4.7,
+        "schall": 23,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Console%20R32_R410A%20-%20R410_R32%20-%20SET75%20-%20Home%20RAS-B10J2FVG-E1%20-%20RAS-10P2AVSG-E%20de.pdf",
+        "bauform": "truhe"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Konsole RAS-B13J2FVG-E1 / RAS-13P2AVSG-E",
+        "kw": 3.5,
+        "klasse": "std",
+        "preis": 1690,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-konsole.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.0,
+        "scop": 4.7,
+        "schall": 24,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=28",
+        "bauform": "truhe"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Konsole RAS-B18J2FVG-E1 / RAS-18P2AVSG-E",
+        "kw": 5.0,
+        "klasse": "std",
+        "preis": 2090,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-konsole.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 6.8,
+        "scop": 4.6,
+        "schall": 37,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Console%20R32_R410A%20-%205%2C00%20kW%20-%20R410_R32%20-%20SET75%20-%20Home%20RAS-B18J2FVG-E1%20-%20RAS-18P2AVSG-E%20de.pdf",
+        "bauform": "truhe"
       },
       {
         "hersteller": "Daikin",
@@ -1924,7 +2299,8 @@ window.ULS_CONFIG = {
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -1941,7 +2317,8 @@ window.ULS_CONFIG = {
         "schall": 20,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -1958,7 +2335,8 @@ window.ULS_CONFIG = {
         "schall": 27,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N8.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N8.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -1975,7 +2353,8 @@ window.ULS_CONFIG = {
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -1992,7 +2371,8 @@ window.ULS_CONFIG = {
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2009,7 +2389,8 @@ window.ULS_CONFIG = {
         "schall": 27,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -2026,7 +2407,8 @@ window.ULS_CONFIG = {
         "schall": 18,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288",
+        "bauform": "wand"
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -2043,7 +2425,8 @@ window.ULS_CONFIG = {
         "schall": 18,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288",
+        "bauform": "wand"
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -2060,7 +2443,8 @@ window.ULS_CONFIG = {
         "schall": 21,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288",
+        "bauform": "wand"
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -2077,7 +2461,8 @@ window.ULS_CONFIG = {
         "schall": 28,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288",
+        "bauform": "wand"
       }
     ],
     "innengeraete_multi": [
@@ -2091,7 +2476,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/toshiba-seiya.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%202%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B10E2KVG-E%20-%20RAS-10E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%202%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B10E2KVG-E%20-%20RAS-10E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -2103,7 +2489,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/toshiba-seiya.jpg",
         "schall": 20,
         "kaeltemittel": "R32",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%203%2C30%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B13E2KVG-E%20-%20RAS-13E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%203%2C30%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B13E2KVG-E%20-%20RAS-13E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -2115,7 +2502,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/toshiba-seiya.jpg",
         "schall": 21,
         "kaeltemittel": "R32",
-        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%204%2C20%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B16E2KVG-E%20-%20RAS-16E2AVG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%204%2C20%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B16E2KVG-E%20-%20RAS-16E2AVG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -2127,7 +2515,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/toshiba-shorai-curve.jpg",
         "schall": 22,
         "kaeltemittel": "R32",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%201%2C50%20kW%20-%20R32%20-%20Home%20RAS-M05P2KVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%201%2C50%20kW%20-%20R32%20-%20Home%20RAS-M05P2KVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -2139,7 +2528,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/toshiba-shorai-curve.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B10P2KVSG-E%20-%20RAS-10P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B10P2KVSG-E%20-%20RAS-10P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -2151,7 +2541,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/toshiba-shorai-curve.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B13P2KVSG-E%20-%20RAS-13P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B13P2KVSG-E%20-%20RAS-13P2AVSG-E%20de.pdf",
+        "bauform": "wand"
       },
       {
         "hersteller": "Toshiba",
@@ -2163,7 +2554,580 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/toshiba-shorai-curve.jpg",
         "schall": 22,
         "kaeltemittel": "R32",
-        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%204%2C60%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B16P2KVSG-E%20-%20RAS-16P2AVSG-E%20de.pdf"
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%204%2C60%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B16P2KVSG-E%20-%20RAS-16P2AVSG-E%20de.pdf",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B05B2KVG-E2 (Multi)",
+        "kw": 1.5,
+        "klasse": "std",
+        "preis": 340,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=14",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B10B2KVG-E2 (Multi)",
+        "kw": 2.5,
+        "klasse": "std",
+        "preis": 370,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=14",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B13B2KVG-E2 (Multi)",
+        "kw": 3.3,
+        "klasse": "std",
+        "preis": 410,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=14",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B16B2KVG-E2 (Multi)",
+        "kw": 4.2,
+        "klasse": "std",
+        "preis": 490,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=14",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B18B2KVG-E2 (Multi)",
+        "kw": 5.0,
+        "klasse": "std",
+        "preis": 560,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=14",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya Classic 2 RAS-B24B2KVG-E2 (Multi)",
+        "kw": 6.5,
+        "klasse": "std",
+        "preis": 690,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya-classic2.jpg",
+        "schall": 29,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=14",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya RAS-B05E2KVG-E (Multi)",
+        "kw": 1.5,
+        "klasse": "std",
+        "preis": 380,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=16",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya RAS-B18E2KVG-E (Multi)",
+        "kw": 5.0,
+        "klasse": "std",
+        "preis": 620,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya.jpg",
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=16",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Seiya RAS-B24E2KVG-E (Multi)",
+        "kw": 6.5,
+        "klasse": "std",
+        "preis": 740,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-seiya.jpg",
+        "schall": 29,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=16",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B18P2KVSG-E (Multi)",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 860,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=18",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B22P2KVSG-E (Multi)",
+        "kw": 6.1,
+        "klasse": "pre",
+        "preis": 960,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=18",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B24P2KVSG-E (Multi)",
+        "kw": 7.0,
+        "klasse": "pre",
+        "preis": 1040,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "schall": 28,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=18",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-M05P2KVSGB-E (Multi)",
+        "kw": 1.5,
+        "klasse": "pre",
+        "preis": 600,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=20",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B10P2KVSGB-E (Multi)",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 650,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=20",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B13P2KVSGB-E (Multi)",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 720,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=20",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B16P2KVSGB-E (Multi)",
+        "kw": 4.6,
+        "klasse": "pre",
+        "preis": 820,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=20",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B18P2KVSGB-E (Multi)",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 920,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=20",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B22P2KVSGB-E (Multi)",
+        "kw": 6.1,
+        "klasse": "pre",
+        "preis": 1020,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=20",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve Black RAS-B24P2KVSGB-E (Multi)",
+        "kw": 7.0,
+        "klasse": "pre",
+        "preis": 1100,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve-black.jpg",
+        "schall": 28,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=20",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Haori RAS-B10N4KVRG-E2 (Multi)",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 790,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-haori.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=22",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Haori RAS-B13N4KVRG-E1 (Multi)",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 860,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-haori.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=22",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Haori RAS-B16N4KVRG-E1 (Multi)",
+        "kw": 4.6,
+        "klasse": "pre",
+        "preis": 960,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-haori.jpg",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=22",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 RAS-B10S4KVPG-E (Multi)",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 990,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai.jpg",
+        "schall": 24,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=24",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 RAS-B13S4KVPG-E (Multi)",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 1090,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai.jpg",
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=24",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 RAS-B18S4KVPG-E (Multi)",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 1290,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai.jpg",
+        "schall": 25,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=24",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 Wood RAS-B10S4KVDG-E (Multi)",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 1190,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai-wood.jpg",
+        "schall": 24,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=26",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 Wood RAS-B13S4KVDG-E (Multi)",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 1290,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai-wood.jpg",
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=26",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 Wood RAS-B18S4KVDG-E (Multi)",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 1490,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai-wood.jpg",
+        "schall": 25,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=26",
+        "bauform": "wand"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Konsole RAS-B10J2FVG-E1 (Multi)",
+        "kw": 2.5,
+        "klasse": "std",
+        "preis": 690,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-konsole.jpg",
+        "schall": 23,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=28",
+        "bauform": "truhe"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Konsole RAS-B13J2FVG-E1 (Multi)",
+        "kw": 3.5,
+        "klasse": "std",
+        "preis": 760,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-konsole.jpg",
+        "schall": 24,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=28",
+        "bauform": "truhe"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Konsole RAS-B18J2FVG-E1 (Multi)",
+        "kw": 5.0,
+        "klasse": "std",
+        "preis": 890,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-konsole.jpg",
+        "schall": 37,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=28",
+        "bauform": "truhe"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kanalgerät RAS-M10U2DVG-E (Multi)",
+        "kw": 2.7,
+        "klasse": "std",
+        "preis": 790,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kanalgeraet.jpg",
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://data.toshiba-klima.at/de/Duct%20unit%20R32_R410A%20-%202%2C70%20kW%20-%20R410_R32%20-%20Home%20RAS-M10U2DVG-E%20de.pdf",
+        "bauform": "kanal"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kanalgerät RAS-M13U2DVG-E (Multi)",
+        "kw": 3.7,
+        "klasse": "std",
+        "preis": 850,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kanalgeraet.jpg",
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://data.toshiba-klima.at/de/Duct%20unit%20R32_R410A%20-%203%2C70%20kW%20-%20R410_R32%20-%20Home%20RAS-M13U2DVG-E%20de.pdf",
+        "bauform": "kanal"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kanalgerät RAS-M16U2DVG-E (Multi)",
+        "kw": 4.5,
+        "klasse": "std",
+        "preis": 930,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kanalgeraet.jpg",
+        "schall": 24,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://data.toshiba-klima.at/de/Duct%20unit%20R32_R410A%20-%204%2C50%20kW%20-%20R410_R32%20-%20Home%20RAS-M16U2DVG-E%20de.pdf",
+        "bauform": "kanal"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kanalgerät RAS-M22U2DVG-E (Multi)",
+        "kw": 6.0,
+        "klasse": "std",
+        "preis": 1090,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kanalgeraet.jpg",
+        "schall": 32,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://data.toshiba-klima.at/de/Duct%20unit%20R32_R410A%20-%206%2C00%20kW%20-%20R410_R32%20-%20Home%20RAS-M22U2DVG-E%20de.pdf",
+        "bauform": "kanal"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kanalgerät RAS-M24U2DVG-E (Multi)",
+        "kw": 7.0,
+        "klasse": "std",
+        "preis": 1190,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kanalgeraet.jpg",
+        "schall": 33,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://data.toshiba-klima.at/de/Duct%20unit%20R32_R410A%20-%207%2C00%20kW%20-%20R410_R32%20-%20Home%20RAS-M24U2DVG-E%20de.pdf",
+        "bauform": "kanal"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kassette 60x60 RAS-M10S4MUVG-E (Multi)",
+        "kw": 2.7,
+        "klasse": "std",
+        "preis": 990,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-60x60.jpg",
+        "schall": 30,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=31",
+        "bauform": "kassette"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kassette 60x60 RAS-M13S4MUVG-E (Multi)",
+        "kw": 3.7,
+        "klasse": "std",
+        "preis": 1050,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-60x60.jpg",
+        "schall": 33,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=31",
+        "bauform": "kassette"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Kassette 60x60 RAS-M16S4MUVG-E (Multi)",
+        "kw": 4.5,
+        "klasse": "std",
+        "preis": 1150,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-60x60.jpg",
+        "schall": 33,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=31",
+        "bauform": "kassette"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "1-Wege-Flachkassette RAS-M05G3YVG-E (Multi)",
+        "kw": 1.5,
+        "klasse": "pre",
+        "preis": 1090,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-1wege.jpg",
+        "schall": 25,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=32",
+        "bauform": "kassette"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "1-Wege-Flachkassette RAS-M10G3YVG-E (Multi)",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 1150,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-1wege.jpg",
+        "schall": 39,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=32",
+        "bauform": "kassette"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "1-Wege-Flachkassette RAS-M13G3YVG-E (Multi)",
+        "kw": 3.6,
+        "klasse": "pre",
+        "preis": 1190,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-1wege.jpg",
+        "schall": 39,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=32",
+        "bauform": "kassette"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "1-Wege-Flachkassette RAS-M16G3YVG-E (Multi)",
+        "kw": 4.6,
+        "klasse": "pre",
+        "preis": 1290,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-1wege.jpg",
+        "schall": 33,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=32",
+        "bauform": "kassette"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "1-Wege-Flachkassette RAS-M24G3YVG-E (Multi)",
+        "kw": 7.0,
+        "klasse": "pre",
+        "preis": 1490,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-kassette-1wege.jpg",
+        "schall": 50,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=32",
+        "bauform": "kassette"
       },
       {
         "hersteller": "Daikin",
@@ -2175,7 +3139,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-comfora.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2187,7 +3152,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-comfora.jpg",
         "schall": 20,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2199,7 +3165,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-comfora.jpg",
         "schall": 27,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2211,7 +3178,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2223,7 +3191,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2235,7 +3204,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2247,7 +3217,8 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 21,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html",
+        "bauform": "wand"
       },
       {
         "hersteller": "Daikin",
@@ -2259,10 +3230,27 @@ window.ULS_CONFIG = {
         "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 27,
         "kaeltemittel": "R32",
-        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html",
+        "bauform": "wand"
       }
     ],
     "aussengeraete_multi": [
+      {
+        "hersteller": "Toshiba",
+        "modell": "RAS-2M10G3AVG-E",
+        "kw": 3.3,
+        "anschluesse": 2,
+        "preis": 1390,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-multi-aussen.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.toshiba-aircondition.com/files/aircond/img/estia/mo/deutsche-fotos-mo/HOME_RAS_Catalog_2026-2027_EN(US)_WEB.pdf#page=35"
+      },
       {
         "hersteller": "Toshiba",
         "modell": "RAS-2M14G3AVG-E",
@@ -3185,7 +4173,7 @@ function calcPV(){
 }
 
 const ekTxt=d=>d&&(d.ek_kuehl||d.ek_heiz)?`; Energieeffizienz Kühlen ${d.ek_kuehl||'–'} / Heizen ${d.ek_heiz||'–'}`:'';
-function klSpecs(d,multiIn){const s=[['Kühlleistung',d.kw?num(+d.kw,1)+' kW':''],['Geräteklasse',d.klasse==='pre'?'Premium':d.klasse==='std'?'Standard':''],['SEER (Kühlen)',d.seer?num(+d.seer,1):''],['SCOP (Heizen)',d.scop?num(+d.scop,1):''],['Schalldruck innen ab',d.schall?num(+d.schall,0)+' dB(A)':''],['Kältemittel',d.kaeltemittel||'']].filter(x=>x[1]);
+function klSpecs(d,multiIn){const s=[['Kühlleistung',d.kw?num(+d.kw,1)+' kW':''],['Bauart',{wand:'Wandgerät',truhe:'Truhengerät / Bodenkonsole',kassette:'Deckenkassette',kanal:'Kanalgerät'}[d.bauform||'wand']],['Geräteklasse',d.klasse==='pre'?'Premium':d.klasse==='std'?'Standard':''],['SEER (Kühlen)',d.seer?num(+d.seer,1):''],['SCOP (Heizen)',d.scop?num(+d.scop,1):''],['Schalldruck innen ab',d.schall?num(+d.schall,0)+' dB(A)':''],['Kältemittel',d.kaeltemittel||'']].filter(x=>x[1]);
   return s.length?`<dl class="mc-dl">${s.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`:''}
 function klCard(d,o){if(!d)return '';const img=d.bild?`<img src="${esc(d.bild)}" alt="${esc(devName(d))}" loading="lazy">`:`<span class="mc-ph" aria-hidden="true"><svg viewBox="0 0 64 40"><rect x="3" y="6" width="58" height="22" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 22h40M16 33l-3 5M32 33v5M48 33l3 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>`;
   const ek=o.noEk?'<p class="mc-n">Energielabel und Effizienzklassen gelten für die Kombination mit dem Außengerät.</p>':`<div class="mc-ek">${ekArrow(d.ek_kuehl,'alt',d.label,'Kühlen','airconditioners',devName(d))}${ekArrow(d.ek_heiz,'alt',d.label,'Heizen','airconditioners',devName(d))}${ekDb(d.datenblatt,'airconditioners')}</div>`;
@@ -3198,17 +4186,17 @@ function klModels(od){const el=$('#kl-models');if(!el)return;const n=rooms.lengt
 function calcKlima(){
   const K=C.klima,M=K.material,H=K.arbeit;fillBrands('#kl-brand',[...K.geraete_single,...K.innengeraete_multi]);
   const ins=+rad('kl-ins'),cls=rad('kl-cls'),len=val('kl-len'),out=rad('kl-out'),n=rooms.length,brand=$('#kl-brand').value;
-  const fb=d=>(!brand||d.hersteller===brand);
+  const fb=d=>(!brand||d.hersteller===brand);const bau=($('#kl-bau')||{}).value||'wand',bf=x=>(x.bauform||'wand')===bau;let bauFB=false,effB=brand;
   rooms.forEach(r=>{r.need=r.m2*K.kw_je_m2*ROOMT[r.t][1]*ins});
   const it=[],t=[];
-  const choose=(list,r,flt)=>{const LB=list.filter(fb);const L0=LB.length?LB:list;const rec=pick(L0,r.need,'kw',flt);r.rec=rec;r.alts=L0.filter(x=>+x.kw>=r.need*.95&&+x.kw<=Math.max(r.need*2,2.6)).sort((a,b)=>(+a.kw-+b.kw)||(a.preis-b.preis));if(rec&&!r.alts.includes(rec))r.alts.unshift(rec);const s=r.sel&&L0.find(x=>devName(x)===r.sel);return s||rec};
+  const choose=(list,r,flt)=>{let L0=list.filter(x=>fb(x)&&bf(x));if(!L0.length){L0=list.filter(bf);if(!L0.length){bauFB=bauFB||bau!=='wand';L0=list.filter(x=>fb(x)&&(x.bauform||'wand')==='wand');if(!L0.length)L0=list}}const rec=pick(L0,r.need,'kw',flt);r.rec=rec;r.alts=L0.filter(x=>+x.kw>=r.need*.95&&+x.kw<=Math.max(r.need*2,2.6)).sort((a,b)=>(+a.kw-+b.kw)||(a.preis-b.preis));if(rec&&!r.alts.includes(rec))r.alts.unshift(rec);const s=r.sel&&L0.find(x=>devName(x)===r.sel);return s||rec};
   if(n===1){const r=rooms[0];let d=choose(K.geraete_single,r,x=>fb(x)&&x.klasse===cls);r.dev=d;
     if(d)it.push(L('klima',`Split-Klimagerät ${devName(d)} (${num(+d.kw,1)} kW${ekTxt(d)}) für ${ROOMT[r.t][0]}, ${r.m2} m²`,1,'Stk.',d.preis));
     it.push(L('klima','Grundmaterial: Kältemittel- und Kondensatleitung bis 3 m, Wandkonsole, Kabelkanal',1,'Pausch.',M.grund_single));
     t.push(['Montage, Dichtheitsprüfung, Evakuierung, Inbetriebnahme',+H.single_h]);}
   else{const tot=rooms.reduce((a,r)=>a+r.need,0);
-    const IM=K.innengeraete_multi,selD=rooms.map(r=>r.sel&&IM.find(x=>devName(x)===r.sel)).find(Boolean),r0=pick(IM,rooms[0].need,'kw',x=>fb(x)&&x.klasse===cls);
-    let B=brand||(selD&&selD.hersteller)||(r0&&r0.hersteller)||'';if(B&&!IM.some(x=>x.hersteller===B))B=(r0&&r0.hersteller)||'';const IB=IM.filter(x=>!B||x.hersteller===B);
+    const IM=K.innengeraete_multi.filter(bf).length?K.innengeraete_multi.filter(bf):K.innengeraete_multi,selD=rooms.map(r=>r.sel&&IM.find(x=>devName(x)===r.sel)).find(Boolean),r0=pick(IM,rooms[0].need,'kw',x=>fb(x)&&x.klasse===cls);
+    let B=brand||(selD&&selD.hersteller)||(r0&&r0.hersteller)||'';if(B&&!IM.some(x=>x.hersteller===B))B=(r0&&r0.hersteller)||'';effB=B;const IB=IM.filter(x=>!B||x.hersteller===B);
     rooms.forEach(r=>{r.dev=choose(IB,r,x=>x.klasse===cls)});
     const sumKw=rooms.reduce((a,r)=>a+(r.dev?+r.dev.kw:0),0);
     const OB=K.aussengeraete_multi.filter(x=>!B||x.hersteller===B);const od=pick(OB.filter(x=>+x.anschluesse>=n),Math.max(tot,sumKw*.75),'kw')||OB.slice().sort((x,y)=>y.anschluesse-x.anschluesse)[0];
@@ -3224,7 +4212,8 @@ function calcKlima(){
   if(chk('kl-pump')){it.push(L('klima','Kondensatpumpe',n,'Stk.',M.pumpe));t.push(['Kondensatpumpen',n*H.pumpe_h])}
   if(chk('kl-circ')){it.push(L('klima','Eigener Stromkreis mit FI/LS nach VDE (Material)',1,'Pausch.',M.stromkreis));t.push(['Stromkreis',+H.stromkreis_h])}
   const lb=labour('klima',t);if(lb)it.push(lb);
-  $('#kl-leno').textContent=len+' m';$('#kl-wart').textContent=eur(K.wartung_jahr);$('#kl-type').textContent=n===1?'Ein Raum: Single-Split-Anlage (ein Innen- und ein Außengerät).':`${n} Räume an einem Außengerät: ${['','','Dual','Trial','Quadro','Penta'][n]||'Multi'}-Split-Anlage${brand?' von '+brand:''}.`+(brand&&n>1&&!K.innengeraete_multi.some(x=>x.hersteller===brand)?` Für Mehrraum-Anlagen von ${brand} beraten wir Sie gern persönlich – unten sehen Sie unsere Empfehlung.`:'');
+  {const bn=$('#kl-baunote');if(bn){bn.hidden=!bauFB;bn.textContent=bauFB?(n===1?'Kassetten- und Kanalgeräte bieten wir als Mehrraum-Anlage an. Für einen Raum zeigen wir ein Wandgerät – gern beraten wir Sie persönlich.':'Diese Bauart gibt es beim gewählten Hersteller nicht – wir zeigen ein Wandgerät.'):''}}
+  $('#kl-leno').textContent=len+' m';$('#kl-wart').textContent=eur(K.wartung_jahr);$('#kl-type').textContent=n===1?'Ein Raum: Single-Split-Anlage (ein Innen- und ein Außengerät).':`${n} Räume an einem Außengerät: ${['','','Dual','Trial','Quadro','Penta'][n]||'Multi'}-Split-Anlage${effB?' von '+effB:''}.`+(brand&&n>1&&effB!==brand?` Diese Anlage bieten wir von ${brand} nicht an – Sie sehen unsere Empfehlung von ${effB}. Gern beraten wir Sie persönlich.`:'');
   pics('#kl-pics',n===1?[rooms[0].dev]:[picOD,...rooms.map(r=>r.dev)]);if(n===1)picOD=null;
   klModels(n===1?null:picOD);
   return {items:it.filter(x=>x.net>0||x.unit==='Std.'),fund:0,maint:chk('kl-maint')};
