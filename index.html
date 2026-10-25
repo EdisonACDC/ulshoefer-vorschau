@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: file:; media-src 'self' data: blob: file:; font-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:; worker-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="uls-version" content="0.9.10">
+<meta name="uls-version" content="0.9.11">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -792,6 +792,10 @@ body.chat-open .chat-fab{display:none}
 .bro-ic{flex:none;font:800 11px/1 Inter,Arial,sans-serif;color:#fff;background:#E2001A;border-radius:6px;padding:7px 6px;margin-top:2px}
 .bro .help{margin:8px 0 0;font-size:12.5px}
 .mc-bro{}.mc-bro2{display:inline-block;margin-top:8px;font-size:14px;font-weight:600}
+/* v0.9.11 Server-Versand */
+.wok{background:#e8f5ec;border-left:4px solid #1f8a4c;border-radius:8px;padding:10px 14px}
+.docok{display:inline-block;margin-left:10px;font-size:14px;color:#1f8a4c;font-weight:600}
+#docMail.sent{background:#1f8a4c;pointer-events:none}
 
 </style>
 </head>
@@ -817,7 +821,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.9.10</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.9.11</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1618,7 +1622,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.10</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.11</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -3985,6 +3989,15 @@ const eur=n=>Math.round(n).toLocaleString('de-DE')+' €';
 const eur2=n=>n.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
 const num=(n,d=0)=>n.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* Versand: auf der Live-Website direkt über den Server (senden.php), sonst über das E-Mail-Programm */
+const SEND_URL=window.ULS_SEND||'',T0=Date.now(),MAILTO='info@elektro-ulshoefer.de';
+async function serverSend(kind,subject,body,extra){if(!SEND_URL||!/^https?:$/.test(location.protocol))return null;
+  try{const r=await fetch(SEND_URL,{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify(Object.assign({kind,subject,body,hp:'',ms:Date.now()-T0},extra||{}))});const j=await r.json().catch(()=>({}));return r.ok&&j.ok?j:null}catch(e){return null}}
+const mailtoHref=(subject,body)=>'mailto:'+MAILTO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+let DOCSEND=null;
+function docMailReset(){const a=$('#docMail');if(!a)return;a.classList.remove('sent');delete a.dataset.busy;document.querySelectorAll('.docok').forEach(n=>n.remove())}
+document.addEventListener('click',e=>{const a=e.target.closest('#docMail');if(!a||!DOCSEND||!SEND_URL||a.dataset.busy)return;e.preventDefault();const d=DOCSEND,href=a.href;a.dataset.busy='1';a.textContent='Wird gesendet …';
+  serverSend(d.kind,d.subject,d.body,d.extra).then(ok=>{delete a.dataset.busy;if(ok){a.textContent='Gesendet ✓';a.removeAttribute('href');a.classList.add('sent');DOCSEND=null;const n=document.createElement('span');n.className='docok';n.textContent=' Vielen Dank – Ihre Anfrage ist bei uns eingegangen. Wir melden uns in der Regel innerhalb von zwei Werktagen.';a.after(n)}else{a.textContent='Per E-Mail an uns senden';location.href=href}})});
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 $('#year').textContent=new Date().getFullYear();
@@ -4061,9 +4074,13 @@ function route(){
     const txt=`Widerrufserklärung\n\nHiermit widerrufe ich den von mir abgeschlossenen Vertrag${w.what?` über folgende Waren/Leistungen: ${w.what}`:''}.\nVertrag: ${w.nr}\nName: ${w.name}\nE-Mail: ${w.mail}\nErklärt über die Online-Widerrufsfunktion am ${ts}.\nEingangsbestätigung per E-Mail: ${w.conf?'ja':'nein'}`;
     $('#wrDone').innerHTML=`<h2>Ihr Widerruf</h2><div class="wbox"><p><b>Vertrag:</b> ${esc(w.nr)}${w.what?`<br><b>Umfang:</b> ${esc(w.what)}`:'<br><b>Umfang:</b> gesamter Vertrag'}<br><b>Name:</b> ${esc(w.name)}<br><b>Erklärt am:</b> ${ts}</p></div>
       <p>${w.conf?`Wir senden Ihnen unverzüglich eine Eingangsbestätigung an <b>${esc(w.mail)}</b> – mit dem Inhalt Ihrer Erklärung sowie Datum und Uhrzeit des Eingangs. Die Bearbeitung des Widerrufs folgt anschließend.`:'Ihr Widerruf wird bearbeitet.'}</p>
-      <p class="draftnote no-print"><b>Hinweis zur Vorschau:</b> Auf der fertigen Website geht die Erklärung direkt an uns und die Eingangsbestätigung wird automatisch per E-Mail versendet. In dieser Vorschau öffnet sich dafür Ihr E-Mail-Programm mit der fertigen Erklärung.</p>
+      <p class="draftnote no-print">${SEND_URL?'Ihre Erklärung wird gesendet …':'<b>Hinweis zur Vorschau:</b> Auf der fertigen Website geht die Erklärung direkt an uns und die Eingangsbestätigung wird automatisch per E-Mail versendet. In dieser Vorschau öffnet sich dafür Ihr E-Mail-Programm mit der fertigen Erklärung.'}</p>
       <p><a class="btn" id="wrMail" href="mailto:info@elektro-ulshoefer.de?subject=${encodeURIComponent('Widerruf '+w.nr)}&body=${encodeURIComponent(txt)}">Widerrufserklärung senden</a> <button type="button" class="btn btn-tone" onclick="print()">Drucken / als PDF speichern</button></p>`;
-    f.hidden=true;$('#wrDone').hidden=false;$('#wrDone').scrollIntoView({block:'start'});location.href=$('#wrMail').href});
+    f.hidden=true;$('#wrDone').hidden=false;$('#wrDone').scrollIntoView({block:'start'});
+    serverSend('widerruf','Widerruf '+w.nr,txt,{name:w.name,nr:w.nr,what:w.what,mail:w.mail}).then(ok=>{
+      if(!ok){const n=$('#wrDone .draftnote');if(n)n.textContent='Ihr E-Mail-Programm öffnet sich mit der fertigen Erklärung – bitte dort noch auf Senden tippen. Alternativ: Erklärung ausdrucken und per Post senden.';location.href=$('#wrMail').href;return}
+      $('#wrDone .draftnote').outerHTML=`<p class="wok"><b>Ihr Widerruf ist am ${esc(ok.ts||ts)} bei uns eingegangen.</b> Die Eingangsbestätigung mit dem Inhalt Ihrer Erklärung haben wir an <b>${esc(w.mail)}</b> gesendet.</p>`;
+      $('#wrMail').remove()})});
 })();
 if('scrollRestoration' in history) history.scrollRestoration='manual';
 addEventListener('hashchange',route);
@@ -4107,9 +4124,11 @@ $('#cForm').addEventListener('submit',e=>{
   e.preventDefault();if($('#c-hp').value)return;
   if(!validate(e.target,[['c-name',notEmpty],['c-tel',notEmpty],['c-dsgvo',el=>el.checked]]))return;
   const body=`Name: ${$('#c-name').value}\nErreichbar unter: ${$('#c-tel').value}\n${$('#c-topic').value}\n\n${$('#c-msg').value}`;
-  location.href='mailto:info@elektro-ulshoefer.de?subject='+encodeURIComponent('Rückrufbitte über die Website')+'&body='+encodeURIComponent(body);
-  $('#cOk').innerHTML=`<h3 style="font-size:28px;margin-bottom:12px">Danke, ${esc($('#c-name').value)}.</h3><p>Ihr E-Mail-Programm öffnet sich mit Ihrer Nachricht – bitte dort noch auf Senden tippen. Wir melden uns in der Regel innerhalb von zwei Werktagen. Eilig? <a href="tel:+49934365545" style="color:#fff">09343 65545</a>.</p>`;
-  $('#coupon').classList.add('sent');
+  const nm=$('#c-name').value,btn=e.target.querySelector('[type=submit]');if(btn)btn.disabled=true;
+  serverSend('rueckruf','Rückrufbitte über die Website',body,{name:nm,tel:$('#c-tel').value}).then(ok=>{if(btn)btn.disabled=false;
+  if(!ok)location.href=mailtoHref('Rückrufbitte über die Website',body);
+  $('#cOk').innerHTML=`<h3 style="font-size:28px;margin-bottom:12px">Danke, ${esc(nm)}.</h3><p>${ok?'Ihre Nachricht ist bei uns eingegangen.':'Ihr E-Mail-Programm öffnet sich mit Ihrer Nachricht – bitte dort noch auf Senden tippen.'} Wir melden uns in der Regel innerhalb von zwei Werktagen. Eilig? <a href="tel:+49934365545" style="color:#fff">09343 65545</a>.</p>`;
+  $('#coupon').classList.add('sent')});
 });
 
 /* ---------- Karte mit Einwilligung ---------- */
@@ -4362,7 +4381,7 @@ function renderDoc(){
   <div class="sigrow"><p class="sig">Mit freundlichen Grüßen<br><br><b>Norbert Ulshöfer</b><br>Elektrotechnikermeister · Geschäftsführer</p><div class="doc-qr">${$('.vcard-qr').innerHTML.replace(/qrlg0/g,'qrlgd')}<small>Unsere Visitenkarte</small></div></div>
   <p style="font-size:11px;color:#666;margin-top:26px">Elektrotechnik Ulshöfer GmbH · Amtsgericht Mannheim HRB 700984 · USt-IdNr. DE250688504 · Geschäftsführer: Norbert Ulshöfer</p>`;
   const sum=`Angebots-Nr.: ${docNr}\nBereiche: ${d.keys.map(k=>NAMES[k]).join(', ')}\nRichtpreis brutto: ${eur(d.gross)}${d.fund?`\nvoraussichtlicher KfW-Zuschuss: ${eur(d.fund)}`:''}\n\nPositionen:\n${d.items.map(it=>`- ${it.txt} (${it.qty.toLocaleString('de-DE',{maximumFractionDigits:2})} ${it.unit})`).join('\n')}\n\nName: ${c.name}\nAdresse: ${c.str} ${c.ort}\nE-Mail: ${c.mail}\nTelefon: ${c.tel}${d.keys.includes('klima')&&($('#kl-wish').value||'').trim()?'\nWunschgerät Klima: '+$('#kl-wish').value.trim():''}\n\nAnmerkungen: ${c.msg}`;
-  $('#docMail').textContent='Per E-Mail an uns senden';$('#docMail').href='mailto:info@elektro-ulshoefer.de?subject='+encodeURIComponent('Angebotsanfrage '+docNr)+'&body='+encodeURIComponent(sum);
+  docMailReset();$('#docMail').textContent=SEND_URL?'Angebot an uns senden':'Per E-Mail an uns senden';$('#docMail').href=mailtoHref('Angebotsanfrage '+docNr,sum);DOCSEND={kind:'angebot',subject:'Angebotsanfrage '+docNr,body:sum,extra:{name:c.name,mail:c.mail,tel:c.tel}};
   $('#docOv').hidden=false;document.body.style.overflow='hidden';$('#docClose').focus();document.title=`Angebot ${docNr} – Elektrotechnik Ulshöfer`;
 }
 function closeDoc(){$('#docOv').hidden=true;document.body.style.overflow='';document.title='Online-Angebot – Elektrotechnik Ulshöfer GmbH'}
@@ -4469,8 +4488,9 @@ route();calc();
   function askNote(){flow.step='note';bot('Möchten Sie noch etwas ergänzen (z. B. beste Uhrzeit für den Rückruf)? Schreiben Sie es einfach – oder senden Sie direkt ab.',[{t:'Nein, weiter',go:consent,primary:true}])}
   function consent(){flow.step='consent';bot(`<b>Ihre Rückrufbitte</b><br>Name: ${esc(flow.name)}<br>Telefon: ${esc(flow.tel)}<br>Thema: ${esc(flow.topic||'–')}${flow.note?'<br>Hinweis: '+esc(flow.note):''}<br><small>Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden. Mehr in der <a href="#datenschutz">Datenschutzerklärung</a>.</small>`,[{t:'Einverstanden, absenden',go:send,primary:true},{t:'Abbrechen',go:menu}])}
   function send(){const body=`Name: ${flow.name}\nErreichbar unter: ${flow.tel}\nThema: ${flow.topic||'–'}\n${flow.note?'Hinweis: '+flow.note+'\n':''}\n(gesendet über den Chat-Assistenten der Website)`;
-    location.href='mailto:info@elektro-ulshoefer.de?subject='+encodeURIComponent('Rückrufbitte über den Website-Chat')+'&body='+encodeURIComponent(body);
-    bot(`Danke, ${esc(flow.name)}! Ihr E-Mail-Programm öffnet sich mit der Rückrufbitte – bitte dort noch auf <b>Senden</b> tippen. Wir melden uns in der Regel innerhalb von zwei Werktagen. Eilig? ${TEL}`,[{t:'Andere Frage',go:menu}]);flow=null}
+    const nm=flow.name;flow=null;serverSend('chat','Rückrufbitte über den Website-Chat',body,{name:nm}).then(ok=>{
+    if(!ok)location.href=mailtoHref('Rückrufbitte über den Website-Chat',body);
+    bot(`Danke, ${esc(nm)}! ${ok?'Ihre Rückrufbitte ist bei uns eingegangen.':'Ihr E-Mail-Programm öffnet sich mit der Rückrufbitte – bitte dort noch auf <b>Senden</b> tippen.'} Wir melden uns in der Regel innerhalb von zwei Werktagen. Eilig? ${TEL}`,[{t:'Andere Frage',go:menu}])})}
 
   /* ---------- Freitext erkennen ---------- */
   const norm=s=>s.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').normalize('NFD').replace(/[̀-ͯ]/g,'');
@@ -4602,8 +4622,8 @@ route();calc();
     <div class="sigrow"><p class="sig">Mit freundlichen Grüßen<br><br><b>Elektrotechnik Ulshöfer GmbH</b></p><div class="doc-qr">${$('.vcard-qr').innerHTML.replace(/qrlg0/g,'qrlgd')}<small>Unsere Visitenkarte</small></div></div>
     <p style="font-size:11px;color:#666;margin-top:26px">Elektrotechnik Ulshöfer GmbH · Amtsgericht Mannheim HRB 700984 · USt-IdNr. DE250688504 · Geschäftsführer: Norbert Ulshöfer</p>`;
     const body=`Bestellanfrage ${nr}\n\n${L.map(x=>`- ${x.t}: ${x.q} × ${money(x.e)} = ${money(x.q*x.e)}`).join('\n')}\n\nGesamt inkl. MwSt.: ${money(tot)}\n${d?'Lieferung nach Hause':'Abholung im Fachgeschäft'}${c.date?'\nWunschtermin: '+c.date:''}${$('#o-early').checked&&!$('#o-earlyw').hidden?'\nMontage vor Ablauf der Widerrufsfrist ausdrücklich gewünscht.':''}\nKundeninformationen und Widerrufsbelehrung zur Kenntnis genommen.\n\nName: ${c.anr?c.anr+' ':''}${c.name}\nAdresse: ${c.str}, ${c.ort}\nTelefon: ${c.tel}\nE-Mail: ${c.mail}${c.msg?'\n\nAnmerkungen: '+c.msg:''}`;
-    $('#docMail').href='mailto:info@elektro-ulshoefer.de?subject='+encodeURIComponent('Bestellanfrage Hausgeräte '+nr)+'&body='+encodeURIComponent(body);
-    $('#docMail').textContent='Bestellanfrage per E-Mail senden';
+    docMailReset();$('#docMail').href=mailtoHref('Bestellanfrage Hausgeräte '+nr,body);
+    $('#docMail').textContent=SEND_URL?'Bestellanfrage an uns senden':'Bestellanfrage per E-Mail senden';DOCSEND={kind:'bestellung',subject:'Bestellanfrage Hausgeräte '+nr,body,extra:{name:c.name,mail:c.mail,tel:c.tel}};
     $('#docOv').hidden=false;document.body.style.overflow='hidden';$('#docClose').focus();document.title=`Bestellanfrage ${nr} – Elektrotechnik Ulshöfer`;
   }
   if(!P.length){$('#shopGrid').innerHTML='<p class="help">Derzeit sind keine Geräte für die Online-Bestellung freigeschaltet. Gern beraten wir Sie im Fachgeschäft oder telefonisch: <a href="tel:+49934365545">09343 65545</a>.</p>'}
