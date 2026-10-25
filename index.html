@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.9.4">
+<meta name="uls-version" content="0.9.5">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -741,6 +741,44 @@ body.chat-open .chat-fab{display:none}
 @media (max-width:1100px){.mod-grid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:560px){.pillars{grid-template-columns:minmax(0,1fr)}}
 .maplink{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:12px;font-size:.92rem;color:#5b616b}
+/* v0.9.5 Energielabel-Pfeil, Modellkarten, Kundeninfo, Widerruf */
+.mc-ek{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:10px 0 4px}
+.mc-ekl{font-size:14px;font-weight:700}
+.ek{display:inline-flex;align-items:stretch;text-decoration:none;color:inherit;gap:6px;align-items:center}
+.ek-r{display:flex;flex-direction:column;justify-content:space-between;border:1.5px solid #222;border-right:0;height:30px;padding:1px 3px;font:700 9px/1.1 Arial,sans-serif;color:#222;background:#fff}
+.ek-r i{font-style:normal}
+.ek-a{position:relative;display:inline-flex;align-items:center;height:30px;padding:0 6px 0 8px;margin-left:-6px;background:var(--ekc);font:800 16px/1 Arial,sans-serif;clip-path:polygon(0 0,calc(100% - 13px) 0,100% 50%,calc(100% - 13px) 100%,0 100%);padding-right:18px;border:0}
+.ek-c{font-size:13px;color:var(--muted)}
+.ek:hover .ek-a,.ek:focus-visible .ek-a{filter:brightness(.92)}
+.ek-db{font-size:14px;font-weight:600}
+.mcards{display:grid;gap:12px;margin-top:12px}
+.mcard{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}
+.mc-img{display:flex;align-items:center;justify-content:center;background:#f6f7f8;border-radius:12px;min-height:110px;overflow:hidden}
+.mc-img img{width:100%;height:110px;object-fit:contain}
+.mc-ph{color:#9aa1aa;width:70px}
+.mc-b{min-width:0}
+.mc-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#1f8a4c;background:#e8f5ec;border-radius:999px;padding:3px 10px}
+.mc-tag.own{color:#fff;background:var(--red,#E2001A)}
+.mcard h4{font-size:17px;margin:6px 0 2px;overflow-wrap:anywhere}
+.mc-for{font-size:14px;color:var(--muted);margin:0}
+.mc-n{font-size:13px;color:var(--muted);margin:8px 0 0}
+.mc-det{margin-top:8px}
+.mc-det summary{cursor:pointer;font-weight:600;font-size:14px}
+.mc-dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0 0;font-size:14px}
+.mc-dl dt{color:var(--muted)}.mc-dl dd{margin:0;font-weight:600}
+.mc-sel{display:block;margin-top:12px}
+.mc-sel span{display:block;font-size:14px;font-weight:700;margin-bottom:4px}
+.mc-sel select{width:100%;max-width:100%}
+.fgas{font-size:13px;line-height:1.45;color:#3d434b;background:#fff8e1;border-left:4px solid #DCDA00;border-radius:8px;padding:8px 12px;margin-top:12px}
+.prod .mc-ek{margin:6px 0 10px}.prod .fgas{margin:0 0 10px}
+.ordsum{background:#f6f7f8;border-radius:14px;padding:14px 16px;margin:14px 0}
+.ordsum h3{font-size:16px;margin:0 0 6px}.ordsum ul{margin:0 0 8px;padding-left:18px}.ordsum p{margin:0}
+.wbox{background:#f6f7f8;border-radius:14px;padding:16px 18px;margin:10px 0}
+.wbtn{background:#1f2328!important;color:#fff!important}
+.flegal .wlink{font-weight:800;text-decoration:underline}
+.draftnote{font-size:14px;background:#fff4e5;border-left:4px solid #f39200;border-radius:8px;padding:10px 14px}
+.lead-s{color:var(--muted)}
+@media (max-width:560px){.mcard{grid-template-columns:minmax(0,1fr)}.mc-img{min-height:90px}.mc-img img{height:90px}}
 
 </style>
 </head>
@@ -766,7 +804,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.9.4</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.9.5</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -839,10 +877,10 @@ body.chat-open .chat-fab{display:none}
       </div>
       <div class="cards" data-rise>
         <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-bolt"/></svg></span><h3>Elektroinstallation</h3><p>Neubau, Sanierung und Erweiterung nach VDE – inklusive Zählerschrank, Netzwerk, Überspannungsschutz und E-CHECK.</p><button type="button" class="vbtn" data-video="videos/elektro.mp4" data-poster="videos/elektro-poster.jpg" data-title="Elektroinstallation"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>Video ansehen <small>0:32 · mit Ton</small></button><p class="from" data-from="elektro"></p><a class="more" href="#angebot/elektro" data-calc="elektro">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
-        <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-sun"/></svg></span><h3>Photovoltaik &amp; Speicher</h3><p>Eigenen Strom erzeugen und speichern. Als einer der ersten Fronius Service Partner Plus – zertifiziert vom TÜV Rheinland – planen, montieren und warten wir Ihre Anlage.</p><button type="button" class="vbtn" data-video="videos/pv.mp4" data-poster="videos/pv-poster.jpg" data-title="Photovoltaik"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>Video ansehen <small>0:36 · mit Ton</small></button><p class="from" data-from="pv"></p><a class="more" href="#angebot/pv" data-calc="pv">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
+        <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-sun"/></svg></span><h3>Photovoltaik &amp; Speicher</h3><p>Eigenen Strom erzeugen und speichern. Als einer der ersten Fronius Service Partner Plus – zertifiziert vom TÜV Rheinland – planen, montieren und warten wir Ihre Anlage.</p><button type="button" class="vbtn" data-video="videos/pv.mp4" data-poster="videos/pv-poster.jpg" data-title="Photovoltaik"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>Video ansehen <small>0:35 · mit Ton</small></button><p class="from" data-from="pv"></p><a class="more" href="#angebot/pv" data-calc="pv">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
         <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-heat"/></svg></span><h3>Wärmepumpen</h3><p>Effizient heizen mit Wärmepumpen von Dimplex – ideal mit Photovoltaik. Inklusive Unterstützung beim KfW-Zuschuss bis 70 %.</p><button type="button" class="vbtn" data-video="videos/wp.mp4" data-poster="videos/wp-poster.jpg" data-title="Wärmepumpe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>Video ansehen <small>0:34 · mit Ton</small></button><p class="from" data-from="wp"></p><a class="more" href="#angebot/wp" data-calc="wp">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
         <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-snow"/></svg></span><h3>Klimaanlagen</h3><p>Single- und Multi-Split-Geräte von Toshiba, die im Sommer kühlen und in der Übergangszeit effizient heizen.</p><button type="button" class="vbtn" data-video="videos/klima.mp4" data-poster="videos/klima-poster.jpg" data-title="Klimaanlage"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>Video ansehen <small>0:30 · mit Ton</small></button><p class="from" data-from="klima"></p><a class="more" href="#angebot/klima" data-calc="klima">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
-        <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-home"/></svg></span><h3>Smart Home</h3><p>Licht, Rollläden, Heizung und Sicherheit intelligent vernetzt – mit Loxone, KNX oder per Funk im Bestand.</p><button type="button" class="vbtn" data-video="videos/smarthome-film.mp4" data-poster="videos/smarthome-film-poster.jpg" data-title="Smart Home – Elektrotechnik mit einer Hand" data-note="Film mit Ton und Untertiteln · Elektrotechnik Ulshöfer GmbH"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>Film ansehen <small>1:04 · mit Ton</small></button><p class="from" data-from="smart"></p><a class="more" href="#angebot/smart" data-calc="smart">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
+        <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-home"/></svg></span><h3>Smart Home</h3><p>Licht, Rollläden, Heizung und Sicherheit intelligent vernetzt – mit Loxone, KNX oder per Funk im Bestand.</p><button type="button" class="vbtn" data-video="videos/smarthome-film.mp4" data-poster="videos/smarthome-film-poster.jpg" data-title="Smart Home – Elektrotechnik mit einer Hand" data-note="Film mit Ton und Untertiteln · Elektrotechnik Ulshöfer GmbH"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg>Film ansehen <small>1:03 · mit Ton</small></button><p class="from" data-from="smart"></p><a class="more" href="#angebot/smart" data-calc="smart">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
         <article class="card"><span class="card-ic"><svg class="ic"><use href="#i-plug"/></svg></span><h3>Hausgeräte &amp; E-Mobilität</h3><p>Fachgeschäft für Marken-Hausgeräte mit Lieferung, Anschluss und Reparatur – und Wallboxen für Ihr E-Auto.</p><a class="more" href="#hausgeraete" data-calc="shop">Hausgeräte online bestellen<svg class="ic"><use href="#i-arrow"/></svg></a></article>
       </div>
     </div>
@@ -856,7 +894,7 @@ body.chat-open .chat-fab{display:none}
         <p>Eine zeitgemäße Elektroinstallation steigert Wohnqualität, Energieeffizienz und den Wert Ihrer Immobilie. Reichen die Steckdosen? Ist die Anlage für E-Auto und Wärmepumpe ausgelegt? Wie lässt sich Energie sparen, das Zuhause vernetzen und vor Einbruch schützen – und wie bleibt man im Alter selbstständig? Wir beraten Sie.</p>
       </div>
       <div class="mod-grid" data-rise>
-        <div class="mod-video"><button type="button" class="vposter" data-video="videos/modernisieren-film.mp4" data-poster="videos/modernisieren-film-poster.jpg" data-title="Intelligent modernisieren" data-note="Film mit Ton und Untertiteln · Elektrotechnik Ulshöfer GmbH"><img src="videos/modernisieren-film-poster.jpg" alt="Video: Intelligent modernisieren mit Elektrotechnik Ulshöfer" loading="lazy"><span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z" fill="currentColor"/></svg></span><span class="vlen">Film mit Ton · 0:55</span></button>
+        <div class="mod-video"><button type="button" class="vposter" data-video="videos/modernisieren-film.mp4" data-poster="videos/modernisieren-film-poster.jpg" data-title="Intelligent modernisieren" data-note="Film mit Ton und Untertiteln · Elektrotechnik Ulshöfer GmbH"><img src="videos/modernisieren-film-poster.jpg" alt="Video: Intelligent modernisieren mit Elektrotechnik Ulshöfer" loading="lazy"><span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z" fill="currentColor"/></svg></span><span class="vlen">Film mit Ton · 0:54</span></button>
           <p class="mod-note">„Intelligent modernisieren“ ist eine Kampagne von <b>e-masters</b> – wir sind Mitglied in diesem Verbund von Elektrofachbetrieben.</p></div>
         <div class="pillars">
           <article class="pillar"><span class="card-ic"><svg class="ic"><use href="#i-check"/></svg></span><h3>Sicherheit und Funktionalität</h3><ul><li>Rauchmelder – in Baden-Württemberg Pflicht, funkvernetzt noch sicherer</li><li>Einbruchschutz: Alarmanlage, Kameras, Bewegungsmelder mit Außenlicht</li><li>FI- und Leitungsschutzschalter, Überspannungsschutz</li><li>E-CHECK: Ihre Anlage geprüft, mit Verbesserungsvorschlägen</li></ul></article>
@@ -1144,6 +1182,7 @@ body.chat-open .chat-fab{display:none}
         <div class="chips" id="shopBrands" role="group" aria-label="Marke"></div>
         <label class="sr" for="shopCat">Kategorie</label><select class="fld" id="shopCat"></select>
       </div>
+      <p class="help shoplegal">Alle Preise inkl. MwSt., zzgl. <a href="#kundeninfo-lieferung">Lieferung</a> · <a href="#kundeninfo">Kundeninformationen</a> · <a href="#kundeninfo-widerruf">Widerrufsbelehrung</a> · <a href="#widerruf"><b>Vertrag widerrufen</b></a></p>
       <p class="help" id="shopCount"></p>
       <div class="shop-grid" id="shopGrid"></div>
       <p class="shop-note">Alle Preise inkl. 19 % MwSt., zzgl. Lieferung und Anschluss nach Wahl. Abbildungen ähnlich.</p>
@@ -1173,9 +1212,12 @@ body.chat-open .chat-fab{display:none}
           <div class="ff full"><label for="o-msg">Anmerkungen (optional)</label><textarea class="fld" id="o-msg" rows="3" placeholder="z. B. Stockwerk, Treppenhaus, Einbausituation"></textarea></div>
           <input id="o-hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="ff full"><label class="tick" style="font-weight:400"><input type="checkbox" id="o-dsgvo" required><span>Ich habe die <a href="#datenschutz">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Bestellanfrage verarbeitet werden. *</span></label><span class="err-msg">Bitte bestätigen.</span></div>
+          <div class="ff full"><label class="tick" style="font-weight:400"><input type="checkbox" id="o-agb" required><span>Ich habe die <a href="#kundeninfo">Kundeninformationen und Lieferbedingungen</a> sowie die <a href="#kundeninfo-widerruf">Widerrufsbelehrung</a> zur Kenntnis genommen. *</span></label><span class="err-msg">Bitte bestätigen.</span></div>
+          <div class="ff full" id="o-earlyw" hidden><label class="tick" style="font-weight:400"><input type="checkbox" id="o-early"><span>Ich verlange ausdrücklich, dass Sie mit Anschluss/Montage schon vor Ablauf der Widerrufsfrist beginnen. Mir ist bekannt, dass ich bei einem Widerruf für die bis dahin erbrachte Leistung einen angemessenen Betrag zahle. <small>(optional – sonst montieren wir frühestens nach 14 Tagen)</small></span></label></div>
         </div>
-        <p class="help">Die Bestellanfrage ist unverbindlich. Der Kaufvertrag kommt erst mit unserer Auftragsbestätigung zustande; Liefertermin und Zahlung stimmen wir mit Ihnen ab.</p>
-        <button class="btn btn-lg btn-block" type="submit">Bestellanfrage erstellen</button>
+        <div class="ordsum" id="ordSum"></div>
+        <p class="help">Die Bestellanfrage ist unverbindlich. Der Kaufvertrag kommt erst mit unserer Auftragsbestätigung zustande; Liefertermin und Zahlung stimmen wir mit Ihnen ab. Zahlung: <span data-ki="zahlung"></span></p>
+        <button class="btn btn-lg btn-block" type="submit">Unverbindliche Bestellanfrage erstellen</button>
       </form>
     </aside>
   </section>
@@ -1230,7 +1272,7 @@ body.chat-open .chat-fab{display:none}
         <div class="q"><label for="wp-inc">Zu versteuerndes Haushaltseinkommen (für den Einkommensbonus)</label>
           <select class="fld" id="wp-inc"><option value="0">keine Angabe / über 50.000 €</option><option value="10">bis 50.000 € (+10 %)</option><option value="30">bis 40.000 € (+30 %)</option><option value="40">bis 30.000 € (+40 %)</option></select>
           <p class="help">Mit minderjährigem Kind im Haushalt wird einmalig 10.000 € abgezogen.</p></div>
-        <div class="kpis"><div class="kpi"><b id="wp-k1"></b><span>Heizlast</span></div><div class="kpi"><b id="wp-k2"></b><span id="wp-k2l">empfohlenes Gerät</span></div><div class="kpi"><b id="wp-k3"></b><span>voraussichtlicher KfW-Zuschuss</span></div></div>
+        <div class="kpis"><div class="kpi"><b id="wp-k1"></b><span>Heizlast</span></div><div class="kpi"><b id="wp-k2"></b><span id="wp-k2l">empfohlenes Gerät</span></div><div class="kpi"><b id="wp-k3"></b><span>voraussichtlicher KfW-Zuschuss</span></div></div><div class="mc-ek" id="wp-ek"></div>
         <div class="devpics" id="wp-pics" hidden></div>
       </div>
 
@@ -1259,7 +1301,11 @@ body.chat-open .chat-fab{display:none}
         <div class="bh"><h2>Klimaanlage</h2><span class="sum" id="s-klima"></span></div>
         <div class="q"><span class="ql">Räume</span><div class="rooms" id="rooms"></div>
           <button class="btn btn-tone btn-sm" id="addRoom" type="button" style="margin-top:12px">Raum hinzufügen</button>
-          <p class="help" id="kl-type"></p><div class="devpics" id="kl-pics" hidden></div></div>
+          <p class="help" id="kl-type"></p></div>
+        <div class="q"><span class="ql">Ihre Geräte</span><p class="help">Foto, Energieklasse und technische Daten des empfohlenen Geräts. Unter „Anderes Modell wählen“ sehen Sie alle passenden Alternativen mit Preisunterschied.</p>
+          <div class="mcards" id="kl-models"></div>
+          <label for="kl-wish" class="ql" style="margin-top:14px">Sie haben ein bestimmtes Modell im Blick?</label><input class="fld" id="kl-wish" maxlength="120" placeholder="z. B. Hersteller und Modell – wir prüfen es und berücksichtigen es im Angebot">
+          <p class="fgas"><b>Hinweis:</b> Split-Klimageräte enthalten fluorierte Treibhausgase (Kältemittel R32). Nach der F-Gase-Verordnung (EU) 2024/573 dürfen sie nur von einem zertifizierten Fachbetrieb installiert werden – bei uns ist die Montage durch zertifizierte Fachkräfte immer enthalten.</p></div>
         <div class="q"><span class="ql">Gebäude</span><div class="chips">
           <label class="chip"><input type="radio" name="kl-ins" value=".85"><span>Neubau</span></label>
           <label class="chip"><input type="radio" name="kl-ins" value="1" checked><span>durchschnittlich</span></label>
@@ -1411,6 +1457,8 @@ body.chat-open .chat-fab{display:none}
       <h2>7. Angebotsrechner</h2>
       <p>Die Berechnung im Angebotsrechner erfolgt ausschließlich lokal in Ihrem Browser; dabei werden keine Daten an uns übertragen. Auch das Angebotsdokument wird lokal in Ihrem Browser erzeugt. Erst wenn Sie es uns per E-Mail senden, erhalten wir Ihre Konfiguration und Ihre Kontaktdaten (Name, E-Mail, PLZ/Ort, optional Anschrift, Telefon und Anmerkungen), um Ihnen ein Angebot zu erstellen und einen Besichtigungstermin zu vereinbaren. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen). Kommt kein Vertrag zustande, löschen wir die Daten spätestens nach 6 Monaten.</p>
 
+      <h3>Online-Widerruf („Vertrag widerrufen“)</h3>
+      <p>Wenn Sie über „Vertrag widerrufen“ einen Vertrag widerrufen, verarbeiten wir Ihren Namen, die Angaben zum Vertrag und Ihre E-Mail-Adresse, um den Widerruf zu bearbeiten und Ihnen den Eingang zu bestätigen (Art. 6 Abs. 1 lit. c DSGVO in Verbindung mit § 356a BGB). Die Daten speichern wir für die Dauer der gesetzlichen Aufbewahrungsfristen.</p>
       <h3>Bestellanfrage Hausgeräte</h3>
       <p>Wenn Sie über unsere Website eine Bestellanfrage für Hausgeräte erstellen, werden Auswahl und Angaben (Name, Anschrift, Telefon, E-Mail, Wunschtermin, Anmerkungen) zunächst nur in Ihrem Browser zu einem Dokument zusammengefasst. Erst wenn Sie die vorbereitete E-Mail an uns senden, erhalten wir diese Daten und verwenden sie zur Bearbeitung Ihrer Anfrage, zur Lieferung und Montage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO. Kommt kein Vertrag zustande, löschen wir die Daten spätestens nach 6 Monaten; im Übrigen gelten die gesetzlichen Aufbewahrungsfristen.</p>
       <h3>Chat-Assistent</h3>
@@ -1445,6 +1493,101 @@ body.chat-open .chat-fab{display:none}
 </main>
 
 
+<div class="page" id="kundeninfo">
+  <section class="legal-wrap frame">
+    <div class="legal">
+      <h1>Kundeninformationen und Lieferbedingungen</h1>
+      <p class="lead-s">Für Bestellanfragen über unsere Online-Bestellung „Hausgeräte“ an Verbraucher. Stand: Oktober 2026.</p>
+      <p class="draftnote no-print"><b>Entwurf zur Prüfung:</b> Diese Texte setzen die gesetzlichen Pflichtangaben für den Online-Verkauf um. Vor der Veröffentlichung bitte von Rechtsanwalt, Handwerkskammer oder Händlerbund prüfen lassen.</p>
+
+      <h2 id="kundeninfo-anbieter">1. Ihr Vertragspartner</h2>
+      <p>Elektrotechnik Ulshöfer GmbH, Fabrikstraße 3, 97922 Lauda-Königshofen · Telefon +49 9343 65545 · E-Mail <a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a> · Geschäftsführer: Norbert Ulshöfer · Amtsgericht Mannheim HRB 700984 · USt-IdNr. DE250688504.</p>
+
+      <h2 id="kundeninfo-vertrag">2. Wie der Vertrag zustande kommt</h2>
+      <p>Die Darstellung der Geräte auf unserer Website ist kein bindendes Angebot. Mit „Unverbindliche Bestellanfrage erstellen“ stellen Sie Ihre Auswahl zusammen und senden sie uns per E-Mail. Wir prüfen Verfügbarkeit und Liefertermin und senden Ihnen eine Auftragsbestätigung mit allen Angaben. Der Kaufvertrag kommt erst zustande, wenn Sie unsere Auftragsbestätigung annehmen (z. B. per E-Mail oder telefonisch). Vor dem Absenden sehen Sie alle Geräte, Leistungen und den Gesamtpreis im Überblick und können Ihre Angaben jederzeit korrigieren.</p>
+      <p>Vertragssprache ist Deutsch. Den Text Ihrer Bestellanfrage erhalten Sie als Dokument zum Speichern oder Drucken; unsere Auftragsbestätigung erhalten Sie per E-Mail. Wir speichern den Vertragstext und senden ihn Ihnen auf Wunsch erneut zu.</p>
+
+      <h2 id="kundeninfo-preise">3. Preise</h2>
+      <p>Alle Preise sind Endpreise in Euro inklusive der gesetzlichen Mehrwertsteuer. Bei den Geräten sehen Sie den Gerätepreis; Lieferung, Anschluss/Montage und die Mitnahme des Altgeräts wählen Sie im Warenkorb dazu und sehen sie dort mit Preis.</p>
+
+      <h2 id="kundeninfo-lieferung">4. Lieferung, Lieferkosten und Abholung</h2>
+      <ul>
+        <li><b>Lieferung frei Verwendungsstelle:</b> <span data-ki="lieferung"></span> je Gerät inkl. MwSt.</li>
+        <li><b>Mitnahme und Entsorgung des Altgeräts:</b> <span data-ki="altgeraet"></span> je Gerät inkl. MwSt. (nur bei Lieferung)</li>
+        <li><b>Liefergebiet:</b> <span data-ki="liefergebiet"></span></li>
+        <li><b>Lieferzeit:</b> <span data-ki="lieferzeit"></span></li>
+        <li><b>Abholung:</b> kostenlos in unserem Fachgeschäft, Fabrikstraße 3, 97922 Lauda-Königshofen.</li>
+      </ul>
+
+      <h2 id="kundeninfo-zahlung">5. Zahlung</h2>
+      <p><span data-ki="zahlung"></span></p>
+
+      <h2 id="kundeninfo-maengel">6. Mängelhaftung und Garantie</h2>
+      <p>Es gilt das gesetzliche Mängelhaftungsrecht. Herstellergarantien bestehen zusätzlich nach den Bedingungen des jeweiligen Herstellers; sie schränken Ihre gesetzlichen Rechte nicht ein. Bei einem Problem mit Ihrem Gerät hilft Ihnen unser Kundendienst: Telefon 09343 65545.</p>
+
+      <h2 id="kundeninfo-energie">7. Energielabel und Produktdatenblätter</h2>
+      <p>Bei Geräten mit Energielabel zeigen wir die Energieeffizienzklasse als farbigen Pfeil neben dem Preis. Ein Klick auf den Pfeil öffnet das Energielabel, der Link „Produktdatenblatt“ das Datenblatt des Herstellers bzw. den Eintrag in der EU-Produktdatenbank EPREL.</p>
+
+      <h2 id="kundeninfo-widerruf">8. Widerrufsbelehrung</h2>
+      <div class="wbox">
+      <h3>Widerrufsrecht</h3>
+      <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
+      <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat. Bei Verträgen, die nur eine Dienstleistung betreffen, beträgt die Widerrufsfrist vierzehn Tage ab dem Tag des Vertragsabschlusses.</p>
+      <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Elektrotechnik Ulshöfer GmbH, Fabrikstraße 3, 97922 Lauda-Königshofen, Telefon +49 9343 65545, E-Mail info@elektro-ulshoefer.de) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
+      <p>Sie können Ihr Widerrufsrecht auch online unter <a href="#widerruf">www.elektro-ulshoefer.de/#widerruf</a> („Vertrag widerrufen“) ausüben. Wenn Sie diese Online-Funktion nutzen, übermitteln wir Ihnen auf einem dauerhaften Datenträger (z. B. durch eine E-Mail) unverzüglich eine Eingangsbestätigung mit Informationen zum Inhalt der Widerrufserklärung sowie dem Datum und der Uhrzeit ihres Eingangs.</p>
+      <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+      <h3>Folgen des Widerrufs</h3>
+      <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
+      <p>Wir holen die Waren auf unsere Kosten ab.</p>
+      <p>Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist.</p>
+      <p>Haben Sie verlangt, dass die Dienstleistungen (z. B. Anschluss oder Montage) während der Widerrufsfrist beginnen sollen, so haben Sie uns einen angemessenen Betrag zu zahlen, der dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns von der Ausübung des Widerrufsrechts hinsichtlich dieses Vertrags unterrichten, bereits erbrachten Dienstleistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Dienstleistungen entspricht.</p>
+      <p><i>– Ende der Widerrufsbelehrung –</i></p>
+      </div>
+      <p><a class="btn wbtn" href="#widerruf">Vertrag widerrufen</a></p>
+
+      <h2 id="kundeninfo-formular">9. Muster-Widerrufsformular</h2>
+      <div class="wbox">
+      <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
+      <p>– An Elektrotechnik Ulshöfer GmbH, Fabrikstraße 3, 97922 Lauda-Königshofen, E-Mail: info@elektro-ulshoefer.de:</p>
+      <p>– Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*)</p>
+      <p>– Bestellt am (*)/erhalten am (*)</p>
+      <p>– Name des/der Verbraucher(s)</p>
+      <p>– Anschrift des/der Verbraucher(s)</p>
+      <p>– Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)</p>
+      <p>– Datum</p>
+      <p>(*) Unzutreffendes streichen.</p>
+      </div>
+
+      <h2 id="kundeninfo-entsorgung">10. Hinweise zur Entsorgung von Elektro-Altgeräten und Batterien</h2>
+      <p>Elektro- und Elektronikgeräte sind mit dem Symbol der durchgestrichenen Mülltonne gekennzeichnet. Sie gehören nicht in den Hausmüll, sondern müssen getrennt gesammelt werden – zum Beispiel beim Wertstoffhof Ihrer Gemeinde. Altbatterien und Altakkus, die nicht fest im Gerät verbaut sind, sowie Lampen, die sich zerstörungsfrei entnehmen lassen, entnehmen Sie bitte vor der Abgabe und geben sie getrennt zurück (z. B. in Sammelboxen im Handel). Für das Löschen persönlicher Daten auf Altgeräten (z. B. bei vernetzten Geräten) sind Sie selbst verantwortlich.</p>
+      <p>Bei Lieferung eines neuen Großgeräts nehmen wir Ihr Altgerät auf Wunsch mit und entsorgen es fachgerecht (Preis siehe Abschnitt 4). Kleingeräte können Sie zu unseren Öffnungszeiten im Fachgeschäft abgeben.</p>
+
+      <h2 id="kundeninfo-streit">11. Streitbeilegung</h2>
+      <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Bei Fragen oder Problemen wenden Sie sich bitte direkt an uns – wir finden gemeinsam eine Lösung.</p>
+    </div>
+  </section>
+</div>
+<div class="page" id="widerruf">
+  <section class="legal-wrap frame">
+    <div class="legal">
+      <h1>Vertrag widerrufen</h1>
+      <p>Hier können Sie einen online geschlossenen Vertrag (z. B. eine Hausgeräte-Bestellung) innerhalb der Widerrufsfrist widerrufen. Ein Kundenkonto brauchen Sie dafür nicht. Einen Grund müssen Sie nicht angeben.</p>
+      <form class="wrform" id="wrForm" novalidate>
+        <div class="grid2">
+          <div class="ff full"><label for="w-name">Ihr Name *</label><input class="fld" id="w-name" autocomplete="name"><span class="err-msg">Bitte Namen angeben.</span></div>
+          <div class="ff full"><label for="w-nr">Auftrags- oder Anfrage-Nr. bzw. Bestelldatum *</label><input class="fld" id="w-nr" placeholder="z. B. ULS-B-20261025-1234"><span class="err-msg">Bitte angeben, welchen Vertrag Sie widerrufen.</span></div>
+          <div class="ff full"><label for="w-what">Nur bestimmte Geräte oder Leistungen widerrufen? (optional)</label><input class="fld" id="w-what" placeholder="leer lassen = gesamter Vertrag"></div>
+          <div class="ff full"><label for="w-mail">E-Mail für die Eingangsbestätigung *</label><input class="fld" id="w-mail" type="email" autocomplete="email"><span class="err-msg">Bitte gültige E-Mail angeben.</span></div>
+          <div class="ff full"><label class="tick" style="font-weight:400"><input type="checkbox" id="w-conf" checked><span>Ich möchte eine Eingangsbestätigung per E-Mail erhalten.</span></label></div>
+        </div>
+        <button class="btn btn-lg wbtn" type="submit">Widerruf bestätigen</button>
+        <p class="help">Mit „Widerruf bestätigen“ erklären Sie den Widerruf. Sie können stattdessen auch per Brief, E-Mail oder mit dem <a href="#kundeninfo-formular">Muster-Widerrufsformular</a> widerrufen.</p>
+      </form>
+      <div class="wrdone" id="wrDone" hidden></div>
+    </div>
+  </section>
+</div>
+
 </main>
 
 <footer class="foot">
@@ -1456,7 +1599,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.4</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.5</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -1535,7 +1678,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 990,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1544,7 +1695,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1120,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1553,7 +1712,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1390,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1562,7 +1729,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1590,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.3,
+        "scop": 4.0,
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1571,7 +1746,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 2090,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.1,
+        "scop": 4.0,
+        "schall": 31,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1580,7 +1763,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 1390,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.8,
+        "scop": 4.2,
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1589,7 +1780,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 1550,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.8,
+        "scop": 4.2,
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1598,7 +1797,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 1790,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.8,
+        "scop": 4.2,
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1607,7 +1814,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 1990,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.8,
+        "scop": 4.2,
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1616,7 +1831,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 2390,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 10.5,
+        "scop": 5.2,
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1625,7 +1848,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1090,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.4,
+        "scop": 4.0,
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1634,7 +1865,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1240,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.3,
+        "scop": 4.0,
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1643,7 +1882,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1690,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 6.21,
+        "scop": 4.06,
+        "schall": 30,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1652,7 +1899,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 1490,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 8.7,
+        "scop": 5.1,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1661,7 +1916,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 1690,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.6,
+        "scop": 4.6,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1670,7 +1933,15 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 2190,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.5,
+        "scop": 4.6,
+        "schall": 32,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -1679,7 +1950,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1150,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "",
+        "ek_heiz": "",
+        "seer": "",
+        "scop": "",
+        "schall": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -1688,7 +1967,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1290,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "",
+        "ek_heiz": "",
+        "seer": "",
+        "scop": "",
+        "schall": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -1697,7 +1984,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1750,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "",
+        "ek_heiz": "",
+        "seer": "",
+        "scop": "",
+        "schall": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Mitsubishi Electric",
@@ -1706,7 +2001,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 2390,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "",
+        "ek_heiz": "",
+        "seer": "",
+        "scop": "",
+        "schall": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       }
     ],
     "innengeraete_multi": [
@@ -1717,7 +2020,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 420,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1726,7 +2032,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 470,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1735,7 +2044,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 560,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1744,7 +2056,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 590,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1753,7 +2068,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 660,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1762,7 +2080,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 760,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1771,7 +2092,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 560,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1780,7 +2104,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 600,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1789,7 +2116,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 680,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1798,7 +2128,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 860,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1807,7 +2140,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 430,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1816,7 +2152,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 490,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1825,7 +2164,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 640,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": ""
       }
     ],
     "aussengeraete_multi": [
@@ -1836,7 +2178,14 @@ window.ULS_CONFIG = {
         "kw": 4.0,
         "preis": 1590,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1845,7 +2194,14 @@ window.ULS_CONFIG = {
         "kw": 5.2,
         "preis": 1990,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1854,7 +2210,14 @@ window.ULS_CONFIG = {
         "kw": 7.5,
         "preis": 2390,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1863,7 +2226,14 @@ window.ULS_CONFIG = {
         "kw": 8.0,
         "preis": 2690,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Toshiba",
@@ -1872,7 +2242,14 @@ window.ULS_CONFIG = {
         "kw": 10.0,
         "preis": 3190,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1881,7 +2258,14 @@ window.ULS_CONFIG = {
         "kw": 5.0,
         "preis": 1790,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1890,7 +2274,14 @@ window.ULS_CONFIG = {
         "kw": 5.2,
         "preis": 2190,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1899,7 +2290,14 @@ window.ULS_CONFIG = {
         "kw": 6.8,
         "preis": 2690,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Daikin",
@@ -1908,7 +2306,14 @@ window.ULS_CONFIG = {
         "kw": 9.0,
         "preis": 3290,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": ""
       }
     ],
     "arbeit": {
@@ -1943,7 +2348,10 @@ window.ULS_CONFIG = {
         "kw": 6,
         "preis": 8900,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek": "A+++",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Dimplex",
@@ -1951,7 +2359,10 @@ window.ULS_CONFIG = {
         "kw": 9,
         "preis": 10400,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek": "A+++",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Dimplex",
@@ -1959,7 +2370,10 @@ window.ULS_CONFIG = {
         "kw": 12,
         "preis": 11900,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek": "A+++",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Dimplex",
@@ -1967,7 +2381,10 @@ window.ULS_CONFIG = {
         "kw": 16,
         "preis": 13400,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek": "A+++",
+        "label": "",
+        "datenblatt": ""
       },
       {
         "hersteller": "Dimplex",
@@ -1975,7 +2392,10 @@ window.ULS_CONFIG = {
         "kw": 18,
         "preis": 14900,
         "aktiv": true,
-        "bild": ""
+        "bild": "",
+        "ek": "A+++",
+        "label": "",
+        "datenblatt": ""
       }
     ],
     "arbeit": {
@@ -2264,7 +2684,11 @@ window.ULS_CONFIG = {
         "modell": "iQ300 Waschmaschine 8 kg",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 599,
-        "montage": 49
+        "montage": 49,
+        "ek": "A",
+        "label": "",
+        "datenblatt": "",
+        "skala": "neu"
       },
       {
         "aktiv": true,
@@ -2274,7 +2698,11 @@ window.ULS_CONFIG = {
         "modell": "iQ500 Waschmaschine 9 kg",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 799,
-        "montage": 49
+        "montage": 49,
+        "ek": "A",
+        "label": "",
+        "datenblatt": "",
+        "skala": "neu"
       },
       {
         "aktiv": true,
@@ -2284,7 +2712,11 @@ window.ULS_CONFIG = {
         "modell": "iQ500 Wärmepumpentrockner 8 kg",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 849,
-        "montage": 39
+        "montage": 39,
+        "ek": "A+++",
+        "label": "",
+        "datenblatt": "",
+        "skala": "alt"
       },
       {
         "aktiv": true,
@@ -2294,7 +2726,11 @@ window.ULS_CONFIG = {
         "modell": "iQ300 Einbau-Geschirrspüler 60 cm",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 649,
-        "montage": 149
+        "montage": 149,
+        "ek": "C",
+        "label": "",
+        "datenblatt": "",
+        "skala": "neu"
       },
       {
         "aktiv": true,
@@ -2304,7 +2740,11 @@ window.ULS_CONFIG = {
         "modell": "iQ500 Einbau-Backofen",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 699,
-        "montage": 129
+        "montage": 129,
+        "ek": "A+",
+        "label": "",
+        "datenblatt": "",
+        "skala": "alt"
       },
       {
         "aktiv": true,
@@ -2314,7 +2754,11 @@ window.ULS_CONFIG = {
         "modell": "iQ300 Kühl-Gefrier-Kombination",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 749,
-        "montage": 39
+        "montage": 39,
+        "ek": "C",
+        "label": "",
+        "datenblatt": "",
+        "skala": "neu"
       },
       {
         "aktiv": true,
@@ -2324,7 +2768,11 @@ window.ULS_CONFIG = {
         "modell": "Waschmaschine W1 (Beispiel)",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 1199,
-        "montage": 49
+        "montage": 49,
+        "ek": "A",
+        "label": "",
+        "datenblatt": "",
+        "skala": "neu"
       },
       {
         "aktiv": true,
@@ -2334,12 +2782,18 @@ window.ULS_CONFIG = {
         "modell": "Kühl-Gefrier-Kombination (Beispiel)",
         "info": "Beispielprodukt – Ausstattung und Preis folgen",
         "preis": 999,
-        "montage": 39
+        "montage": 39,
+        "ek": "C",
+        "label": "",
+        "datenblatt": "",
+        "skala": "neu"
       }
     ],
     "lieferung": 39,
     "altgeraet": 25,
-    "lieferzeit": "In der Regel 3–10 Werktage, Liefertermin nach Absprache."
+    "lieferzeit": "In der Regel 3–10 Werktage, Liefertermin nach Absprache.",
+    "zahlung": "Überweisung nach Erhalt der Rechnung oder Barzahlung bzw. EC-Karte bei Abholung im Fachgeschäft.",
+    "liefergebiet": "Lauda-Königshofen und Umgebung – andere Orte auf Anfrage."
   }
 };
 
@@ -2397,14 +2851,16 @@ function applyAktiv(){
 applyAktiv();
 
 /* ---------- Router ---------- */
-const PAGES=['start','angebot','hausgeraete','impressum','datenschutz','barrierefreiheit'];
+const PAGES=['start','angebot','hausgeraete','impressum','datenschutz','barrierefreiheit','kundeninfo','widerruf'];
 const ANCH={leistungen:1,referenzen:1,partner:1,ablauf:1,'ueber-uns':1,kontakt:1,foerderung:1,modernisieren:1,service:1,laden:1};
 function route(){
   let h=decodeURIComponent(location.hash.slice(1))||'start';
   let [p,arg]=h.split('/');
   let target=null;
   if(ANCH[p]){target=p;p='start'}
+  else if(/^kundeninfo-/.test(p)){target=p;p='kundeninfo'}
   if(p==='main'||p==='sumcard'||!PAGES.includes(p)){ if(p==='sumcard'){ $('#sumcard').scrollIntoView({behavior:reduce?'auto':'smooth'}); } return; }
+  {const ov=$('#docOv');if(ov&&!ov.hidden){ov.hidden=true;document.body.style.overflow=''}}
   $$('.page').forEach(x=>x.classList.toggle('on',x.id===p));
   $$('.nav a').forEach(a=>{const k=a.getAttribute('href').slice(1);a.toggleAttribute('aria-current',k===p&&p==='angebot'||k===target);if(a.hasAttribute('aria-current'))a.setAttribute('aria-current','page')});
   $('#nav').classList.remove('open');$('#burger').setAttribute('aria-expanded','false');
@@ -2416,6 +2872,23 @@ function route(){
   else scrollTo({top:0,behavior:'instant'});
   observe();
 }
+
+/* ---------- Kundeninformationen (Werte aus der Preisverwaltung) und Online-Widerruf (§ 356a BGB) ---------- */
+(function(){const S=C.shop||{};const m=n=>(Math.round(+n*100)/100).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+  const V={lieferung:+S.lieferung?m(S.lieferung):'kostenlos',altgeraet:+S.altgeraet?m(S.altgeraet):'kostenlos',lieferzeit:S.lieferzeit||'nach Absprache',liefergebiet:S.liefergebiet||'nach Absprache',zahlung:S.zahlung||'nach Absprache'};
+  $$('[data-ki]').forEach(el=>{el.textContent=V[el.dataset.ki]||''});
+  const f=$('#wrForm');if(!f)return;
+  f.addEventListener('submit',e=>{e.preventDefault();
+    if(!validate(f,[['w-name',notEmpty],['w-nr',notEmpty],['w-mail',isMail]]))return;
+    const now=new Date(),ts=now.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'})+', '+now.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})+' Uhr';
+    const w={name:$('#w-name').value.trim(),nr:$('#w-nr').value.trim(),what:$('#w-what').value.trim(),mail:$('#w-mail').value.trim(),conf:$('#w-conf').checked};
+    const txt=`Widerrufserklärung\n\nHiermit widerrufe ich den von mir abgeschlossenen Vertrag${w.what?` über folgende Waren/Leistungen: ${w.what}`:''}.\nVertrag: ${w.nr}\nName: ${w.name}\nE-Mail: ${w.mail}\nErklärt über die Online-Widerrufsfunktion am ${ts}.\nEingangsbestätigung per E-Mail: ${w.conf?'ja':'nein'}`;
+    $('#wrDone').innerHTML=`<h2>Ihr Widerruf</h2><div class="wbox"><p><b>Vertrag:</b> ${esc(w.nr)}${w.what?`<br><b>Umfang:</b> ${esc(w.what)}`:'<br><b>Umfang:</b> gesamter Vertrag'}<br><b>Name:</b> ${esc(w.name)}<br><b>Erklärt am:</b> ${ts}</p></div>
+      <p>${w.conf?`Wir senden Ihnen unverzüglich eine Eingangsbestätigung an <b>${esc(w.mail)}</b> – mit dem Inhalt Ihrer Erklärung sowie Datum und Uhrzeit des Eingangs. Die Bearbeitung des Widerrufs folgt anschließend.`:'Ihr Widerruf wird bearbeitet.'}</p>
+      <p class="draftnote no-print"><b>Hinweis zur Vorschau:</b> Auf der fertigen Website geht die Erklärung direkt an uns und die Eingangsbestätigung wird automatisch per E-Mail versendet. In dieser Vorschau öffnet sich dafür Ihr E-Mail-Programm mit der fertigen Erklärung.</p>
+      <p><a class="btn" id="wrMail" href="mailto:info@elektro-ulshoefer.de?subject=${encodeURIComponent('Widerruf '+w.nr)}&body=${encodeURIComponent(txt)}">Widerrufserklärung senden</a> <button type="button" class="btn btn-tone" onclick="print()">Drucken / als PDF speichern</button></p>`;
+    f.hidden=true;$('#wrDone').hidden=false;$('#wrDone').scrollIntoView({block:'start'});location.href=$('#wrMail').href});
+})();
 if('scrollRestoration' in history) history.scrollRestoration='manual';
 addEventListener('hashchange',route);
 /* gleicher Link erneut angetippt: trotzdem ausführen */
@@ -2495,9 +2968,19 @@ function renderRooms(){
 }
 $('#rooms').addEventListener('input',e=>{const i=e.target.dataset.i;if(i==null)return;rooms[i][e.target.dataset.f]=e.target.dataset.f==='m2'?Math.max(6,Math.min(80,+e.target.value||0)):e.target.value;calc()});
 $('#rooms').addEventListener('click',e=>{const d=e.target.closest('[data-del]');if(!d)return;rooms.splice(+d.dataset.del,1);renderRooms();calc()});
+['input','change'].forEach(ev=>$('#kl-models').addEventListener(ev,e=>{const s=e.target.closest('[data-room]');if(!s)return;e.stopPropagation();const v=s.value||null;if(rooms[+s.dataset.room].sel===v)return;rooms[+s.dataset.room].sel=v;calc()}));
 $('#addRoom').addEventListener('click',()=>{if(rooms.length<5){rooms.push({t:'wohn',m2:25});renderRooms();calc()}});
 renderRooms();
 
+
+/* Energielabel: Pfeil mit Effizienzklasse (geschachtelte Anzeige nach VO (EU) 2017/1369) + Produktdatenblatt */
+const EKS={alt:['A+++','A++','A+','A','B','C','D'],neu:['A','B','C','D','E','F','G']};
+const EKC=['#00a651','#50b848','#bed630','#fff200','#fcb814','#f36f21','#ed1c24'];
+const EPREL='https://eprel.ec.europa.eu/screen/product/';
+function ekArrow(cls,scale,label,cap,grp,model){if(!cls)return '';const S=EKS[scale]||(cls.includes('+')?EKS.alt:EKS.neu);const i=Math.max(0,S.indexOf(cls));const dark=i===2||i===3;
+  const href=label||`${EPREL}${grp||''}`;
+  return `<a class="ek" href="${esc(href)}" target="_blank" rel="noopener" title="Energielabel${model?' '+esc(model):''} öffnen" aria-label="Energieeffizienzklasse ${esc(cls)}${cap?' '+esc(cap):''}, Skala ${S[0]} bis ${S[S.length-1]} – Energielabel öffnen"><span class="ek-r" aria-hidden="true"><i>${S[0]}</i><i>${S[S.length-1]}</i></span><span class="ek-a" style="--ekc:${EKC[i]};color:${dark?'#111':'#fff'}" aria-hidden="true">${esc(cls)}</span>${cap?`<span class="ek-c">${esc(cap)}</span>`:''}</a>`}
+function ekDb(url,grp){return `<a class="ek-db" href="${esc(url||EPREL+(grp||''))}" target="_blank" rel="noopener">Produktdatenblatt</a>`}
 const L=(sec,txt,qty,unit,price,vat)=>{vat=vat==null?VAT():vat;return {sec,txt,qty,unit,price:+price,vat,net:qty*price}};
 /* Arbeitszeit als eigene Position: Stunden × Stundensatz */
 function labour(sec,tasks,vat){const h=tasks.reduce((a,t)=>a+t[1],0);if(h<=0)return null;return L(sec,`Arbeitszeit Fachpersonal: ${tasks.filter(t=>t[1]>0).map(t=>t[0]).join(', ')}`,Math.round(h*4)/4,'Std.',RATE(),vat)}
@@ -2509,7 +2992,7 @@ function calcWP(){
   const load=m2*w/1000+pers*W.ww_kw_je_person;
   const dev=pick(W.geraete,load*1.05,'kw',d=>!brand||d.hersteller===brand);
   const it=[],t=[];
-  if(dev){it.push(L('wp',`Luft-Wasser-Wärmepumpe ${devName(dev)} (${num(+dev.kw,0)} kW)`,1,'Stk.',dev.preis));}
+  if(dev){it.push(L('wp',`Luft-Wasser-Wärmepumpe ${devName(dev)} (${num(+dev.kw,0)} kW${dev.ek?'; Energieeffizienzklasse Raumheizung '+dev.ek:''})`,1,'Stk.',dev.preis));}
   it.push(L('wp','Hydraulikpaket: Pufferspeicher, Warmwasserspeicher, Armaturen, Rohrleitungen, Kleinmaterial',1,'Pausch.',M.hydraulik_paket));
   t.push(['Montage, hydraulischer Abgleich und Inbetriebnahme',+H.montage_h]);
   if(old==='oel'){it.push(L('wp','Entsorgung Ölheizung und Tankreinigung',1,'Pausch.',M.entsorgung_oel));t.push(['Demontage Ölheizung',+H.demontage_oel_h])}
@@ -2526,7 +3009,7 @@ function calcWP(){
     const mx=(inc===40)?(+F.max_einkommen||80):+F.max;rate=Math.min(rate,mx);}
   const base=Math.min(gross,+F.kosten_max);const fund=base*rate/100;
   $('#wp-m2o').textContent=m2+' m²';$('#wp-po').textContent=pers;$('#wp-hko').textContent=hk+' Stk.';$('#wp-hkwrap').style.display=dist==='hk'?'flex':'none';
-  $('#wp-k1').textContent=num(load,1)+' kW';pics('#wp-pics',[dev]);$('#wp-k2').textContent=dev?`${num(+dev.kw,0)} kW`:'–';$('#wp-k2l').textContent=dev?devName(dev):'empfohlenes Gerät';$('#wp-k3').textContent=fund?eur(fund):'–';
+  $('#wp-k1').textContent=num(load,1)+' kW';pics('#wp-pics',[dev]);$('#wp-ek').innerHTML=dev&&dev.ek?`<span class="mc-ekl">${esc(devName(dev))}:</span>`+ekArrow(dev.ek,'alt',dev.label,'Raumheizung 55 °C','spaceheaters',devName(dev))+ekDb(dev.datenblatt,'spaceheaters'):'';$('#wp-k2').textContent=dev?`${num(+dev.kw,0)} kW`:'–';$('#wp-k2l').textContent=dev?devName(dev):'empfohlenes Gerät';$('#wp-k3').textContent=fund?eur(fund):'–';
   return {items:it,fund,fundTxt:fund?`KfW-Heizungsförderung (Programm 458): ${parts.join(' + ')}${(rate===+F.max||rate===+(F.max_einkommen||80))&&parts.length>2?` (Höchstsatz ${rate} %)`:''} = ${rate} % von ${eur(base)} förderfähigen Kosten`:''};
 }
 let pvBuilt=false;
@@ -2560,21 +3043,36 @@ function calcPV(){
   $('#pv-note').textContent=`${mods} × ${devName(mod)}${wr?', '+devName(wr):''}${sp?', '+devName(sp):''}. Eigenverbrauch ca. ${Math.round(self/yieldK*100)} %, Einspeisung ${num(P.einspeisung*100,2)} ct/kWh, Strompreis ${num(P.strompreis*100,0)} ct/kWh. Amortisation nach etwa ${num(cost/save,0)} Jahren.`;
   return {items:it,fund:0,info:{kwp,yieldK,save}};
 }
+
+const ekTxt=d=>d&&(d.ek_kuehl||d.ek_heiz)?`; Energieeffizienz Kühlen ${d.ek_kuehl||'–'} / Heizen ${d.ek_heiz||'–'}`:'';
+function klSpecs(d,multiIn){const s=[['Kühlleistung',d.kw?num(+d.kw,1)+' kW':''],['Geräteklasse',d.klasse==='pre'?'Premium':d.klasse==='std'?'Standard':''],['SEER (Kühlen)',d.seer?num(+d.seer,1):''],['SCOP (Heizen)',d.scop?num(+d.scop,1):''],['Schalldruck innen ab',d.schall?num(+d.schall,0)+' dB(A)':''],['Kältemittel',d.kaeltemittel||'']].filter(x=>x[1]);
+  return s.length?`<dl class="mc-dl">${s.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`:''}
+function klCard(d,o){if(!d)return '';const img=d.bild?`<img src="${esc(d.bild)}" alt="${esc(devName(d))}" loading="lazy">`:`<span class="mc-ph" aria-hidden="true"><svg viewBox="0 0 64 40"><rect x="3" y="6" width="58" height="22" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 22h40M16 33l-3 5M32 33v5M48 33l3 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>`;
+  const ek=o.noEk?'<p class="mc-n">Energielabel und Effizienzklassen gelten für die Kombination mit dem Außengerät.</p>':`<div class="mc-ek">${ekArrow(d.ek_kuehl,'alt',d.label,'Kühlen','airconditioners',devName(d))}${ekArrow(d.ek_heiz,'alt',d.label,'Heizen','airconditioners',devName(d))}${ekDb(d.datenblatt,'airconditioners')}</div>`;
+  const opts=o.alts?`<label class="mc-sel"><span>Anderes Modell wählen</span><select class="fld" data-room="${o.i}"><option value="">Empfehlung: ${esc(devName(o.rec||d))}</option>${o.alts.filter(x=>x!==o.rec).map(x=>{const diff=(x.preis-(o.rec?o.rec.preis:x.preis))*(1+VAT()/100);return `<option value="${esc(devName(x))}"${devName(x)===o.sel?' selected':''}>${esc(devName(x))} · ${num(+x.kw,1)} kW · ${x.klasse==='pre'?'Premium':'Standard'}${x.ek_kuehl?' · '+x.ek_kuehl:''} · ${diff>=0?'+':'−'} ${eur(Math.abs(diff))}</option>`}).join('')}</select></label>`:'';
+  return `<article class="mcard"><div class="mc-img">${img}</div><div class="mc-b"><span class="mc-tag${o.sel&&devName(d)===o.sel?' own':''}">${o.tag}</span><h4>${esc(devName(d))}</h4><p class="mc-for">${esc(o.for)}</p>${o.need&&+d.kw<o.need?'<p class="mc-n" style="color:#b45309">Hinweis: Dieses Gerät ist für den Raum etwas knapp bemessen – an heißen Tagen kühlt es langsamer.</p>':''}${ek}<details class="mc-det"><summary>Technische Daten</summary>${klSpecs(d)}${d.datenblatt?'':'<p class="mc-n">Ausführliches Datenblatt auf Anfrage oder in der EU-Produktdatenbank EPREL.</p>'}</details>${opts}</div></article>`}
+function klModels(od){const el=$('#kl-models');if(!el)return;const n=rooms.length;
+  let h=rooms.map((r,i)=>klCard(r.dev,{i,need:r.need,rec:r.rec,alts:r.alts,sel:r.sel,tag:r.sel&&r.dev&&devName(r.dev)===r.sel?'Ihre Auswahl':'Unsere Empfehlung',for:`${n>1?'Innengerät für ':'Für '}${ROOMT[r.t][0]}, ${r.m2} m² · Bedarf ca. ${num(r.need,1)} kW`,noEk:n>1})).join('');
+  if(od)h=klCard(od,{tag:'Außengerät',for:`Multi-Split-Außengerät für ${n} Innengeräte · ${od.anschluesse} Anschlüsse`})+h;
+  el.innerHTML=h}
 function calcKlima(){
   const K=C.klima,M=K.material,H=K.arbeit;fillBrands('#kl-brand',[...K.geraete_single,...K.innengeraete_multi]);
   const ins=+rad('kl-ins'),cls=rad('kl-cls'),len=val('kl-len'),out=rad('kl-out'),n=rooms.length,brand=$('#kl-brand').value;
   const fb=d=>(!brand||d.hersteller===brand);
   rooms.forEach(r=>{r.need=r.m2*K.kw_je_m2*ROOMT[r.t][1]*ins});
   const it=[],t=[];
-  if(n===1){const r=rooms[0];let d=pick(K.geraete_single,r.need,'kw',x=>fb(x)&&x.klasse===cls);r.dev=d;
-    if(d)it.push(L('klima',`Split-Klimagerät ${devName(d)} (${num(+d.kw,1)} kW) für ${ROOMT[r.t][0]}, ${r.m2} m²`,1,'Stk.',d.preis));
+  const choose=(list,r,flt)=>{const rec=pick(list,r.need,'kw',flt);r.rec=rec;r.alts=list.filter(x=>+x.kw>=r.need*.9&&+x.kw<=Math.max(r.need*2.2,2.6)).sort((a,b)=>a.preis-b.preis);const s=r.sel&&list.find(x=>devName(x)===r.sel);return s||rec};
+  if(n===1){const r=rooms[0];let d=choose(K.geraete_single,r,x=>fb(x)&&x.klasse===cls);r.dev=d;
+    if(d)it.push(L('klima',`Split-Klimagerät ${devName(d)} (${num(+d.kw,1)} kW${ekTxt(d)}) für ${ROOMT[r.t][0]}, ${r.m2} m²`,1,'Stk.',d.preis));
     it.push(L('klima','Grundmaterial: Kältemittel- und Kondensatleitung bis 3 m, Wandkonsole, Kabelkanal',1,'Pausch.',M.grund_single));
     t.push(['Montage, Dichtheitsprüfung, Evakuierung, Inbetriebnahme',+H.single_h]);}
   else{const tot=rooms.reduce((a,r)=>a+r.need,0);
-    rooms.forEach(r=>{r.dev=pick(K.innengeraete_multi,r.need,'kw',x=>fb(x)&&x.klasse===cls)});
+    const IM=K.innengeraete_multi,selD=rooms.map(r=>r.sel&&IM.find(x=>devName(x)===r.sel)).find(Boolean),r0=pick(IM,rooms[0].need,'kw',x=>fb(x)&&x.klasse===cls);
+    const B=brand||(selD&&selD.hersteller)||(r0&&r0.hersteller)||'';const IB=IM.filter(x=>!B||x.hersteller===B);
+    rooms.forEach(r=>{r.dev=choose(IB,r,x=>x.klasse===cls)});
     const sumKw=rooms.reduce((a,r)=>a+(r.dev?+r.dev.kw:0),0);
-    const od=pick(K.aussengeraete_multi.filter(x=>+x.anschluesse>=n),Math.max(tot,sumKw*.75),'kw',fb)||K.aussengeraete_multi.slice().sort((x,y)=>y.anschluesse-x.anschluesse)[0];
-    picOD=od;if(od)it.push(L('klima',`Multi-Split-Außengerät ${devName(od)} (${num(+od.kw,1)} kW, ${od.anschluesse} Anschlüsse)`,1,'Stk.',od.preis));
+    const OB=K.aussengeraete_multi.filter(x=>!B||x.hersteller===B);const od=pick(OB.filter(x=>+x.anschluesse>=n),Math.max(tot,sumKw*.75),'kw')||OB.slice().sort((x,y)=>y.anschluesse-x.anschluesse)[0];
+    picOD=od;if(od)it.push(L('klima',`Multi-Split-Außengerät ${devName(od)} (${num(+od.kw,1)} kW, ${od.anschluesse} Anschlüsse${ekTxt(od)})`,1,'Stk.',od.preis));
     rooms.forEach(r=>{if(r.dev)it.push(L('klima',`Innengerät ${devName(r.dev)} (${num(+r.dev.kw,1)} kW) für ${ROOMT[r.t][0]}, ${r.m2} m²`,1,'Stk.',r.dev.preis))});
     it.push(L('klima','Grundmaterial je Innengerät: Leitungen bis 3 m, Kondensat, Kabelkanal',n,'Stk.',M.grund_je_innen));
     t.push([`Montage Multi-Split mit ${n} Innengeräten, Dichtheitsprüfung, Evakuierung, Inbetriebnahme`,+H.multi_basis_h+n*H.multi_je_innen_h]);}
@@ -2588,6 +3086,7 @@ function calcKlima(){
   const lb=labour('klima',t);if(lb)it.push(lb);
   $('#kl-leno').textContent=len+' m';$('#kl-wart').textContent=eur(K.wartung_jahr);$('#kl-type').textContent=n===1?'Ein Raum: Single-Split-Anlage.':`${n} Räume an einem Außengerät: Multi-Split-Anlage.`;
   pics('#kl-pics',n===1?[rooms[0].dev]:[picOD,...rooms.map(r=>r.dev)]);if(n===1)picOD=null;
+  klModels(n===1?null:picOD);
   return {items:it.filter(x=>x.net>0||x.unit==='Std.'),fund:0,maint:chk('kl-maint')};
 }
 function calcSmart(){
@@ -2667,11 +3166,13 @@ function renderDoc(){
   ${d.fund?`<div class="box"><b>Förderung:</b> ${esc(d.res.wp.fundTxt)}. Der Antrag muss vor Auftragserteilung bei der KfW gestellt werden; wir unterstützen Sie dabei. Maßgeblich ist allein der Zuschussbescheid.</div>`:''}
   ${pv?`<div class="box"><b>Ihre PV-Anlage:</b> ${num(pv.kwp,1)} kWp, erwarteter Ertrag ca. ${num(Math.round(pv.yieldK/50)*50)} kWh pro Jahr, Ersparnis ca. ${eur(pv.save)} pro Jahr. Auf Lieferung und Installation von PV-Anlage und Speicher fällt gemäß § 12 Abs. 3 UStG keine Umsatzsteuer an.</div>`:''}
   ${d.keys.includes('klima')&&d.res.klima.maint?`<div class="box"><b>Wartungsvertrag Klimaanlage:</b> jährliche Inspektion für ${eur(C.klima.wartung_jahr)} pro Jahr (separater Vertrag).</div>`:''}
+  ${d.keys.includes('klima')&&($('#kl-wish').value||'').trim()?`<div class="box"><b>Ihr Wunschgerät Klimaanlage:</b> ${esc($('#kl-wish').value.trim())} – wir prüfen Verfügbarkeit und Preis und berücksichtigen es im verbindlichen Angebot.</div>`:''}
+  ${d.keys.includes('klima')?'<p style="font-size:12px;color:#555">Energieeffizienzklassen nach Herstellerangaben (Energielabel und Produktdatenblatt: EU-Datenbank EPREL). Split-Klimageräte enthalten fluorierte Treibhausgase (R32) und werden ausschließlich durch zertifizierte Fachkräfte installiert.</p>':''}
   ${c.msg?`<div class="box"><b>Ihre Anmerkungen:</b> ${esc(c.msg)}</div>`:''}
   <div class="box" style="border-left:4px solid #E2001A"><b>Hinweise:</b> Dies ist ein unverbindliches Richtangebot auf Basis Ihrer Online-Angaben und typischer Einbausituationen. Nach einer kostenlosen Besichtigung vor Ort erhalten Sie ein verbindliches Festpreisangebot. Kältetechnische Arbeiten erfolgen gemäß F-Gase-Verordnung durch zertifiziertes Fachpersonal. Zahlungsbedingungen: 30 % bei Auftragserteilung, Rest nach Fertigstellung.</div>
   <div class="sigrow"><p class="sig">Mit freundlichen Grüßen<br><br><b>Norbert Ulshöfer</b><br>Elektrotechnikermeister · Geschäftsführer</p><div class="doc-qr">${$('.vcard-qr').innerHTML.replace(/qrlg0/g,'qrlgd')}<small>Unsere Visitenkarte</small></div></div>
   <p style="font-size:11px;color:#666;margin-top:26px">Elektrotechnik Ulshöfer GmbH · Amtsgericht Mannheim HRB 700984 · USt-IdNr. DE250688504 · Geschäftsführer: Norbert Ulshöfer</p>`;
-  const sum=`Angebots-Nr.: ${docNr}\nBereiche: ${d.keys.map(k=>NAMES[k]).join(', ')}\nRichtpreis brutto: ${eur(d.gross)}${d.fund?`\nvoraussichtlicher KfW-Zuschuss: ${eur(d.fund)}`:''}\n\nPositionen:\n${d.items.map(it=>`- ${it.txt} (${it.qty.toLocaleString('de-DE',{maximumFractionDigits:2})} ${it.unit})`).join('\n')}\n\nName: ${c.name}\nAdresse: ${c.str} ${c.ort}\nE-Mail: ${c.mail}\nTelefon: ${c.tel}\n\nAnmerkungen: ${c.msg}`;
+  const sum=`Angebots-Nr.: ${docNr}\nBereiche: ${d.keys.map(k=>NAMES[k]).join(', ')}\nRichtpreis brutto: ${eur(d.gross)}${d.fund?`\nvoraussichtlicher KfW-Zuschuss: ${eur(d.fund)}`:''}\n\nPositionen:\n${d.items.map(it=>`- ${it.txt} (${it.qty.toLocaleString('de-DE',{maximumFractionDigits:2})} ${it.unit})`).join('\n')}\n\nName: ${c.name}\nAdresse: ${c.str} ${c.ort}\nE-Mail: ${c.mail}\nTelefon: ${c.tel}${d.keys.includes('klima')&&($('#kl-wish').value||'').trim()?'\nWunschgerät Klima: '+$('#kl-wish').value.trim():''}\n\nAnmerkungen: ${c.msg}`;
   $('#docMail').textContent='Per E-Mail an uns senden';$('#docMail').href='mailto:info@elektro-ulshoefer.de?subject='+encodeURIComponent('Angebotsanfrage '+docNr)+'&body='+encodeURIComponent(sum);
   $('#docOv').hidden=false;document.body.style.overflow='hidden';$('#docClose').focus();document.title=`Angebot ${docNr} – Elektrotechnik Ulshöfer`;
 }
@@ -2840,6 +3341,7 @@ route();calc();
   const cats=[...new Set(P.map(p=>p.kategorie).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'de'));
   const PH='<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="8" width="36" height="48" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="36" r="11" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="22" cy="16" r="2" fill="currentColor"/><circle cx="29" cy="16" r="2" fill="currentColor"/></svg>';
 
+  const grpOf=p=>{const k=(p.kategorie||'')+' '+(p.modell||'');return /trockner/i.test(k)?'tumbledriers':/wasch/i.test(k)?'washingmachines2019':/spül/i.test(k)?'dishwashers2019':/kühl|gefrier/i.test(k)?'refrigeratingappliances2019':/back|herd/i.test(k)?'ovens':/klima/i.test(k)?'airconditioners':''};
   function filters(){
     $('#shopBrands').innerHTML=[['','Alle Marken'],...brands.map(b=>[b,b])].map(([v,l])=>`<label class="chip"><input type="radio" name="sb" value="${esc(v)}"${v===brand?' checked':''}><span>${esc(l)}</span></label>`).join('');
     $('#shopCat').innerHTML=`<option value="">Alle Kategorien</option>`+cats.map(c=>`<option${c===cat?' selected':''}>${esc(c)}</option>`).join('');
@@ -2851,7 +3353,9 @@ route();calc();
       <div class="prod-img">${p.bild?`<img src="${esc(p.bild)}" alt="${esc(p.partner+' '+p.modell)}" loading="lazy">`:`<span class="ph">${PH}<small>Bild folgt</small></span>`}</div>
       <p class="prod-b">${esc(p.partner)} · ${esc(p.kategorie||'')}</p>
       <h3>${esc(p.modell)}</h3>${p.info?`<p class="prod-i">${esc(p.info)}</p>`:''}
-      <p class="prod-p"><b>${money(+p.preis)}</b><small>inkl. MwSt.${+p.montage?` · Anschluss + ${money(+p.montage)}`:''}</small></p>
+      <p class="prod-p"><b>${money(+p.preis)}</b><small>inkl. MwSt., zzgl. <a href="#kundeninfo-lieferung">Lieferung</a>${+p.montage?` · Anschluss + ${money(+p.montage)}`:''}</small></p>
+      ${p.ek?`<div class="mc-ek">${ekArrow(p.ek,p.skala,p.label,'',grpOf(p),p.partner+' '+p.modell)}${ekDb(p.datenblatt,grpOf(p))}</div>`:''}
+      ${/klima/i.test(p.kategorie||'')?'<p class="fgas">Installation nur durch zertifizierten Fachbetrieb (F-Gase-Verordnung) – bei uns inklusive.</p>':''}
       <button type="button" class="btn ${inC?'btn-tone':''} btn-block" data-add="${i}" aria-pressed="${!!inC}">${inC?'✓ Ausgewählt':'Auswählen'}</button></article>`}).join('');
   }
   const deliver=()=>{const r=$('input[name="o-del"]:checked');return !r||r.value==='1'};
@@ -2874,6 +3378,8 @@ route();calc();
     $('#cartTime').textContent=d?(S.lieferzeit||''):'Abholung im Fachgeschäft, Fabrikstraße 3 – wir melden uns, sobald Ihr Gerät bereitsteht.';
     $('#cartBarTxt').textContent=`${cart.reduce((a,c)=>a+c.qty,0)} Gerät${cart.reduce((a,c)=>a+c.qty,0)>1?'e':''} · ${money(tot)}`;
     $('#cartBar').hidden=false;
+    $('#o-earlyw').hidden=!cart.some(x=>x.mont&&+P[x.i].montage);
+    $('#ordSum').innerHTML=`<h3>Ihre Bestellanfrage im Überblick</h3><ul>${cart.map(x=>{const p=P[x.i];return `<li><b>${x.qty} × ${esc(p.partner)} ${esc(p.modell)}</b>${p.info?` – ${esc(p.info)}`:''}${p.ek?` · Energieeffizienzklasse ${esc(p.ek)}`:''}</li>`}).join('')}</ul><p><b>Gesamtpreis: ${money(tot)}</b> inkl. ${VAT()} % MwSt.${d?' und Lieferung':''} · ${d?esc(S.lieferzeit||''):'Abholung im Fachgeschäft'}</p>`;
   }
   $('#shopBrands').addEventListener('change',e=>{brand=e.target.value;grid()});
   $('#shopCat').addEventListener('change',e=>{cat=e.target.value;grid()});
@@ -2886,7 +3392,7 @@ route();calc();
   $('#cartBarBtn').addEventListener('click',e=>{e.preventDefault();$('#cart').scrollIntoView({behavior:reduce?'auto':'smooth'})});
 
   $('#ordForm').addEventListener('submit',e=>{e.preventDefault();if($('#o-hp').value||!cart.length)return;
-    if(!validate(e.target,[['o-name',notEmpty],['o-str',notEmpty],['o-ort',notEmpty],['o-tel',el=>(el.value.match(/\d/g)||[]).length>=6],['o-mail',isMail],['o-dsgvo',el=>el.checked]]))return;
+    if(!validate(e.target,[['o-name',notEmpty],['o-str',notEmpty],['o-ort',notEmpty],['o-tel',el=>(el.value.match(/\d/g)||[]).length>=6],['o-mail',isMail],['o-dsgvo',el=>el.checked],['o-agb',el=>el.checked]]))return;
     orderDoc()});
   function orderDoc(){
     const now=new Date(),ds=x=>x.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'});
@@ -2902,10 +3408,11 @@ route();calc();
     <table class="sum"><tr class="tot"><td>Gesamtbetrag inkl. MwSt.</td><td>${money(tot)}</td></tr><tr><td>darin enthalten ${VAT()} % MwSt.</td><td>${money(vat)}</td></tr></table>
     <div class="box"><b>${d?'Lieferung':'Abholung'}:</b> ${d?esc(S.lieferzeit||'Liefertermin nach Absprache.'):'im Fachgeschäft, Fabrikstraße 3, 97922 Lauda-Königshofen.'}${c.date?`<br><b>Ihr Wunschtermin:</b> ${esc(c.date)}`:''}</div>
     ${c.msg?`<div class="box"><b>Ihre Anmerkungen:</b> ${esc(c.msg)}</div>`:''}
-    <div class="box" style="border-left:4px solid #E2001A"><b>Hinweise:</b> Dies ist eine unverbindliche Bestellanfrage. Der Kaufvertrag kommt erst mit unserer Auftragsbestätigung zustande. Liefertermin und Zahlungsweise stimmen wir mit Ihnen ab. Ihr gesetzliches Widerrufsrecht bei Fernabsatzverträgen bleibt unberührt.</div>
+    ${$('#o-early').checked&&!$('#o-earlyw').hidden?'<div class="box"><b>Ihr Wunsch:</b> Beginn von Anschluss/Montage vor Ablauf der Widerrufsfrist (ausdrücklich verlangt).</div>':''}
+    <div class="box" style="border-left:4px solid #E2001A"><b>Hinweise:</b> Dies ist eine unverbindliche Bestellanfrage. Der Kaufvertrag kommt erst mit unserer Auftragsbestätigung zustande. Liefertermin und Zahlungsweise stimmen wir mit Ihnen ab (${esc(S.zahlung||'')}). Als Verbraucher haben Sie ein gesetzliches Widerrufsrecht von 14 Tagen – Details in unserer Widerrufsbelehrung; widerrufen können Sie auch online unter „Vertrag widerrufen“ auf unserer Website (Anfrage-Nr. ${nr} bereithalten). Es gilt die gesetzliche Mängelhaftung.</div>
     <div class="sigrow"><p class="sig">Mit freundlichen Grüßen<br><br><b>Elektrotechnik Ulshöfer GmbH</b></p><div class="doc-qr">${$('.vcard-qr').innerHTML.replace(/qrlg0/g,'qrlgd')}<small>Unsere Visitenkarte</small></div></div>
     <p style="font-size:11px;color:#666;margin-top:26px">Elektrotechnik Ulshöfer GmbH · Amtsgericht Mannheim HRB 700984 · USt-IdNr. DE250688504 · Geschäftsführer: Norbert Ulshöfer</p>`;
-    const body=`Bestellanfrage ${nr}\n\n${L.map(x=>`- ${x.t}: ${x.q} × ${money(x.e)} = ${money(x.q*x.e)}`).join('\n')}\n\nGesamt inkl. MwSt.: ${money(tot)}\n${d?'Lieferung nach Hause':'Abholung im Fachgeschäft'}${c.date?'\nWunschtermin: '+c.date:''}\n\nName: ${c.anr?c.anr+' ':''}${c.name}\nAdresse: ${c.str}, ${c.ort}\nTelefon: ${c.tel}\nE-Mail: ${c.mail}${c.msg?'\n\nAnmerkungen: '+c.msg:''}`;
+    const body=`Bestellanfrage ${nr}\n\n${L.map(x=>`- ${x.t}: ${x.q} × ${money(x.e)} = ${money(x.q*x.e)}`).join('\n')}\n\nGesamt inkl. MwSt.: ${money(tot)}\n${d?'Lieferung nach Hause':'Abholung im Fachgeschäft'}${c.date?'\nWunschtermin: '+c.date:''}${$('#o-early').checked&&!$('#o-earlyw').hidden?'\nMontage vor Ablauf der Widerrufsfrist ausdrücklich gewünscht.':''}\nKundeninformationen und Widerrufsbelehrung zur Kenntnis genommen.\n\nName: ${c.anr?c.anr+' ':''}${c.name}\nAdresse: ${c.str}, ${c.ort}\nTelefon: ${c.tel}\nE-Mail: ${c.mail}${c.msg?'\n\nAnmerkungen: '+c.msg:''}`;
     $('#docMail').href='mailto:info@elektro-ulshoefer.de?subject='+encodeURIComponent('Bestellanfrage Hausgeräte '+nr)+'&body='+encodeURIComponent(body);
     $('#docMail').textContent='Bestellanfrage per E-Mail senden';
     $('#docOv').hidden=false;document.body.style.overflow='hidden';$('#docClose').focus();document.title=`Bestellanfrage ${nr} – Elektrotechnik Ulshöfer`;
