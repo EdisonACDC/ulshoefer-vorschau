@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.7.0">
+<meta name="uls-version" content="0.7.1">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -694,6 +694,13 @@ body.chat-open .chat-fab{display:none}
 .prod .btn{white-space:nowrap;padding:0 10px}.prod-p small{display:block;line-height:1.35;margin-top:2px}
 
 .nav a{white-space:nowrap}
+/* So funktioniert's – Hausgeräte (v0.7.1) */
+.shop-steps{margin:-8px auto 28px}
+.ssteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:ss}
+.ssteps li{counter-increment:ss;position:relative;background:var(--tone);border-radius:var(--r);padding:16px 16px 16px 62px;min-width:0}
+.ssteps li::before{content:counter(ss);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:grid;place-items:center}
+.ssteps b{display:block;color:var(--ink);font-size:16px}.ssteps span{display:block;font-size:14.5px;color:var(--text);margin-top:2px}
+@media (max-width:760px){.ssteps{grid-template-columns:1fr;gap:8px}.ssteps li{padding:12px 12px 12px 54px}.ssteps li::before{left:12px;top:12px}}
 
 </style>
 </head>
@@ -719,7 +726,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.7.0</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.7.1</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1042,6 +1049,14 @@ body.chat-open .chat-fab{display:none}
     <div><p class="kicker">Fachgeschäft · Online bestellen</p><h1>Hausgeräte bestellen – geliefert und angeschlossen.</h1></div>
     <p class="lead">Wählen Sie Ihr Gerät: Wir liefern, schließen fachgerecht an und nehmen auf Wunsch Ihr Altgerät mit. Sie senden uns eine Bestellanfrage und erhalten von uns eine Auftragsbestätigung mit Liefertermin.</p>
   </section>
+  <section class="frame shop-steps" aria-label="So funktioniert's">
+    <h2 class="sr">So funktioniert's</h2>
+    <ol class="ssteps">
+      <li><b>Gerät auswählen</b><span>Marke und Kategorie filtern, auf „Auswählen“ tippen – auch mehrere Geräte.</span></li>
+      <li><b>Lieferung &amp; Anschluss wählen</b><span>Lieferung nach Hause oder Abholung, Anschluss durch uns, Mitnahme des Altgeräts.</span></li>
+      <li><b>Bestellanfrage senden</b><span>Angaben eintragen und absenden. Sie erhalten von uns eine Auftragsbestätigung mit Liefertermin.</span></li>
+    </ol>
+  </section>
   <section class="frame shop" aria-label="Hausgeräte">
     <div class="shop-main">
       <div class="shop-filter">
@@ -1361,7 +1376,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.7.0</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.7.1</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
