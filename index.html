@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.7.1">
+<meta name="uls-version" content="0.8.0">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -726,7 +726,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.7.1</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.8.0</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1212,7 +1212,6 @@ body.chat-open .chat-fab{display:none}
           <label class="tick"><input type="checkbox" id="sm-light" checked><span>Licht in allen Räumen schalten und dimmen</span></label>
           <label class="tick"><input type="checkbox" id="sm-heat" checked><span>Heizung je Raum regeln</span></label>
           <label class="tick"><input type="checkbox" id="sm-sec"><span>Sicherheit<small>Tür- und Fensterkontakte, vernetzte Rauchmelder, Alarm aufs Handy</small></span></label>
-          <label class="tick"><input type="checkbox" id="sm-ha"><span>Anbindung an Home Assistant</span></label>
         </div>
         <div class="q"><span class="ql">Rollläden und Jalousien</span><div class="rng"><input type="range" id="sm-roll" min="0" max="24" value="6" aria-label="Anzahl Rollläden"><output id="sm-rollo"></output></div></div>
       </div>
@@ -1376,7 +1375,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.7.1</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.8.0</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -2086,10 +2085,6 @@ window.ULS_CONFIG = {
         "preis": 450,
         "h": 4
       }
-    },
-    "home_assistant": {
-      "preis": 0,
-      "h": 4
     }
   },
   "elektro": {
@@ -2360,7 +2355,7 @@ const SVC={
   pv:{t:'Photovoltaik und Speicher',c:'#2b2b2b',d:'Als TÜV-zertifizierter Fronius Service Partner Plus planen, montieren und warten wir Anlagen mit Speicher und melden sie beim Netzbetreiber an. Auf Anlage und Speicher fallen 0 % Mehrwertsteuer an.',p:()=>{const pv=C.pv,m=pv.module[0];if(!m)return '';const n=Math.ceil(8000/m.wp),wr=pick(pv.wechselrichter,8*.8),sp=pv.speicher[0];const net=n*(+m.preis+ +pv.material.unterkonstruktion_je_modul)+(wr?+wr.preis:0)+(sp?+sp.preis:0)+ +pv.material.kabel_kleinmaterial+ +pv.material.geruest+ +pv.material.anmeldung+ +pv.material.zaehlerschrank+(pv.arbeit.basis_h+n*pv.arbeit.je_modul_h+(sp?pv.arbeit.speicher_h:0))*RATE();return `8 kWp${sp?' mit Speicher':''} ab ca. ${eur(r100(net))}, 0 % MwSt.`}},
   wp:{t:'Wärmepumpe',c:'#E2001A',d:'Luft-Wasser-Wärmepumpen für Neubau und Bestand, abgestimmt auf Ihre Heizkörper. Den KfW-Zuschuss von bis zu 70 % (bei geringem Einkommen bis 80 %) beantragen Sie mit unserer Unterstützung.',p:()=>{const w=C.wp,d=w.geraete.slice().sort((x,y)=>x.preis-y.preis)[0];if(!d)return '';return `Im Bestand ab ca. ${eur(r100(gr(+d.preis+ +w.material.hydraulik_paket+ +w.material.entsorgung_gas+(w.arbeit.montage_h+w.arbeit.demontage_gas_h)*RATE())))} vor Förderung, inkl. MwSt.`}},
   klima:{t:'Klimaanlage',c:'#2b2b2b',d:'Single- und Multi-Split-Geräte, die im Sommer kühlen und in der Übergangszeit heizen. Den Kältekreis bearbeiten zertifizierte Fachkräfte nach F-Gase-Verordnung.',p:()=>{const k=C.klima,d=k.geraete_single.slice().sort((x,y)=>x.preis-y.preis)[0];if(!d)return '';return `Ein Raum ab ca. ${eur(r100(gr(+d.preis+ +k.material.grund_single+ +k.material.kernbohrung+ +k.material.stromkreis+(k.arbeit.single_h+k.arbeit.kernbohrung_h+k.arbeit.stromkreis_h)*RATE())))}, inkl. Montage und MwSt.`}},
-  smart:{t:'Smart Home',c:'#E2001A',d:'Licht, Rollläden, Heizung und Sicherheit vernetzt – per Funk im Bestand oder KNX im Neubau. Bedienung per Taster, App oder Sprache, auf Wunsch mit Home Assistant.',p:()=>{const s=C.smart.funk;return `Funk-Einstieg ab ca. ${eur(r100(gr(+s.zentrale.preis+2*s.licht.preis+(s.zentrale.h+2*s.licht.h)*RATE())))}, inkl. MwSt.`}}
+  smart:{t:'Smart Home',c:'#E2001A',d:'Licht, Rollläden, Heizung und Sicherheit vernetzt – per Funk im Bestand oder KNX im Neubau. Bedienung per Taster, App oder Sprache.',p:()=>{const s=C.smart.funk;return `Funk-Einstieg ab ca. ${eur(r100(gr(+s.zentrale.preis+2*s.licht.preis+(s.zentrale.h+2*s.licht.h)*RATE())))}, inkl. MwSt.`}}
 };
 $$('[data-from]').forEach(el=>{const s=SVC[el.dataset.from];if(s)el.textContent=s.p()});
 
@@ -2521,7 +2516,6 @@ function calcSmart(){
   if(chk('sm-heat')){it.push(L('smart',`${S.name}: Einzelraum-Temperaturregelung`,r,'Raum',S.heizung.preis));t.push([`Heizung (${r} Räume)`,r*S.heizung.h])}
   if(roll){it.push(L('smart',`${S.name}: Rollladen-/Jalousieaktor`,roll,'Stk.',S.rollladen.preis));t.push([`Rollläden (${roll} Stk.)`,roll*S.rollladen.h])}
   if(chk('sm-sec')){it.push(L('smart',`${S.name}: Sicherheitspaket (Tür-/Fensterkontakte, Rauchmelder, Alarmierung)`,1,'Pausch.',S.sicherheit.preis));t.push(['Sicherheit',+S.sicherheit.h])}
-  if(chk('sm-ha')){const h=C.smart.home_assistant;if(+h.preis)it.push(L('smart','Home-Assistant-Hardware',1,'Stk.',h.preis));t.push(['Anbindung Home Assistant',+h.h])}
   const lb=labour('smart',t);if(lb)it.push(lb);
   $('#sm-roomso').textContent=r;$('#sm-rollo').textContent=roll;
   return {items:it,fund:0};
@@ -2713,7 +2707,7 @@ route();calc();
     [/(waermepumpe|heizung|oelheizung|gasheizung|nachtspeicher|heizkoerper|dimplex)/,()=>sector('wp')],
     [/(photovolt|\bpv\b|solar|speicher|batterie|wechselrichter|fronius|balkonkraftwerk)/,()=>sector('pv')],
     [/(klima|kuehl|split|hitze|toshiba|daikin|mitsubishi)/,()=>sector('klima')],
-    [/(smart.?home|loxone|knx|homematic|rolllaeden|rollladen|rollo|home assistant|automation)/,()=>sector('smart')],
+    [/(smart.?home|loxone|knx|homematic|rolllaeden|rollladen|rollo|automation)/,()=>sector('smart')],
     [/(elektro|installation|zaehlerschrank|steckdose|leitung|verkabel|neubau|sanierung|wallbox|ladestation|e-?auto|ueberspannung|netzwerk|lan\b)/,()=>sector('elektro')],
     [/(wartung|e-?check|pruefung|service|reparatur|kundendienst)/,service],
     [/(preis|kosten|kostet|teuer|angebot|rechner|richtpreis|was kostet)/,askPrice],
