@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.9.5">
+<meta name="uls-version" content="0.9.6">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -752,9 +752,9 @@ body.chat-open .chat-fab{display:none}
 .ek:hover .ek-a,.ek:focus-visible .ek-a{filter:brightness(.92)}
 .ek-db{font-size:14px;font-weight:600}
 .mcards{display:grid;gap:12px;margin-top:12px}
-.mcard{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}
-.mc-img{display:flex;align-items:center;justify-content:center;background:#f6f7f8;border-radius:12px;min-height:110px;overflow:hidden}
-.mc-img img{width:100%;height:110px;object-fit:contain}
+.mcard{display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}
+.mc-img{display:flex;align-items:center;justify-content:center;background:#f6f7f8;border-radius:12px;min-height:110px;overflow:hidden;align-self:start}
+.mc-img img{width:100%;height:auto;display:block}
 .mc-ph{color:#9aa1aa;width:70px}
 .mc-b{min-width:0}
 .mc-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#1f8a4c;background:#e8f5ec;border-radius:999px;padding:3px 10px}
@@ -778,7 +778,7 @@ body.chat-open .chat-fab{display:none}
 .flegal .wlink{font-weight:800;text-decoration:underline}
 .draftnote{font-size:14px;background:#fff4e5;border-left:4px solid #f39200;border-radius:8px;padding:10px 14px}
 .lead-s{color:var(--muted)}
-@media (max-width:560px){.mcard{grid-template-columns:minmax(0,1fr)}.mc-img{min-height:90px}.mc-img img{height:90px}}
+@media (max-width:560px){.mcard{grid-template-columns:minmax(0,1fr)}.mc-img{min-height:0}}
 
 </style>
 </head>
@@ -804,7 +804,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.9.5</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.9.6</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1599,7 +1599,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.5</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.6</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -1678,15 +1678,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 990,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-seiya.jpg",
         "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.1,
-        "scop": 4.0,
-        "schall": 21,
+        "ek_heiz": "A++",
+        "seer": 7.0,
+        "scop": 4.6,
+        "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%202%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B10E2KVG-E%20-%20RAS-10E2AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -1695,15 +1695,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1120,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-seiya.jpg",
         "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.1,
-        "scop": 4.0,
-        "schall": 21,
+        "ek_heiz": "A++",
+        "seer": 7.0,
+        "scop": 4.6,
+        "schall": 20,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%203%2C30%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B13E2KVG-E%20-%20RAS-13E2AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -1712,15 +1712,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1390,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-seiya.jpg",
         "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.1,
-        "scop": 4.0,
-        "schall": 22,
+        "ek_heiz": "A++",
+        "seer": 7.0,
+        "scop": 4.6,
+        "schall": 21,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%204%2C20%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B16E2KVG-E%20-%20RAS-16E2AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -1729,15 +1729,15 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 1590,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-seiya.jpg",
         "ek_kuehl": "A++",
         "ek_heiz": "A+",
-        "seer": 6.3,
-        "scop": 4.0,
-        "schall": 27,
+        "seer": 7.0,
+        "scop": 4.4,
+        "schall": 26,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%205%2C00%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B18E2KVG-E%20-%20RAS-18E2AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -1746,270 +1746,338 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 2090,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-seiya.jpg",
         "ek_kuehl": "A++",
         "ek_heiz": "A+",
-        "seer": 6.1,
-        "scop": 4.0,
-        "schall": 31,
+        "seer": 6.9,
+        "scop": 4.3,
+        "schall": 29,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%206%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B24E2KVG-E%20-%20RAS-24E2AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
-        "modell": "Shorai Curve RAS-B10P2KVSG-E",
+        "modell": "Shorai Curve RAS-B10P2KVSG-E / RAS-10P2AVSG-E",
         "kw": 2.5,
         "klasse": "pre",
         "preis": 1390,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.8,
-        "scop": 4.2,
-        "schall": 20,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Toshiba",
-        "modell": "Shorai Curve RAS-B13P2KVSG-E",
-        "kw": 3.5,
-        "klasse": "pre",
-        "preis": 1550,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.8,
-        "scop": 4.2,
-        "schall": 20,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Toshiba",
-        "modell": "Shorai Curve RAS-B16P2KVSG-E",
-        "kw": 4.6,
-        "klasse": "pre",
-        "preis": 1790,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.8,
-        "scop": 4.2,
-        "schall": 20,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Toshiba",
-        "modell": "Shorai Curve RAS-B18P2KVSG-E",
-        "kw": 5.0,
-        "klasse": "pre",
-        "preis": 1990,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.8,
-        "scop": 4.2,
-        "schall": 20,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Toshiba",
-        "modell": "Daisekai 10 RAS-B13S4KVPG-E",
-        "kw": 3.5,
-        "klasse": "pre",
-        "preis": 2390,
-        "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
         "ek_kuehl": "A+++",
         "ek_heiz": "A+++",
-        "seer": 10.5,
-        "scop": 5.2,
-        "schall": 20,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Daikin",
-        "modell": "Sensira FTXF25D / RXF25D",
-        "kw": 2.5,
-        "klasse": "std",
-        "preis": 1090,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.4,
-        "scop": 4.0,
-        "schall": 21,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Daikin",
-        "modell": "Sensira FTXF35D / RXF35D",
-        "kw": 3.5,
-        "klasse": "std",
-        "preis": 1240,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.3,
-        "scop": 4.0,
-        "schall": 21,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Daikin",
-        "modell": "Sensira FTXF50D / RXF50D",
-        "kw": 5.0,
-        "klasse": "std",
-        "preis": 1690,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": 6.21,
-        "scop": 4.06,
-        "schall": 30,
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Daikin",
-        "modell": "Perfera FTXM25R / RXM25R",
-        "kw": 2.5,
-        "klasse": "pre",
-        "preis": 1490,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A+++",
-        "ek_heiz": "A+++",
-        "seer": 8.7,
+        "seer": 8.6,
         "scop": 5.1,
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B10P2KVSG-E%20-%20RAS-10P2AVSG-E%20de.pdf"
       },
       {
-        "hersteller": "Daikin",
-        "modell": "Perfera FTXM35R / RXM35R",
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B13P2KVSG-E / RAS-13P2AVSG-E",
         "kw": 3.5,
         "klasse": "pre",
-        "preis": 1690,
+        "preis": 1550,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
         "ek_kuehl": "A+++",
-        "ek_heiz": "A++",
+        "ek_heiz": "A+++",
         "seer": 8.6,
-        "scop": 4.6,
+        "scop": 5.1,
         "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B13P2KVSG-E%20-%20RAS-13P2AVSG-E%20de.pdf"
       },
       {
-        "hersteller": "Daikin",
-        "modell": "Perfera FTXM50R / RXM50R",
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B16P2KVSG-E / RAS-16P2AVSG-E",
+        "kw": 4.6,
+        "klasse": "pre",
+        "preis": 1790,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 7.8,
+        "scop": 4.6,
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%204%2C60%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B16P2KVSG-E%20-%20RAS-16P2AVSG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B18P2KVSG-E / RAS-18P2AVSG-E",
         "kw": 5.0,
+        "klasse": "pre",
+        "preis": 1990,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 7.3,
+        "scop": 4.6,
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%205%2C00%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B18P2KVSG-E%20-%20RAS-18P2AVSG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B22P2KVSG-E / RAS-22P2AVSG-E",
+        "kw": 6.1,
+        "klasse": "pre",
+        "preis": 2290,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 7.3,
+        "scop": 4.6,
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%206%2C10%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B22P2KVSG-E%20-%20RAS-22P2AVSG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-B24P2KVSG-E / RAS-24P2AVSG-E",
+        "kw": 7.0,
+        "klasse": "pre",
+        "preis": 2490,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+++",
+        "seer": 6.3,
+        "scop": 4.1,
+        "schall": 28,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%207%2C00%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B24P2KVSG-E%20-%20RAS-24P2AVSG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 RAS-B10S4KVPG-E / RAS-10S4AVPG-E",
+        "kw": 2.5,
         "klasse": "pre",
         "preis": 2190,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A++",
-        "seer": 7.5,
-        "scop": 4.6,
-        "schall": 32,
+        "bild": "img/geraete/toshiba-daiseikai.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 10.7,
+        "scop": 5.3,
+        "schall": 24,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B10S4KVPG-E%20-%20RAS-10S4AVPG-E%20de.pdf"
       },
       {
-        "hersteller": "Mitsubishi Electric",
-        "modell": "MSZ-AY25VGK / MUZ-AY25VG",
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 RAS-B13S4KVPG-E / RAS-13S4AVPG-E",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 2390,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 9.7,
+        "scop": 5.2,
+        "schall": 26,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B13S4KVPG-E%20-%20RAS-13S4AVPG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Daiseikai 10 RAS-B18S4KVPG-E / RAS-18S4AVPG-E",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 2890,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-daiseikai.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.6,
+        "scop": 4.8,
+        "schall": 25,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Daiseikai%2010%20-%20WHITE%20-%205%2C00%20kW%20-%20R32%20-%20SET145%20-%20Home%20RAS-B18S4KVPG-E%20-%20RAS-18S4AVPG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Comfora FTXP25N / RXP25N",
         "kw": 2.5,
         "klasse": "std",
         "preis": 1150,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "",
-        "ek_heiz": "",
-        "seer": "",
-        "scop": "",
-        "schall": "",
+        "bild": "img/geraete/daikin-comfora.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.2,
+        "scop": 4.61,
+        "schall": 19,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N9.html"
       },
       {
-        "hersteller": "Mitsubishi Electric",
-        "modell": "MSZ-AY35VGK / MUZ-AY35VG",
+        "hersteller": "Daikin",
+        "modell": "Comfora FTXP35N / RXP35N",
         "kw": 3.5,
         "klasse": "std",
         "preis": 1290,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "",
-        "ek_heiz": "",
-        "seer": "",
-        "scop": "",
-        "schall": "",
+        "bild": "img/geraete/daikin-comfora.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.2,
+        "scop": 4.64,
+        "schall": 20,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N9.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Comfora FTXP50N / RXP50N",
+        "kw": 5.0,
+        "klasse": "std",
+        "preis": 1790,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-comfora.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A+",
+        "seer": 7.1,
+        "scop": 4.3,
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9---RXP-N8.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Perfera FTXM25A / RXM25A",
+        "kw": 2.5,
+        "klasse": "pre",
+        "preis": 1490,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-perfera.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 9.47,
+        "scop": 5.2,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Perfera FTXM35A / RXM35A",
+        "kw": 3.5,
+        "klasse": "pre",
+        "preis": 1690,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-perfera.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 9.25,
+        "scop": 5.2,
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Perfera FTXM50A / RXM50A",
+        "kw": 5.0,
+        "klasse": "pre",
+        "preis": 2190,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-perfera.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.8,
+        "scop": 4.8,
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---RXM-A9.html"
       },
       {
         "hersteller": "Mitsubishi Electric",
-        "modell": "MSZ-AY50VGK / MUZ-AY50VG",
+        "modell": "MSZ-AY25VGKP / MUZ-AY25VG",
+        "kw": 2.5,
+        "klasse": "std",
+        "preis": 1150,
+        "aktiv": true,
+        "bild": "img/geraete/mitsubishi-msz-ay.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.7,
+        "scop": 4.8,
+        "schall": 18,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
+      },
+      {
+        "hersteller": "Mitsubishi Electric",
+        "modell": "MSZ-AY35VGKP / MUZ-AY35VG",
+        "kw": 3.5,
+        "klasse": "std",
+        "preis": 1290,
+        "aktiv": true,
+        "bild": "img/geraete/mitsubishi-msz-ay.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.7,
+        "scop": 4.7,
+        "schall": 18,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
+      },
+      {
+        "hersteller": "Mitsubishi Electric",
+        "modell": "MSZ-AY42VGKP / MUZ-AY42VG",
+        "kw": 4.2,
+        "klasse": "std",
+        "preis": 1490,
+        "aktiv": true,
+        "bild": "img/geraete/mitsubishi-msz-ay.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.9,
+        "scop": 4.7,
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
+      },
+      {
+        "hersteller": "Mitsubishi Electric",
+        "modell": "MSZ-AY50VGKP / MUZ-AY50VG",
         "kw": 5.0,
         "klasse": "std",
         "preis": 1750,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "",
-        "ek_heiz": "",
-        "seer": "",
-        "scop": "",
-        "schall": "",
+        "bild": "img/geraete/mitsubishi-msz-ay.jpg",
+        "ek_kuehl": "A++",
+        "ek_heiz": "A++",
+        "seer": 7.5,
+        "scop": 4.7,
+        "schall": 28,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Mitsubishi Electric",
-        "modell": "MSZ-AY71VGK / MUZ-AY71VG",
-        "kw": 7.1,
-        "klasse": "std",
-        "preis": 2390,
-        "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "",
-        "ek_heiz": "",
-        "seer": "",
-        "scop": "",
-        "schall": "",
-        "kaeltemittel": "R32",
-        "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.mitsubishi-les.com/de-de/dam-upload/daswandgeraetmszaybroschuere.pdf?rev=346288"
       }
     ],
     "innengeraete_multi": [
@@ -2020,10 +2088,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 420,
         "aktiv": true,
-        "bild": "",
-        "schall": 21,
+        "bild": "img/geraete/toshiba-seiya.jpg",
+        "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%202%2C50%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B10E2KVG-E%20-%20RAS-10E2AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -2032,10 +2100,10 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 470,
         "aktiv": true,
-        "bild": "",
-        "schall": 21,
+        "bild": "img/geraete/toshiba-seiya.jpg",
+        "schall": 20,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%203%2C30%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B13E2KVG-E%20-%20RAS-13E2AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -2044,10 +2112,22 @@ window.ULS_CONFIG = {
         "klasse": "std",
         "preis": 560,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-seiya.jpg",
         "schall": 21,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Seiya%20NEW%20-%204%2C20%20kW%20-%20R32%20-%20SET120%20-%20Home%20RAS-B16E2KVG-E%20-%20RAS-16E2AVG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "Shorai Curve RAS-M05P2KVSG-E (Multi)",
+        "kw": 1.5,
+        "klasse": "pre",
+        "preis": 540,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "schall": 22,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%201%2C50%20kW%20-%20R32%20-%20Home%20RAS-M05P2KVSG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -2056,10 +2136,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 590,
         "aktiv": true,
-        "bild": "",
-        "schall": 20,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%202%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B10P2KVSG-E%20-%20RAS-10P2AVSG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -2068,10 +2148,10 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 660,
         "aktiv": true,
-        "bild": "",
-        "schall": 20,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%203%2C50%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B13P2KVSG-E%20-%20RAS-13P2AVSG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
@@ -2080,240 +2160,300 @@ window.ULS_CONFIG = {
         "klasse": "pre",
         "preis": 760,
         "aktiv": true,
-        "bild": "",
-        "schall": 20,
+        "bild": "img/geraete/toshiba-shorai-curve.jpg",
+        "schall": 22,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/SHORAI%20CURVE%20WHITE%20-%204%2C60%20kW%20-%20R32%20-%20SET160%20-%20Home%20RAS-B16P2KVSG-E%20-%20RAS-16P2AVSG-E%20de.pdf"
       },
       {
         "hersteller": "Daikin",
-        "modell": "Perfera FTXM20R",
+        "modell": "Comfora FTXP25N (Multi)",
+        "kw": 2.5,
+        "klasse": "std",
+        "preis": 470,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-comfora.jpg",
+        "schall": 19,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Comfora FTXP35N (Multi)",
+        "kw": 3.5,
+        "klasse": "std",
+        "preis": 520,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-comfora.jpg",
+        "schall": 20,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Comfora FTXP50N (Multi)",
+        "kw": 5.0,
+        "klasse": "std",
+        "preis": 680,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-comfora.jpg",
+        "schall": 27,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXP-N9.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Perfera FTXM20A (Multi)",
         "kw": 2.0,
         "klasse": "pre",
         "preis": 560,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
       },
       {
         "hersteller": "Daikin",
-        "modell": "Perfera FTXM25R",
+        "modell": "Perfera FTXM25A (Multi)",
         "kw": 2.5,
         "klasse": "pre",
         "preis": 600,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
       },
       {
         "hersteller": "Daikin",
-        "modell": "Perfera FTXM35R",
+        "modell": "Perfera FTXM35A (Multi)",
         "kw": 3.5,
         "klasse": "pre",
         "preis": 680,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/daikin-perfera.jpg",
         "schall": 19,
         "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
       },
       {
         "hersteller": "Daikin",
-        "modell": "Perfera FTXM50R",
+        "modell": "Perfera FTXM42A (Multi)",
+        "kw": 4.2,
+        "klasse": "pre",
+        "preis": 760,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-perfera.jpg",
+        "schall": 21,
+        "kaeltemittel": "R32",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "Perfera FTXM50A (Multi)",
         "kw": 5.0,
         "klasse": "pre",
         "preis": 860,
         "aktiv": true,
-        "bild": "",
-        "schall": 19,
+        "bild": "img/geraete/daikin-perfera.jpg",
+        "schall": 27,
         "kaeltemittel": "R32",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Daikin",
-        "modell": "Sensira FTXF25D",
-        "kw": 2.5,
-        "klasse": "std",
-        "preis": 430,
-        "aktiv": true,
-        "bild": "",
-        "schall": 21,
-        "kaeltemittel": "R32",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Daikin",
-        "modell": "Sensira FTXF35D",
-        "kw": 3.5,
-        "klasse": "std",
-        "preis": 490,
-        "aktiv": true,
-        "bild": "",
-        "schall": 21,
-        "kaeltemittel": "R32",
-        "datenblatt": ""
-      },
-      {
-        "hersteller": "Daikin",
-        "modell": "Sensira FTXF50D",
-        "kw": 5.0,
-        "klasse": "std",
-        "preis": 640,
-        "aktiv": true,
-        "bild": "",
-        "schall": 21,
-        "kaeltemittel": "R32",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A.html"
       }
     ],
     "aussengeraete_multi": [
       {
         "hersteller": "Toshiba",
         "modell": "RAS-2M14G3AVG-E",
-        "anschluesse": 2,
         "kw": 4.0,
+        "anschluesse": 2,
         "preis": 1590,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": "",
-        "scop": "",
+        "bild": "img/geraete/toshiba-multi-aussen.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.7,
+        "scop": 4.8,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Multisplit%20Next%20R32%20-%204%2C00%20kW%20-%20R32%20-%20Home%20RAS-2M14G3AVG-E%20de.pdf"
+      },
+      {
+        "hersteller": "Toshiba",
+        "modell": "RAS-2M18G3AVG-E",
+        "kw": 5.2,
+        "anschluesse": 2,
+        "preis": 1790,
+        "aktiv": true,
+        "bild": "img/geraete/toshiba-multi-aussen.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.7,
+        "scop": 4.8,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Multisplit%20Next%20R32%20-%205%2C20%20kW%20-%20R32%20-%20Home%20RAS-2M18G3AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
         "modell": "RAS-3M18G3AVG-E",
-        "anschluesse": 3,
         "kw": 5.2,
+        "anschluesse": 3,
         "preis": 1990,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": "",
-        "scop": "",
+        "bild": "img/geraete/toshiba-multi-aussen.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.6,
+        "scop": 4.8,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Multisplit%20Next%20R32%20-%205%2C20%20kW%20-%20R32%20-%20Home%20RAS-3M18G3AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
         "modell": "RAS-3M26G3AVG-E",
+        "kw": 7.0,
         "anschluesse": 3,
-        "kw": 7.5,
         "preis": 2390,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": "",
-        "scop": "",
+        "bild": "img/geraete/toshiba-multi-aussen.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A++",
+        "seer": 8.5,
+        "scop": 4.6,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Multisplit%20Next%20R32%20-%207%2C00%20kW%20-%20R32%20-%20Home%20RAS-3M26G3AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
         "modell": "RAS-4M27G3AVG-E",
-        "anschluesse": 4,
         "kw": 8.0,
+        "anschluesse": 4,
         "preis": 2690,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-multi-aussen.jpg",
         "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": "",
-        "scop": "",
+        "ek_heiz": "A++",
+        "seer": 8.3,
+        "scop": 4.5,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://data.toshiba-klima.at/de/Multisplit%20Next%20R32%20-%208%2C00%20kW%20-%20R32%20-%20Home%20RAS-4M27G3AVG-E%20de.pdf"
       },
       {
         "hersteller": "Toshiba",
-        "modell": "RAS-5M34G3AVG-E",
-        "anschluesse": 5,
+        "modell": "RAS-5M34G3AVG-E1",
         "kw": 10.0,
+        "anschluesse": 5,
         "preis": 3190,
         "aktiv": true,
-        "bild": "",
+        "bild": "img/geraete/toshiba-multi-aussen.jpg",
         "ek_kuehl": "A++",
-        "ek_heiz": "A+",
+        "ek_heiz": "A++",
+        "seer": 7.2,
+        "scop": 4.3,
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://data.toshiba-klima.at/de/Multisplit%20Next%20R32%20-%2010%2C00%20kW%20-%20R32%20-%20Home%20RAS-5M34G3AVG-E1%20de.pdf"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "2MXM40A",
+        "kw": 4.0,
+        "anschluesse": 2,
+        "preis": 1690,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-mxm-aussen.jpg",
+        "ek_kuehl": "",
+        "ek_heiz": "",
         "seer": "",
         "scop": "",
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/2MXM-A9.html"
       },
       {
         "hersteller": "Daikin",
         "modell": "2MXM50A",
-        "anschluesse": 2,
         "kw": 5.0,
+        "anschluesse": 2,
         "preis": 1790,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
+        "bild": "img/geraete/daikin-mxm-aussen.jpg",
+        "ek_kuehl": "",
+        "ek_heiz": "",
         "seer": "",
         "scop": "",
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/2MXM-A9.html"
       },
       {
         "hersteller": "Daikin",
         "modell": "3MXM52A",
-        "anschluesse": 3,
         "kw": 5.2,
+        "anschluesse": 3,
         "preis": 2190,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
-        "seer": "",
-        "scop": "",
+        "bild": "img/geraete/daikin-mxm-aussen.jpg",
+        "ek_kuehl": "A+++",
+        "ek_heiz": "A+++",
+        "seer": 8.51,
+        "scop": 5.1,
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/FTXM-A---3MXM-A9.html"
       },
       {
         "hersteller": "Daikin",
-        "modell": "4MXM68A",
-        "anschluesse": 4,
+        "modell": "3MXM68A",
         "kw": 6.8,
-        "preis": 2690,
+        "anschluesse": 3,
+        "preis": 2490,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
+        "bild": "img/geraete/daikin-mxm-aussen.jpg",
+        "ek_kuehl": "",
+        "ek_heiz": "",
         "seer": "",
         "scop": "",
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/3MXM-A9.html"
+      },
+      {
+        "hersteller": "Daikin",
+        "modell": "4MXM80A",
+        "kw": 8.0,
+        "anschluesse": 4,
+        "preis": 2890,
+        "aktiv": true,
+        "bild": "img/geraete/daikin-mxm-aussen.jpg",
+        "ek_kuehl": "",
+        "ek_heiz": "",
+        "seer": "",
+        "scop": "",
+        "kaeltemittel": "R32",
+        "label": "",
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/4MXM-A9.html"
       },
       {
         "hersteller": "Daikin",
         "modell": "5MXM90A",
-        "anschluesse": 5,
         "kw": 9.0,
+        "anschluesse": 5,
         "preis": 3290,
         "aktiv": true,
-        "bild": "",
-        "ek_kuehl": "A++",
-        "ek_heiz": "A+",
+        "bild": "img/geraete/daikin-mxm-aussen.jpg",
+        "ek_kuehl": "",
+        "ek_heiz": "",
         "seer": "",
         "scop": "",
         "kaeltemittel": "R32",
         "label": "",
-        "datenblatt": ""
+        "datenblatt": "https://www.daikin.de/de_de/produkte/product.table.html/5MXM-A9.html"
       }
     ],
     "arbeit": {
@@ -3053,7 +3193,7 @@ function klCard(d,o){if(!d)return '';const img=d.bild?`<img src="${esc(d.bild)}"
   return `<article class="mcard"><div class="mc-img">${img}</div><div class="mc-b"><span class="mc-tag${o.sel&&devName(d)===o.sel?' own':''}">${o.tag}</span><h4>${esc(devName(d))}</h4><p class="mc-for">${esc(o.for)}</p>${o.need&&+d.kw<o.need?'<p class="mc-n" style="color:#b45309">Hinweis: Dieses Gerät ist für den Raum etwas knapp bemessen – an heißen Tagen kühlt es langsamer.</p>':''}${ek}<details class="mc-det"><summary>Technische Daten</summary>${klSpecs(d)}${d.datenblatt?'':'<p class="mc-n">Ausführliches Datenblatt auf Anfrage oder in der EU-Produktdatenbank EPREL.</p>'}</details>${opts}</div></article>`}
 function klModels(od){const el=$('#kl-models');if(!el)return;const n=rooms.length;
   let h=rooms.map((r,i)=>klCard(r.dev,{i,need:r.need,rec:r.rec,alts:r.alts,sel:r.sel,tag:r.sel&&r.dev&&devName(r.dev)===r.sel?'Ihre Auswahl':'Unsere Empfehlung',for:`${n>1?'Innengerät für ':'Für '}${ROOMT[r.t][0]}, ${r.m2} m² · Bedarf ca. ${num(r.need,1)} kW`,noEk:n>1})).join('');
-  if(od)h=klCard(od,{tag:'Außengerät',for:`Multi-Split-Außengerät für ${n} Innengeräte · ${od.anschluesse} Anschlüsse`})+h;
+  if(od)h=klCard(od,{tag:`Außengerät für ${n} Räume`,for:`Für ${n} Innengeräte · ${od.anschluesse} Anschlüsse · Kühlleistung ${num(+od.kw,1)} kW`})+h;
   el.innerHTML=h}
 function calcKlima(){
   const K=C.klima,M=K.material,H=K.arbeit;fillBrands('#kl-brand',[...K.geraete_single,...K.innengeraete_multi]);
@@ -3061,14 +3201,14 @@ function calcKlima(){
   const fb=d=>(!brand||d.hersteller===brand);
   rooms.forEach(r=>{r.need=r.m2*K.kw_je_m2*ROOMT[r.t][1]*ins});
   const it=[],t=[];
-  const choose=(list,r,flt)=>{const rec=pick(list,r.need,'kw',flt);r.rec=rec;r.alts=list.filter(x=>+x.kw>=r.need*.9&&+x.kw<=Math.max(r.need*2.2,2.6)).sort((a,b)=>a.preis-b.preis);const s=r.sel&&list.find(x=>devName(x)===r.sel);return s||rec};
+  const choose=(list,r,flt)=>{const LB=list.filter(fb);const L0=LB.length?LB:list;const rec=pick(L0,r.need,'kw',flt);r.rec=rec;r.alts=L0.filter(x=>+x.kw>=r.need*.95&&+x.kw<=Math.max(r.need*2,2.6)).sort((a,b)=>(+a.kw-+b.kw)||(a.preis-b.preis));if(rec&&!r.alts.includes(rec))r.alts.unshift(rec);const s=r.sel&&L0.find(x=>devName(x)===r.sel);return s||rec};
   if(n===1){const r=rooms[0];let d=choose(K.geraete_single,r,x=>fb(x)&&x.klasse===cls);r.dev=d;
     if(d)it.push(L('klima',`Split-Klimagerät ${devName(d)} (${num(+d.kw,1)} kW${ekTxt(d)}) für ${ROOMT[r.t][0]}, ${r.m2} m²`,1,'Stk.',d.preis));
     it.push(L('klima','Grundmaterial: Kältemittel- und Kondensatleitung bis 3 m, Wandkonsole, Kabelkanal',1,'Pausch.',M.grund_single));
     t.push(['Montage, Dichtheitsprüfung, Evakuierung, Inbetriebnahme',+H.single_h]);}
   else{const tot=rooms.reduce((a,r)=>a+r.need,0);
     const IM=K.innengeraete_multi,selD=rooms.map(r=>r.sel&&IM.find(x=>devName(x)===r.sel)).find(Boolean),r0=pick(IM,rooms[0].need,'kw',x=>fb(x)&&x.klasse===cls);
-    const B=brand||(selD&&selD.hersteller)||(r0&&r0.hersteller)||'';const IB=IM.filter(x=>!B||x.hersteller===B);
+    let B=brand||(selD&&selD.hersteller)||(r0&&r0.hersteller)||'';if(B&&!IM.some(x=>x.hersteller===B))B=(r0&&r0.hersteller)||'';const IB=IM.filter(x=>!B||x.hersteller===B);
     rooms.forEach(r=>{r.dev=choose(IB,r,x=>x.klasse===cls)});
     const sumKw=rooms.reduce((a,r)=>a+(r.dev?+r.dev.kw:0),0);
     const OB=K.aussengeraete_multi.filter(x=>!B||x.hersteller===B);const od=pick(OB.filter(x=>+x.anschluesse>=n),Math.max(tot,sumKw*.75),'kw')||OB.slice().sort((x,y)=>y.anschluesse-x.anschluesse)[0];
@@ -3084,7 +3224,7 @@ function calcKlima(){
   if(chk('kl-pump')){it.push(L('klima','Kondensatpumpe',n,'Stk.',M.pumpe));t.push(['Kondensatpumpen',n*H.pumpe_h])}
   if(chk('kl-circ')){it.push(L('klima','Eigener Stromkreis mit FI/LS nach VDE (Material)',1,'Pausch.',M.stromkreis));t.push(['Stromkreis',+H.stromkreis_h])}
   const lb=labour('klima',t);if(lb)it.push(lb);
-  $('#kl-leno').textContent=len+' m';$('#kl-wart').textContent=eur(K.wartung_jahr);$('#kl-type').textContent=n===1?'Ein Raum: Single-Split-Anlage.':`${n} Räume an einem Außengerät: Multi-Split-Anlage.`;
+  $('#kl-leno').textContent=len+' m';$('#kl-wart').textContent=eur(K.wartung_jahr);$('#kl-type').textContent=n===1?'Ein Raum: Single-Split-Anlage (ein Innen- und ein Außengerät).':`${n} Räume an einem Außengerät: ${['','','Dual','Trial','Quadro','Penta'][n]||'Multi'}-Split-Anlage${brand?' von '+brand:''}.`+(brand&&n>1&&!K.innengeraete_multi.some(x=>x.hersteller===brand)?` Für Mehrraum-Anlagen von ${brand} beraten wir Sie gern persönlich – unten sehen Sie unsere Empfehlung.`:'');
   pics('#kl-pics',n===1?[rooms[0].dev]:[picOD,...rooms.map(r=>r.dev)]);if(n===1)picOD=null;
   klModels(n===1?null:picOD);
   return {items:it.filter(x=>x.net>0||x.unit==='Std.'),fund:0,maint:chk('kl-maint')};
