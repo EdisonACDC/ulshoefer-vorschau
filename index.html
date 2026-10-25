@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.5.5">
+<meta name="uls-version" content="0.6.0">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -584,6 +584,57 @@ img,svg,video{max-width:100%}
   .sw[aria-pressed="true"] .sw-st{background:var(--red);border-color:var(--red);color:#fff}
 }
 
+/* ===== Chat-Assistent (v0.6.0) ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.chat-fab{position:fixed;right:20px;bottom:20px;z-index:95;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 20px 0 16px;border:0;border-radius:999px;background:var(--red);color:#fff;font:700 16px/1 var(--face);box-shadow:0 10px 26px rgba(226,0,26,.32);cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.chat-fab:hover{background:var(--red-d);transform:translateY(-2px)}
+.chat-fab .ic{width:26px;height:26px}
+.chat-fab:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+body:has(.cc.show) .chat-fab{display:none}
+body.chat-open .chat-fab{display:none}
+.chat{position:fixed;right:20px;bottom:20px;z-index:130;width:390px;max-width:calc(100vw - 32px);height:min(620px,calc(100vh - 40px));display:flex;flex-direction:column;background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(16,24,40,.28);overflow:hidden}
+.chat[hidden]{display:none}
+.chat-h{display:flex;align-items:center;gap:12px;background:var(--dark);color:#fff;padding:14px 14px 14px 18px}
+.chat-h b{display:block;font-size:17px}
+.chat-h small{display:block;font-size:12.5px;color:#c9ced5;margin-top:2px}
+.chat-x{all:unset;cursor:pointer;margin-left:auto;width:44px;height:44px;display:grid;place-items:center;font-size:28px;line-height:1;border-radius:10px;color:#fff}
+.chat-x:hover,.chat-x:focus-visible{background:rgba(255,255,255,.12)}
+.chat-log{position:relative;flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--tone);overscroll-behavior:contain}
+.cm{max-width:88%;padding:10px 14px;border-radius:16px;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.cm-bot{background:#fff;color:var(--text);border-bottom-left-radius:4px;align-self:flex-start;box-shadow:0 1px 2px rgba(16,24,40,.06)}
+.cm-me{background:var(--red);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.cm b{color:var(--ink)}.cm-me b{color:#fff}
+.cm ul{margin:6px 0;padding-left:18px}.cm li{margin:2px 0}
+.cm a{color:var(--red-d);font-weight:600}
+.cm small{color:var(--muted);font-size:12.5px}
+.cprice{display:inline-block;margin-top:6px;background:var(--tone);border-radius:8px;padding:3px 8px;font-weight:700;color:var(--ink);font-size:14px}
+.ctab{border-collapse:collapse;margin:6px 0;font-size:14px}.ctab td{padding:2px 12px 2px 0;vertical-align:top}
+.typing{display:flex;gap:4px;padding:14px}
+.typing span{width:7px;height:7px;border-radius:50%;background:#b6bbc2;animation:cdot 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes cdot{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.chat-chips{display:flex;flex-wrap:wrap;gap:8px;padding:10px 12px 4px;background:#fff;border-top:1px solid var(--line);max-height:40%;overflow-y:auto}
+.chat-chips:empty{display:none}
+.cchip{all:unset;box-sizing:border-box;cursor:pointer;min-height:40px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--red);color:var(--red-d);font-weight:700;font-size:14px;line-height:1.25;max-width:100%;overflow-wrap:anywhere}
+.cchip.pri{background:var(--red);color:#fff}
+.cchip:hover{background:var(--red);color:#fff}
+.cchip:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.chat-f{display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff}
+.chat-f input{flex:1;min-width:0;min-height:46px;border:1.5px solid var(--line);border-radius:999px;padding:0 16px;font:16px var(--face);color:var(--ink)}
+.chat-f input:focus{outline:0;border-color:var(--red)}
+.chat-f button{all:unset;cursor:pointer;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;flex:none}
+.chat-f button svg{width:22px;height:22px}
+.chat-f button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+@media (max-width:760px){
+  .chat-fab{right:14px;bottom:82px;min-height:52px;padding:0 16px 0 13px;font-size:15px}
+  body:has(#angebot.on) .chat-fab{bottom:86px}
+  .chat{inset:0;right:0;bottom:0;width:100%;max-width:none;height:100%;height:100dvh;border-radius:0}
+  body.chat-open{overflow:hidden}
+}
+@media (prefers-reduced-motion:reduce){.typing span{animation:none;opacity:.6}}
+@media print{.chat,.chat-fab{display:none!important}}
+@media (max-width:760px){body:has(#angebot.on) .chat-fab{width:52px;padding:0;justify-content:center;bottom:92px}body:has(#angebot.on) .chat-fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+
 </style>
 </head>
 <body>
@@ -608,7 +659,7 @@ img,svg,video{max-width:100%}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.5.5</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.6.0</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1153,6 +1204,9 @@ img,svg,video{max-width:100%}
       <h2>7. Angebotsrechner</h2>
       <p>Die Berechnung im Angebotsrechner erfolgt ausschließlich lokal in Ihrem Browser; dabei werden keine Daten an uns übertragen. Auch das Angebotsdokument wird lokal in Ihrem Browser erzeugt. Erst wenn Sie es uns per E-Mail senden, erhalten wir Ihre Konfiguration und Ihre Kontaktdaten (Name, E-Mail, PLZ/Ort, optional Anschrift, Telefon und Anmerkungen), um Ihnen ein Angebot zu erstellen und einen Besichtigungstermin zu vereinbaren. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen). Kommt kein Vertrag zustande, löschen wir die Daten spätestens nach 6 Monaten.</p>
 
+      <h3>Chat-Assistent</h3>
+      <p>Unser Chat-Assistent („Fragen?“) beantwortet häufige Fragen mit vorbereiteten Texten. Er läuft ausschließlich in Ihrem Browser; es handelt sich nicht um ein KI-System und es ist kein externer Dienst eingebunden. Ihre Eingaben werden weder gespeichert noch an uns übertragen. Nur wenn Sie im Chat eine Rückrufbitte absenden, öffnet sich Ihr E-Mail-Programm mit Ihrem Namen, Ihrer Telefonnummer und Ihrem Anliegen; mit dem Senden dieser E-Mail erhalten wir die Angaben. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.</p>
+
       <h2>8. Kartendienst</h2>
       <p>Auf der Kontaktseite können Sie eine Karte zur Anfahrt anzeigen. Die Karte wird erst nach Ihrem Klick geladen („Zwei-Klick-Lösung"). Dabei wird Ihre IP-Adresse an den Kartenanbieter <em>[z. B. OpenStreetMap Foundation, Großbritannien – Drittland mit Angemessenheitsbeschluss]</em> übertragen. Rechtsgrundlage ist Ihre Einwilligung, Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG.</p>
 
@@ -1193,7 +1247,7 @@ img,svg,video{max-width:100%}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.5.5</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.6.0</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -1206,6 +1260,13 @@ img,svg,video{max-width:100%}
   <article class="doc" id="doc"></article>
 </div>
 
+<button class="chat-fab no-print" id="chatFab" type="button" aria-controls="chat" aria-expanded="false" data-calc="chat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="9.6" r="1.1" fill="currentColor"/><circle cx="12" cy="9.6" r="1.1" fill="currentColor"/><circle cx="15" cy="9.6" r="1.1" fill="currentColor"/></svg><span>Fragen?</span></button>
+<section class="chat no-print" id="chat" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+  <header class="chat-h"><div><b id="chatTitle">Ulshöfer-Assistent</b><small>Automatische Antworten · für Persönliches: 09343 65545</small></div><button type="button" class="chat-x" id="chatClose" aria-label="Chat schließen">×</button></header>
+  <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <form class="chat-f" id="chatForm" autocomplete="off"><label class="sr" for="chatIn">Ihre Frage</label><input id="chatIn" type="text" placeholder="Ihre Frage eingeben …" maxlength="300" enterkeyhint="send"><button type="submit" aria-label="Senden"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>
+</section>
 <nav class="qbar no-print" aria-label="Schnellkontakt"><a class="btn btn-outline" href="tel:+49934365545"><svg class="ic"><use href="#i-phone"/></svg>Anrufen</a><a class="btn" href="#angebot">Preis berechnen<svg class="ic"><use href="#i-arrow"/></svg></a></nav>
 <div class="cc" id="cc" role="region" aria-labelledby="ccTitle">
   <h2 id="ccTitle">Ihre Privatsphäre</h2>
@@ -1237,7 +1298,8 @@ window.ULS_CONFIG = {
     "pv": true,
     "klima": true,
     "smart": true,
-    "elektro": true
+    "elektro": true,
+    "chat": true
   },
   "allgemein": {
     "stundensatz": 68,
@@ -1865,7 +1927,7 @@ function pick(list,need,key='kw',filter=()=>true){
   return ok[0]||pool.slice().sort((x,y)=>+y[key]-+x[key])[0];
 }
 function applyAktiv(){
-  const any=Object.values(C.aktiv).some(Boolean);
+  const any=['wp','pv','klima','smart','elektro'].some(k=>C.aktiv[k]);
   for(const k in C.aktiv)$$(`[data-calc="${k}"]`).forEach(el=>el.hidden=!C.aktiv[k]);
   $$('[data-calc="any"]').forEach(el=>el.hidden=!any);
 }
@@ -2163,8 +2225,129 @@ function observe(){
   els.forEach(e=>io.observe(e));
 }
 route();calc();
+
+
+/* =====================================================================
+   Chat-Assistent (geführt, ohne KI, ohne Datenübertragung)
+   Antworten aus vorbereiteten Texten und den Preisen der Konfiguration.
+   ===================================================================== */
+(function chatInit(){
+  const fab=$('#chatFab'),box=$('#chat');
+  if(!fab||!box)return;
+  const log=$('#chatLog'),chips=$('#chatChips'),form=$('#chatForm'),inp=$('#chatIn');
+  const SECTS=['wp','pv','klima','smart','elektro'];
+  const NAME={wp:'Wärmepumpe',pv:'Photovoltaik',klima:'Klimaanlage',smart:'Smart Home',elektro:'Elektroinstallation'};
+  const on=k=>!!C.aktiv[k];
+  const TEL='<a href="tel:+49934365545">09343 65545</a>';
+  const MAIL='<a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a>';
+  let flow=null,started=false;
+
+  /* ---------- Darstellung ---------- */
+  function msg(html,who){const d=document.createElement('div');d.className='cm '+(who==='me'?'cm-me':'cm-bot');d.innerHTML=html;log.appendChild(d);log.scrollTop=(who==='me')?log.scrollHeight:Math.max(0,d.offsetTop-12);return d}
+  function setChips(list){chips.innerHTML='';(list||[]).forEach(c=>{const b=document.createElement('button');b.type='button';b.className='cchip'+(c.primary?' pri':'');b.textContent=c.t;b.addEventListener('click',()=>{msg(esc(c.t),'me');c.go()});chips.appendChild(b)})}
+  function bot(html,list){const t=document.createElement('div');t.className='cm cm-bot typing';t.innerHTML='<span></span><span></span><span></span>';log.appendChild(t);log.scrollTop=log.scrollHeight;setChips([]);
+    setTimeout(()=>{t.remove();msg(html,'bot');setChips(list)},reduce?0:380)}
+  const go=(hash)=>()=>{close();location.hash=hash};
+
+  /* ---------- Bausteine ---------- */
+  const MENU=()=>[
+    {t:'Preis berechnen',go:askPrice,primary:true},
+    {t:'Förderung',go:foerderung},
+    {t:'Öffnungszeiten',go:hours},
+    {t:'Rückruf anfordern',go:callback}
+  ];
+  const sectChips=(fn)=>SECTS.filter(on).map(k=>({t:NAME[k],go:()=>fn(k)}));
+  function from(k){try{const s=SVC[k];return s?s.p():''}catch(e){return ''}}
+
+  function welcome(){bot('Guten Tag! Ich bin der Assistent von <b>Elektrotechnik Ulshöfer</b>. Ich beantworte häufige Fragen sofort – zu Preisen, Förderung, Öffnungszeiten und unseren Leistungen. Wobei kann ich helfen?',MENU().concat([{t:'Unsere Leistungen',go:services}]))}
+  function services(){bot('Wir sind Elektro-Meisterbetrieb seit 2006 und bieten:<ul>'+SECTS.filter(on).map(k=>`<li><b>${NAME[k]}</b></li>`).join('')+'<li><b>Hausgeräte &amp; Fachgeschäft</b></li></ul>Wozu möchten Sie mehr wissen?',sectChips(sector).concat([{t:'Hausgeräte',go:shop}]))}
+  function sector(k){
+    if(!on(k)){bot(`Zu ${NAME[k]} beraten wir Sie gern persönlich: ${TEL}.`,[{t:'Rückruf anfordern',go:()=>callback(k)},{t:'Zurück zum Menü',go:menu}]);return}
+    const s=SVC[k];const p=from(k);
+    const extra={wp:'<br>Für den Heizungstausch gibt es einen KfW-Zuschuss – den Antrag bereiten wir mit Ihnen vor.',pv:'<br>Auf PV-Anlage und Speicher fallen 0 % Mehrwertsteuer an.',klima:'',smart:'',elektro:''}[k];
+    const l=[{t:'Preis berechnen',go:go('#angebot/'+k),primary:true}];
+    if(k==='wp'||k==='pv')l.push({t:'Förderung',go:()=>k==='wp'?kfw():pvRules()});
+    l.push({t:'Rückruf anfordern',go:()=>callback(k)},{t:'Andere Frage',go:menu});
+    bot(`<b>${NAME[k]}</b><br>${esc(s?s.d:'')}${p?`<br><span class="cprice">${esc(p)}</span>`:''}${extra}`,l)
+  }
+  function askPrice(){const l=sectChips(k=>{bot(`${from(k)?`<span class="cprice">${esc(from(k))}</span><br>`:''}Im Online-Rechner bekommen Sie in zwei Minuten einen Richtpreis für Ihr Haus – mit Angebot zum Ausdrucken.`,[{t:'Zum Rechner',go:go('#angebot/'+k),primary:true},{t:'Andere Frage',go:menu}])});
+    bot('Gern! Wofür möchten Sie einen Richtpreis?',l.length?l:[{t:'Rückruf anfordern',go:callback}])}
+  function foerderung(){bot('Zu welchem Thema?',[{t:'KfW-Zuschuss Wärmepumpe',go:kfw},{t:'Heizungstausch in BW (EWärmeG)',go:ewg},{t:'Photovoltaik: Pflicht & Vergütung',go:pvRules},{t:'§ 14a: günstiger Netzstrom',go:p14a},{t:'Alle Infos auf der Seite',go:go('#foerderung')}])}
+  function kfw(){const F=C.foerderung;bot(`<b>KfW-Heizungsförderung (Programm 458)</b><ul><li>${F.grund} % Grundförderung</li><li>+${F.kgb} % Klimageschwindigkeitsbonus beim Tausch einer Öl-, Nachtspeicher-, Gasetagen- oder über 20 Jahre alten Gasheizung</li><li>+10 bis 40 % Einkommensbonus bis 50.000 € Haushaltseinkommen</li><li>höchstens ${F.max} % (bei Einkommen bis 30.000 € ${F.max_einkommen||80} %) von max. ${eur(+F.kosten_max)} förderfähigen Kosten</li></ul>Wichtig: Der Antrag muss <b>vor Beginn der Arbeiten</b> gestellt werden. Der Rechner zeigt Ihren voraussichtlichen Zuschuss.`,[{t:'Zuschuss berechnen',go:go('#angebot/wp'),primary:true},{t:'Rückruf anfordern',go:()=>callback('wp')},{t:'Andere Frage',go:menu}])}
+  function ewg(){bot('<b>Heizungstausch in Baden-Württemberg</b><br>Zusätzlich zum Bundesrecht gilt hier das <b>Erneuerbare-Wärme-Gesetz</b>: Wer in einem bis 1.1.2009 gebauten Haus die Heizung tauscht, muss 15 % erneuerbare Wärme nutzen oder Ersatzmaßnahmen nachweisen – z. B. mit einer Wärmepumpe, PV-Anlage oder einem Sanierungsfahrplan. Der Nachweis geht innerhalb von 18 Monaten an die Baurechtsbehörde.',[{t:'Wärmepumpe berechnen',go:go('#angebot/wp'),primary:true},{t:'Mehr dazu',go:go('#foerderung')},{t:'Andere Frage',go:menu}])}
+  function pvRules(){bot(`<b>Photovoltaik in Baden-Württemberg</b><ul><li>PV-Pflicht bei Neubau und bei grundlegender Dachsanierung (mind. 60 % der geeigneten Dachfläche)</li><li>0 % Mehrwertsteuer auf Anlage und Speicher</li><li>feste Einspeisevergütung für 20 Jahre (ab 1.8.2026 bis 10 kWp: ${num(C.pv.einspeisung*100,2)} ct/kWh)</li></ul>`,[{t:'PV-Anlage berechnen',go:go('#angebot/pv'),primary:true},{t:'Mehr dazu',go:go('#foerderung')},{t:'Andere Frage',go:menu}])}
+  function p14a(){bot('<b>§ 14a EnWG</b><br>Wärmepumpen und Wallboxen über 4,2 kW werden beim Netzbetreiber angemeldet – das übernehmen wir. Dafür sinken Ihre Netzentgelte (je nach Modul pauschal oder über einen eigenen Zähler). 4,2 kW bleiben immer garantiert.',[{t:'Rückruf anfordern',go:callback},{t:'Andere Frage',go:menu}])}
+  function hours(){bot(`<b>Unser Fachgeschäft</b><br>Fabrikstraße 3 · 97922 Lauda-Königshofen<table class="ctab"><tr><td>Mo, Di, Do, Fr</td><td>09:00–12:00 · 13:30–18:00</td></tr><tr><td>Mittwoch</td><td>09:00–12:00</td></tr><tr><td>Samstag</td><td>09:00–13:00</td></tr><tr><td>Sonntag</td><td>geschlossen</td></tr></table>Telefon: ${TEL}`,[{t:'Anfahrt anzeigen',go:go('#kontakt')},{t:'Andere Frage',go:menu}])}
+  function contact(){bot(`So erreichen Sie uns:<br>Telefon: ${TEL}<br>E-Mail: ${MAIL}<br>Fabrikstraße 3 · 97922 Lauda-Königshofen`,[{t:'Rückruf anfordern',go:callback,primary:true},{t:'Öffnungszeiten',go:hours},{t:'Andere Frage',go:menu}])}
+  function shop(){bot('In unserem <b>Fachgeschäft</b> im Gewerbegebiet „Becksteiner Weg“ beraten wir Sie zu Hausgeräten bekannter Marken wie Miele, Liebherr und Braun – mit Lieferung, Anschluss und Reparatur.',[{t:'Öffnungszeiten',go:hours},{t:'Zum Fachgeschäft',go:go('#laden')},{t:'Andere Frage',go:menu}])}
+  function job(){bot('Wir bilden aus: <b>Elektroniker für Energie- und Gebäudetechnik (m/w/d)</b> in einem modernen Familienbetrieb. Bewerbungen gern per E-Mail an '+MAIL+'.',[{t:'Jetzt bewerben',go:()=>{location.href='mailto:info@elektro-ulshoefer.de?subject=Bewerbung%20Ausbildung'}},{t:'Andere Frage',go:menu}])}
+  function service(){bot('Wir warten und prüfen Ihre Anlagen – vom <b>E-CHECK</b> für die Elektroinstallation über die Wartung von Klimaanlagen und Wärmepumpen bis zum Service für PV-Anlagen als Fronius Service Partner Plus.',[{t:'Rückruf anfordern',go:callback,primary:true},{t:'Andere Frage',go:menu}])}
+  function stoerung(){bot(`Bei einer Störung rufen Sie uns bitte direkt an: ${TEL}. <br><small>Bei Gefahr (Brandgeruch, Funken, Stromschlag) sofort die Sicherung ausschalten und im Notfall 112 wählen.</small>`,[{t:'Andere Frage',go:menu}])}
+  function brands(){bot('Unsere Systempartner: <b>Fronius</b> (Photovoltaik), <b>Dimplex</b> (Wärmepumpen), <b>Toshiba</b> (Klimaanlagen), <b>Loxone</b> (Smart Home) und das Netzwerk <b>e-masters</b>. Dazu Marken wie Gira, Jung, Hager, Siedle, Miele und Liebherr.',[{t:'Partner ansehen',go:go('#partner')},{t:'Andere Frage',go:menu}])}
+  function region(){bot(`Wir sind in Lauda-Königshofen zu Hause und in der Region für Sie unterwegs. Ob wir auch zu Ihnen kommen, klären wir gern kurz am Telefon: ${TEL}.`,[{t:'Rückruf anfordern',go:callback,primary:true},{t:'Andere Frage',go:menu}])}
+  function bye(){bot('Gern geschehen! Wenn noch etwas ist, bin ich hier.',[{t:'Andere Frage',go:menu}])}
+  function menu(){flow=null;bot('Was möchten Sie wissen?',MENU().concat([{t:'Unsere Leistungen',go:services},{t:'Kontakt',go:contact}]))}
+  function unknown(){bot(`Das kann ich leider nicht sicher beantworten. Unser Team hilft Ihnen gern persönlich: ${TEL} – oder wir rufen Sie zurück.`,[{t:'Rückruf anfordern',go:callback,primary:true},{t:'Zum Menü',go:menu}])}
+
+  /* ---------- Rückruf-Ablauf ---------- */
+  function callback(topic){flow={step:'name',topic:typeof topic==='string'?NAME[topic]:''};bot('Gern rufen wir Sie zurück. Wie ist Ihr <b>Name</b>?',[{t:'Abbrechen',go:menu}]);setTimeout(()=>inp.focus(),reduce?0:420)}
+  function flowInput(t){
+    if(flow.step==='name'){if(t.trim().length<2){bot('Bitte geben Sie Ihren Namen ein.');return}flow.name=t.trim();flow.step='tel';bot(`Danke, ${esc(flow.name)}. Unter welcher <b>Telefonnummer</b> erreichen wir Sie?`,[{t:'Abbrechen',go:menu}]);return}
+    if(flow.step==='tel'){if((t.match(/\d/g)||[]).length<6){bot('Bitte geben Sie eine gültige Telefonnummer ein (mindestens 6 Ziffern).',[{t:'Abbrechen',go:menu}]);return}flow.tel=t.trim();
+      if(flow.topic){askNote();return}
+      flow.step='topic';bot('Worum geht es?',SECTS.filter(on).map(k=>({t:NAME[k],go:()=>{flow.topic=NAME[k];askNote()}})).concat([{t:'Etwas anderes',go:()=>{flow.topic='Sonstiges';askNote()}}]));return}
+    if(flow.step==='note'){flow.note=t.trim();consent();return}
+    if(flow.step==='topic'){flow.topic=t.trim();askNote();return}
+    if(flow.step==='consent'){consent();return}
+  }
+  function askNote(){flow.step='note';bot('Möchten Sie noch etwas ergänzen (z. B. beste Uhrzeit für den Rückruf)? Schreiben Sie es einfach – oder senden Sie direkt ab.',[{t:'Nein, weiter',go:consent,primary:true}])}
+  function consent(){flow.step='consent';bot(`<b>Ihre Rückrufbitte</b><br>Name: ${esc(flow.name)}<br>Telefon: ${esc(flow.tel)}<br>Thema: ${esc(flow.topic||'–')}${flow.note?'<br>Hinweis: '+esc(flow.note):''}<br><small>Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden. Mehr in der <a href="#datenschutz">Datenschutzerklärung</a>.</small>`,[{t:'Einverstanden, absenden',go:send,primary:true},{t:'Abbrechen',go:menu}])}
+  function send(){const body=`Name: ${flow.name}\nErreichbar unter: ${flow.tel}\nThema: ${flow.topic||'–'}\n${flow.note?'Hinweis: '+flow.note+'\n':''}\n(gesendet über den Chat-Assistenten der Website)`;
+    location.href='mailto:info@elektro-ulshoefer.de?subject='+encodeURIComponent('Rückrufbitte über den Website-Chat')+'&body='+encodeURIComponent(body);
+    bot(`Danke, ${esc(flow.name)}! Ihr E-Mail-Programm öffnet sich mit der Rückrufbitte – bitte dort noch auf <b>Senden</b> tippen. Wir melden uns in der Regel innerhalb von zwei Werktagen. Eilig? ${TEL}`,[{t:'Andere Frage',go:menu}]);flow=null}
+
+  /* ---------- Freitext erkennen ---------- */
+  const norm=s=>s.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const RULES=[
+    [/(stoerung|notfall|notdienst|stromausfall|kein strom|sicherung|fi .*(fliegt|faellt)|kurzschluss|brandgeruch)/,stoerung],
+    [/(rueckruf|zurueckruf|ruft? .*an|anrufen lassen|termin|besichtigung|vor ort|beratung|berat)/,()=>callback()],
+    [/(foerder|zuschuss|kfw|bafa|bonus|subvention)/,()=>/(pv|photovolt|solar)/.test(T)?pvRules():kfw()],
+    [/((heizungstausch|heizung (tauschen|erneuern|wechseln)|neue heizung).*(bw|baden|beachten|pflicht|gesetz|vorschrift|regel|muss)|(bw|baden.?wuerttemberg).*heizung)/,ewg],
+    [/(ewaermeg|erneuerbare.?waerme|heizungsgesetz|gmodg|geg\b|65 ?%|pflicht)/,()=>/(pv|photovolt|solar|dach)/.test(T)?pvRules():ewg()],
+    [/(14a|netzentgelt|steuerbar|drossel)/,p14a],
+    [/(einspeis|verguetung)/,pvRules],
+    [/(oeffnungszeit|geoeffnet|offen|uhrzeit|wann .*(da|offen)|samstag|sonntag|feierabend)/,hours],
+    [/(adresse|wo (sind|finde|ist)|anfahrt|standort|fabrikstr)/,hours],
+    [/(ausbildung|azubi|lehrstelle|lehre\b|bewerb|praktikum|job|stelle|karriere|arbeiten bei)/,job],
+    [/(hausgeraet|waschmaschine|trockner|kuehlschrank|gefrier|herd|backofen|spuelmaschine|geschirrspuel|kaffee|staubsauger|fachgeschaeft|ausstellung|laden\b)/,shop],
+    [/(waermepumpe|heizung|oelheizung|gasheizung|nachtspeicher|heizkoerper|dimplex)/,()=>sector('wp')],
+    [/(photovolt|\bpv\b|solar|speicher|batterie|wechselrichter|fronius|balkonkraftwerk)/,()=>sector('pv')],
+    [/(klima|kuehl|split|hitze|toshiba|daikin|mitsubishi)/,()=>sector('klima')],
+    [/(smart.?home|loxone|knx|homematic|rolllaeden|rollladen|rollo|home assistant|automation)/,()=>sector('smart')],
+    [/(elektro|installation|zaehlerschrank|steckdose|leitung|verkabel|neubau|sanierung|wallbox|ladestation|e-?auto|ueberspannung|netzwerk|lan\b)/,()=>sector('elektro')],
+    [/(wartung|e-?check|pruefung|service|reparatur|kundendienst)/,service],
+    [/(preis|kosten|kostet|teuer|angebot|rechner|richtpreis|was kostet)/,askPrice],
+    [/(telefon|nummer|anruf|mail|e-mail|kontakt|erreich)/,contact],
+    [/(marke|hersteller|partner)/,brands],
+    [/(einzugsgebiet|region|kommen sie|fahren sie|umkreis|tauberbischofsheim|bad mergentheim|wertheim|boxberg|grossrinderfeld|wuerzburg)/,region],
+    [/(danke|vielen dank|tschuess|ciao|auf wiedersehen|super|perfekt)/,bye],
+    [/^(hallo|hi|hey|guten (tag|morgen|abend)|servus|moin|gruess)/,welcome],
+    [/(leistung|was machen sie|angebot an|bieten sie)/,services]
+  ];
+  let T='';
+  function answer(text){T=norm(text);if(flow){flowInput(text);return}for(const [re,fn] of RULES){if(re.test(T)){fn();return}}unknown()}
+
+  /* ---------- Öffnen/Schließen ---------- */
+  function open(){box.hidden=false;fab.setAttribute('aria-expanded','true');document.body.classList.add('chat-open');if(!started){started=true;welcome()}setTimeout(()=>{(innerWidth>760?inp:$('#chatClose')).focus()},50)}
+  function close(){box.hidden=true;fab.setAttribute('aria-expanded','false');document.body.classList.remove('chat-open');fab.focus({preventScroll:true})}
+  fab.addEventListener('click',()=>box.hidden?open():close());
+  $('#chatClose').addEventListener('click',close);
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&!box.hidden)close()});
+  form.addEventListener('submit',e=>{e.preventDefault();const t=inp.value.trim();if(!t)return;inp.value='';msg(esc(t),'me');answer(t)});
+  log.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(a)close()});
 })();
 
+})();
 </script>
 </body>
 </html>
