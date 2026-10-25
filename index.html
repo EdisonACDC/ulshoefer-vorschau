@@ -6,7 +6,7 @@
 <title>Elektrotechnik Ulshöfer GmbH – Lauda-Königshofen</title>
 <meta name="description" content="Elektro-Meisterbetrieb in Lauda-Königshofen: Elektroinstallation, Photovoltaik, Wärmepumpen, Klimaanlagen und Smart Home. Mit Online-Angebotsrechner.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="uls-version" content="0.9.8">
+<meta name="uls-version" content="0.9.9">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -815,7 +815,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.9.8</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.9.9</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1319,9 +1319,13 @@ body.chat-open .chat-fab{display:none}
           <p class="fgas"><b>Hinweis:</b> Split-Klimageräte enthalten fluorierte Treibhausgase (Kältemittel R32). Nach der F-Gase-Verordnung (EU) 2024/573 dürfen sie nur von einem zertifizierten Fachbetrieb installiert werden – bei uns ist die Montage durch zertifizierte Fachkräfte immer enthalten.</p>
           <div class="bro" id="kl-bro" hidden></div></div>
         <div class="q"><span class="ql">Gebäude</span><div class="chips">
-          <label class="chip"><input type="radio" name="kl-ins" value=".85"><span>Neubau</span></label>
+          <label class="chip"><input type="radio" name="kl-ins" value=".75"><span>Neubau, gut gedämmt</span></label>
           <label class="chip"><input type="radio" name="kl-ins" value="1" checked><span>durchschnittlich</span></label>
-          <label class="chip"><input type="radio" name="kl-ins" value="1.2"><span>Altbau</span></label></div></div>
+          <label class="chip"><input type="radio" name="kl-ins" value="1.25"><span>Altbau, wenig gedämmt</span></label></div></div>
+        <div class="q"><span class="ql">Sonneneinstrahlung</span><div class="chips">
+          <label class="chip"><input type="radio" name="kl-sun" value="1" checked><span>normal / beschattet</span></label>
+          <label class="chip"><input type="radio" name="kl-sun" value="1.2"><span>stark (große Süd- oder Westfenster)</span></label></div>
+          <p class="help" id="kl-calcnote"></p></div>
         <div class="q"><label for="kl-brand">Hersteller</label><select class="fld" id="kl-brand"><option value="">Unsere Empfehlung</option></select></div>
         <div class="q"><label for="kl-bau">Bauart des Innengeräts</label><select class="fld" id="kl-bau"><option value="wand">Wandgerät (am häufigsten)</option><option value="truhe">Truhengerät / Bodenkonsole</option><option value="kassette">Deckenkassette</option><option value="kanal">Kanalgerät (unsichtbar in der Decke)</option></select><p class="help" id="kl-baunote" hidden></p></div>
         <div class="q"><span class="ql">Geräteklasse</span><div class="chips">
@@ -1612,7 +1616,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.8</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.9</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -3478,7 +3482,7 @@ window.ULS_CONFIG = {
       "stromkreis": 170
     },
     "wartung_jahr": 149,
-    "kw_je_m2": 0.1,
+    "kw_je_m2": 0.08,
     "broschueren": [
       {
         "aktiv": true,
@@ -4219,7 +4223,7 @@ function klSpecs(d,multiIn){const s=[['Kühlleistung',d.kw?num(+d.kw,1)+' kW':''
   return s.length?`<dl class="mc-dl">${s.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`:''}
 function klCard(d,o){if(!d)return '';const img=d.bild?`<img src="${esc(d.bild)}" alt="${esc(devName(d))}" loading="lazy">`:`<span class="mc-ph" aria-hidden="true"><svg viewBox="0 0 64 40"><rect x="3" y="6" width="58" height="22" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 22h40M16 33l-3 5M32 33v5M48 33l3 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>`;
   const ek=o.noEk?'<p class="mc-n">Energielabel und Effizienzklassen gelten für die Kombination mit dem Außengerät.</p>':`<div class="mc-ek">${ekArrow(d.ek_kuehl,'alt',d.label,'Kühlen','airconditioners',devName(d))}${ekArrow(d.ek_heiz,'alt',d.label,'Heizen','airconditioners',devName(d))}${ekDb(d.datenblatt,'airconditioners')}${broLink(d)}</div>`;
-  const opts=o.alts?`<label class="mc-sel"><span>Anderes Modell wählen</span><select class="fld" data-room="${o.i}"><option value="">Empfehlung: ${esc(devName(o.rec||d))}</option>${o.alts.filter(x=>x!==o.rec).map(x=>{const diff=(x.preis-(o.rec?o.rec.preis:x.preis))*(1+VAT()/100);return `<option value="${esc(devName(x))}"${devName(x)===o.sel?' selected':''}>${esc(devName(x))} · ${num(+x.kw,1)} kW · ${x.klasse==='pre'?'Premium':'Standard'}${x.ek_kuehl?' · '+x.ek_kuehl:''} · ${diff>=0?'+':'−'} ${eur(Math.abs(diff))}</option>`}).join('')}</select></label>`:'';
+  const opts=o.alts?`<label class="mc-sel"><span>Anderes Modell mit passender Leistung wählen (${o.alts.length} Modelle für ca. ${num(o.need,1)} kW)</span><select class="fld" data-room="${o.i}"><option value="">Empfehlung: ${esc(devName(o.rec||d))}</option>${o.alts.filter(x=>x!==o.rec).map(x=>{const diff=(x.preis-(o.rec?o.rec.preis:x.preis))*(1+VAT()/100);return `<option value="${esc(devName(x))}"${devName(x)===o.sel?' selected':''}>${esc(devName(x))} · ${num(+x.kw,1)} kW · ${x.klasse==='pre'?'Premium':'Standard'}${x.ek_kuehl?' · '+x.ek_kuehl:''} · ${diff>=0?'+':'−'} ${eur(Math.abs(diff))}</option>`}).join('')}</select></label>`:'';
   return `<article class="mcard"><div class="mc-img">${img}</div><div class="mc-b"><span class="mc-tag${o.sel&&devName(d)===o.sel?' own':''}">${o.tag}</span><h4>${esc(devName(d))}</h4><p class="mc-for">${esc(o.for)}</p>${o.need&&+d.kw<o.need?'<p class="mc-n" style="color:#b45309">Hinweis: Dieses Gerät ist für den Raum etwas knapp bemessen – an heißen Tagen kühlt es langsamer.</p>':''}${ek}<details class="mc-det"><summary>Technische Daten</summary>${klSpecs(d)}${d.datenblatt?'':'<p class="mc-n">Ausführliches Datenblatt auf Anfrage oder in der EU-Produktdatenbank EPREL.</p>'}${o.noEk?broLink(d).replace('ek-db mc-bro','mc-bro2'):''}</details>${opts}</div></article>`}
 /* Herstellerbroschüren: Links auf die offiziellen PDF-Kataloge der Hersteller */
 const BRO=()=>((C.klima&&C.klima.broschueren)||[]).filter(b=>b&&b.aktiv!==false&&b.url);
@@ -4227,6 +4231,10 @@ function broLink(d){const b=d&&BRO().find(x=>x.hersteller===d.hersteller);return
 function klBro(brand){const el=$('#kl-bro');if(!el)return;const L=BRO();if(!L.length){el.hidden=true;return}
   const show=brand&&L.some(b=>b.hersteller===brand)?L.filter(b=>b.hersteller===brand):L;
   el.hidden=false;el.innerHTML=`<h4>Herstellerbroschüren${brand&&show!==L?' – '+esc(brand):''}</h4><ul>${show.map(b=>`<li><a href="${esc(b.url)}" target="_blank" rel="noopener"><span class="bro-ic" aria-hidden="true">PDF</span><span><b>${esc(b.hersteller)}</b> · ${esc(b.titel||'Broschüre')}${b.info?`<small>${esc(b.info)}</small>`:''}</span></a></li>`).join('')}</ul><p class="help">Offizielle Unterlagen der Hersteller (öffnen sich in einem neuen Fenster). Maßgeblich für Ihr Angebot sind die Daten im Angebot und im Produktdatenblatt.</p>`}
+/* Passende Leistung: je Serie nur das kleinste Gerät, das den Bedarf des Raums deckt */
+const serie=d=>{const w=String(d.modell||'').replace(/\s*\(Multi\)/,'').split(/\s+/);const i=w.findIndex(x=>/^[A-Z]{2,}[-A-Z0-9]*\d/.test(x));const n=w.slice(0,i<0?w.length:i).join(' ');return (d.hersteller||'')+'|'+(n||(w[i]||'').replace(/\d.*$/,''))+'|'+(d.bauform||'wand')};
+function fitAlts(L,need,rec){const g={};L.forEach(x=>{if(+x.kw<need)return;const k=serie(x);if(!g[k]||+x.kw<+g[k].kw||(+x.kw===+g[k].kw&&x.preis<g[k].preis))g[k]=x});
+  let a=Object.values(g);if(!a.length&&rec)a=[rec];if(rec&&!a.includes(rec))a.unshift(rec);return a.sort((x,y)=>(+x.kw-+y.kw)||(x.preis-y.preis))}
 function klModels(od){const el=$('#kl-models');if(!el)return;const n=rooms.length;
   let h=rooms.map((r,i)=>klCard(r.dev,{i,need:r.need,rec:r.rec,alts:r.alts,sel:r.sel,tag:r.sel&&r.dev&&devName(r.dev)===r.sel?'Ihre Auswahl':'Unsere Empfehlung',for:`${n>1?'Innengerät für ':'Für '}${ROOMT[r.t][0]}, ${r.m2} m² · Bedarf ca. ${num(r.need,1)} kW`,noEk:n>1})).join('');
   if(od)h=klCard(od,{tag:`Außengerät für ${n} Räume`,for:`Für ${n} Innengeräte · ${od.anschluesse} Anschlüsse · Kühlleistung ${num(+od.kw,1)} kW`})+h;
@@ -4235,9 +4243,10 @@ function calcKlima(){
   const K=C.klima,M=K.material,H=K.arbeit;fillBrands('#kl-brand',[...K.geraete_single,...K.innengeraete_multi]);
   const ins=+rad('kl-ins'),cls=rad('kl-cls'),len=val('kl-len'),out=rad('kl-out'),n=rooms.length,brand=$('#kl-brand').value;
   const fb=d=>(!brand||d.hersteller===brand);const bau=($('#kl-bau')||{}).value||'wand',bf=x=>(x.bauform||'wand')===bau;let bauFB=false,effB=brand;
-  rooms.forEach(r=>{r.need=r.m2*K.kw_je_m2*ROOMT[r.t][1]*ins});
+  const sun=+(rad('kl-sun')||1);rooms.forEach(r=>{r.need=r.m2*K.kw_je_m2*ROOMT[r.t][1]*ins*sun});
+  {const cn=$('#kl-calcnote');if(cn)cn.textContent=`Berechnung: Raumfläche × ${num(K.kw_je_m2*1000,0)} W/m² × Raumart × Gebäude × Sonne. Beispiel: ${rooms[0].m2} m² ${ROOMT[rooms[0].t][0]} = ca. ${num(rooms[0].need,1)} kW Kühlleistung. Die genaue Kühllast prüfen wir bei der Besichtigung.`}
   const it=[],t=[];
-  const choose=(list,r,flt)=>{let L0=list.filter(x=>fb(x)&&bf(x));if(!L0.length){L0=list.filter(bf);if(!L0.length){bauFB=bauFB||bau!=='wand';L0=list.filter(x=>fb(x)&&(x.bauform||'wand')==='wand');if(!L0.length)L0=list}}const rec=pick(L0,r.need,'kw',flt);r.rec=rec;r.alts=L0.filter(x=>+x.kw>=r.need*.95&&+x.kw<=Math.max(r.need*2,2.6)).sort((a,b)=>(+a.kw-+b.kw)||(a.preis-b.preis));if(rec&&!r.alts.includes(rec))r.alts.unshift(rec);const s=r.sel&&L0.find(x=>devName(x)===r.sel);return s||rec};
+  const choose=(list,r,flt)=>{let L0=list.filter(x=>fb(x)&&bf(x));if(!L0.length){L0=list.filter(bf);if(!L0.length){bauFB=bauFB||bau!=='wand';L0=list.filter(x=>fb(x)&&(x.bauform||'wand')==='wand');if(!L0.length)L0=list}}const rec=pick(L0,r.need,'kw',flt);r.rec=rec;r.alts=fitAlts(L0,r.need,rec);const s=r.sel&&r.alts.find(x=>devName(x)===r.sel);if(r.sel&&!s)r.sel='';return s||rec};
   if(n===1){const r=rooms[0];let d=choose(K.geraete_single,r,x=>fb(x)&&x.klasse===cls);r.dev=d;
     if(d)it.push(L('klima',`Split-Klimagerät ${devName(d)} (${num(+d.kw,1)} kW${ekTxt(d)}) für ${ROOMT[r.t][0]}, ${r.m2} m²`,1,'Stk.',d.preis));
     it.push(L('klima','Grundmaterial: Kältemittel- und Kondensatleitung bis 3 m, Wandkonsole, Kabelkanal',1,'Pausch.',M.grund_single));
@@ -4252,7 +4261,7 @@ function calcKlima(){
     rooms.forEach(r=>{if(r.dev)it.push(L('klima',`Innengerät ${devName(r.dev)} (${num(+r.dev.kw,1)} kW) für ${ROOMT[r.t][0]}, ${r.m2} m²`,1,'Stk.',r.dev.preis))});
     it.push(L('klima','Grundmaterial je Innengerät: Leitungen bis 3 m, Kondensat, Kabelkanal',n,'Stk.',M.grund_je_innen));
     t.push([`Montage Multi-Split mit ${n} Innengeräten, Dichtheitsprüfung, Evakuierung, Inbetriebnahme`,+H.multi_basis_h+n*H.multi_je_innen_h]);}
-  rooms.forEach((r,i)=>{const el=$('#kw'+i);if(el)el.textContent=r.dev?num(+r.dev.kw,1)+' kW':num(r.need,1)+' kW'});
+  rooms.forEach((r,i)=>{const el=$('#kw'+i);if(el){el.textContent='Bedarf '+num(r.need,1)+' kW';el.title=r.dev?'Gerät: '+devName(r.dev)+' ('+num(+r.dev.kw,1)+' kW)':''}});
   if(len>3){it.push(L('klima',`Mehrlänge Kältemittel- und Kondensatleitung (${len-3} m je Innengerät)`,(len-3)*n,'m',M.leitung_m));t.push(['Mehrlänge Leitungen',(len-3)*n*H.leitung_m_h])}
   if(out==='1'){it.push(L('klima','Bodenkonsole für Außengerät',1,'Stk.',M.bodenkonsole));t.push(['Bodenkonsole',+H.konsole_h])}
   if(out==='2'){it.push(L('klima','Flachdachgestell für Außengerät',1,'Stk.',M.dachgestell));t.push(['Flachdachgestell',+H.konsole_h])}
