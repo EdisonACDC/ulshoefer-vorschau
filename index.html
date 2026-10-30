@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: file:; media-src 'self' data: blob: file:; font-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:; worker-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="uls-version" content="0.9.12">
+<meta name="uls-version" content="0.9.13">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -820,6 +820,18 @@ body.chat-open .chat-fab{display:none}
 @media (prefers-reduced-motion: reduce){.shoptile:hover{transform:none}}
 .prod-img img{object-fit:contain;background:#fff}
 @media (max-width:1020px){.hero-media{order:-1}.hero-in{gap:24px}}
+/* v0.9.13 Kategorien als Kacheln */
+.shop-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px;margin:6px 0 14px}
+.scat{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:10px 8px 12px;border:2px solid var(--line);border-radius:14px;background:#fff;transition:border-color .2s,box-shadow .2s}
+.scat img,.scat-all{width:64px;height:64px;object-fit:contain}
+.scat-all{display:grid;place-items:center;font-size:40px;color:var(--red)}
+.scat b{font-size:14px;line-height:1.2}.scat small{font-size:12.5px;color:var(--muted)}
+.scat:hover{border-color:#c9ced5;box-shadow:0 6px 16px rgba(16,24,40,.08)}
+.scat.on{border-color:var(--red);box-shadow:0 0 0 3px rgba(226,0,26,.12)}
+.scat:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.scat:disabled{opacity:.4;cursor:default}
+#shopCount{scroll-margin-top:90px;font-weight:700;color:var(--ink)}
+@media (max-width:520px){.shop-cats{grid-template-columns:repeat(3,minmax(0,1fr))}.scat img,.scat-all{width:48px;height:48px}.scat b{font-size:12.5px}}
 
 </style>
 </head>
@@ -845,7 +857,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.9.12</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.9.13</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1223,8 +1235,8 @@ body.chat-open .chat-fab{display:none}
     <div class="shop-main">
       <div class="shop-filter">
         <div class="chips" id="shopBrands" role="group" aria-label="Marke"></div>
-        <label class="sr" for="shopCat">Kategorie</label><select class="fld" id="shopCat"></select>
       </div>
+      <div class="shop-cats" id="shopCat" role="group" aria-label="Kategorie"></div>
       <p class="help shoplegal">Alle Preise inkl. MwSt., zzgl. <a href="#kundeninfo-lieferung">Lieferung</a> · <a href="#kundeninfo">Kundeninformationen</a> · <a href="#kundeninfo-widerruf">Widerrufsbelehrung</a> · <a href="#widerruf"><b>Vertrag widerrufen</b></a></p>
       <p class="help" id="shopCount"></p>
       <div class="shop-grid" id="shopGrid"></div>
@@ -1648,7 +1660,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.12</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.13</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -4594,11 +4606,13 @@ route();calc();
   const grpOf=p=>{const k=(p.kategorie||'')+' '+(p.modell||'');return /trockner/i.test(k)?'tumbledriers':/wasch/i.test(k)?'washingmachines2019':/spül/i.test(k)?'dishwashers2019':/kühl|gefrier/i.test(k)?'refrigeratingappliances2019':/back|herd/i.test(k)?'ovens':/klima/i.test(k)?'airconditioners':''};
   function filters(){
     $('#shopBrands').innerHTML=[['','Alle Marken'],...brands.map(b=>[b,b])].map(([v,l])=>`<label class="chip"><input type="radio" name="sb" value="${esc(v)}"${v===brand?' checked':''}><span>${esc(l)}</span></label>`).join('');
-    $('#shopCat').innerHTML=`<option value="">Alle Kategorien</option>`+cats.map(c=>`<option${c===cat?' selected':''}>${esc(c)}</option>`).join('');
+    const cnt=c=>P.filter(p=>(!brand||p.partner===brand)&&(!c||p.kategorie===c)).length;
+    const img=c=>{const p=P.find(p=>p.kategorie===c&&p.bild&&(!brand||p.partner===brand))||P.find(p=>p.kategorie===c&&p.bild);return p?`<img src="${esc(p.bild)}" alt="" loading="lazy">`:''};
+    $('#shopCat').innerHTML=[['','Alle Geräte'],...cats.map(c=>[c,c])].map(([v,l])=>`<button type="button" class="scat${v===cat?' on':''}" data-cat="${esc(v)}" aria-pressed="${v===cat}"${v&&!cnt(v)?' disabled':''}>${v?img(v):'<span class="scat-all" aria-hidden="true">▦</span>'}<b>${esc(l)}</b><small>${cnt(v)} ${cnt(v)===1?'Gerät':'Geräte'}</small></button>`).join('');
   }
   function grid(){
     const l=P.map((p,i)=>({p,i})).filter(({p})=>(!brand||p.partner===brand)&&(!cat||p.kategorie===cat));
-    $('#shopCount').textContent=l.length?`${l.length} Gerät${l.length>1?'e':''}`:'Keine Geräte in dieser Auswahl.';
+    $('#shopCount').textContent=l.length?`${l.length} Gerät${l.length>1?'e':''}${cat?' · '+cat:''}${brand?' · '+brand:''}`:'Keine Geräte in dieser Auswahl.';
     $('#shopGrid').innerHTML=l.map(({p,i})=>{const inC=cart.find(c=>c.i===i);return `<article class="prod">
       <div class="prod-img">${p.bild?`<img src="${esc(p.bild)}" alt="${esc(p.partner+' '+p.modell)}" loading="lazy">`:`<span class="ph">${PH}<small>Bild folgt</small></span>`}</div>
       <p class="prod-b">${esc(p.partner)} · ${esc(p.kategorie||'')}</p>
@@ -4631,8 +4645,9 @@ route();calc();
     $('#o-earlyw').hidden=!cart.some(x=>x.mont&&+P[x.i].montage);
     $('#ordSum').innerHTML=`<h3>Ihre Bestellanfrage im Überblick</h3><ul>${cart.map(x=>{const p=P[x.i];return `<li><b>${x.qty} × ${esc(p.partner)} ${esc(p.modell)}</b>${p.info?` – ${esc(p.info)}`:''}${p.ek?` · Energieeffizienzklasse ${esc(p.ek)}`:''}</li>`}).join('')}</ul><p><b>Gesamtpreis: ${money(tot)}</b> inkl. ${VAT()} % MwSt.${d?' und Lieferung':''} · ${d?esc(S.lieferzeit||''):'Abholung im Fachgeschäft'}</p>`;
   }
-  $('#shopBrands').addEventListener('change',e=>{brand=e.target.value;grid()});
-  $('#shopCat').addEventListener('change',e=>{cat=e.target.value;grid()});
+  const showRes=()=>{const g=$('#shopCount');const r=g.getBoundingClientRect();if(r.top<70||r.top>innerHeight*.55)g.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})};
+  $('#shopBrands').addEventListener('change',e=>{brand=e.target.value;if(cat&&!P.some(p=>p.partner===brand&&p.kategorie===cat)&&brand)cat='';filters();grid()});
+  $('#shopCat').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b||b.disabled)return;cat=b.dataset.cat;filters();grid();showRes()});
   $('#shopGrid').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;const i=+b.dataset.add;const k=cart.findIndex(c=>c.i===i);
     if(k<0)cart.push({i,qty:1,mont:+P[i].montage>0,alt:false});else cart.splice(k,1);grid();renderCart()});
   $('#cart').addEventListener('click',e=>{const q=e.target.closest('[data-q]'),r=e.target.closest('[data-rm]');
