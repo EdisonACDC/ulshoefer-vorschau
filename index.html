@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: file:; media-src 'self' data: blob: file:; font-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' mailto:; worker-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="uls-version" content="0.9.13">
+<meta name="uls-version" content="0.9.14">
 <meta name="theme-color" content="#E2001A">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -857,7 +857,7 @@ body.chat-open .chat-fab{display:none}
 </svg>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="preview no-print"><b>Vorschau v0.9.13</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
+<div class="preview no-print"><b>Vorschau v0.9.14</b><span class="pv-long"> · Entwurf für den Website-Relaunch · Formulare öffnen in dieser Vorschau nur Ihr E-Mail-Programm</span></div>
 
 <div class="infobar no-print">
   <div class="wrap infobar-in">
@@ -1660,7 +1660,7 @@ body.chat-open .chat-fab{display:none}
       <div class="fc" data-calc="any"><h3>Angebot</h3><ul><li data-calc="wp"><a href="#angebot/wp">Wärmepumpe rechnen</a></li><li data-calc="pv"><a href="#angebot/pv">Photovoltaik rechnen</a></li><li data-calc="klima"><a href="#angebot/klima">Klimaanlage rechnen</a></li><li data-calc="smart"><a href="#angebot/smart">Smart Home rechnen</a></li><li data-calc="elektro"><a href="#angebot/elektro">Elektro rechnen</a></li></ul></div>
       <div class="fc"><h3>Kontakt</h3><ul class="fcontact"><li>Fabrikstraße 3<br>97922 Lauda-Königshofen</li><li><a href="tel:+49934365545">+49 9343 65545</a></li><li><a href="mailto:info@elektro-ulshoefer.de">info@elektro-ulshoefer.de</a></li></ul></div>
     </div>
-    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.13</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
+    <div class="foot-last"><span>© <span id="year">2026</span> Elektrotechnik Ulshöfer GmbH · Alle Fotos: Elektrotechnik Ulshöfer GmbH · Version 0.9.14</span><span class="flegal"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#barrierefreiheit">Barrierefreiheit</a><a href="#kundeninfo">Kundeninformationen &amp; Widerrufsbelehrung</a><a class="wlink" href="#widerruf">Vertrag widerrufen</a><button class="linklike" id="ccOpen">Cookie-Einstellungen</button></span></div>
   </div>
 </footer>
 
@@ -4027,6 +4027,8 @@ const eur=n=>Math.round(n).toLocaleString('de-DE')+' €';
 const eur2=n=>n.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
 const num=(n,d=0)=>n.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* Links aus der Konfiguration: nur http(s), sonst leer (Schutz vor javascript:-Links) */
+const safeUrl=u=>/^https?:\/\//i.test(String(u||'').trim())?String(u).trim():'';
 /* Versand: auf der Live-Website direkt über den Server (senden.php), sonst über das E-Mail-Programm */
 const SEND_URL=window.ULS_SEND||'',T0=Date.now(),MAILTO='info@elektro-ulshoefer.de';
 async function serverSend(kind,subject,body,extra){if(!SEND_URL||!/^https?:$/.test(location.protocol))return null;
@@ -4212,8 +4214,8 @@ const EKC=['#00a651','#50b848','#bed630','#fff200','#fcb814','#f36f21','#ed1c24'
 const EPREL='https://eprel.ec.europa.eu/screen/product/';
 function ekArrow(cls,scale,label,cap,grp,model){if(!cls)return '';const S=EKS[scale]||(cls.includes('+')?EKS.alt:EKS.neu);const i=Math.max(0,S.indexOf(cls));const dark=i===2||i===3;
   const href=label||`${EPREL}${grp||''}`;
-  return `<a class="ek" href="${esc(href)}" target="_blank" rel="noopener" title="Energielabel${model?' '+esc(model):''} öffnen" aria-label="Energieeffizienzklasse ${esc(cls)}${cap?' '+esc(cap):''}, Skala ${S[0]} bis ${S[S.length-1]} – Energielabel öffnen"><span class="ek-r" aria-hidden="true"><i>${S[0]}</i><i>${S[S.length-1]}</i></span><span class="ek-a" style="--ekc:${EKC[i]};color:${dark?'#111':'#fff'}" aria-hidden="true">${esc(cls)}</span>${cap?`<span class="ek-c">${esc(cap)}</span>`:''}</a>`}
-function ekDb(url,grp){return `<a class="ek-db" href="${esc(url||EPREL+(grp||''))}" target="_blank" rel="noopener">Produktdatenblatt</a>`}
+  return `<a class="ek" href="${esc(safeUrl(href)||EPREL)}" target="_blank" rel="noopener" title="Energielabel${model?' '+esc(model):''} öffnen" aria-label="Energieeffizienzklasse ${esc(cls)}${cap?' '+esc(cap):''}, Skala ${S[0]} bis ${S[S.length-1]} – Energielabel öffnen"><span class="ek-r" aria-hidden="true"><i>${S[0]}</i><i>${S[S.length-1]}</i></span><span class="ek-a" style="--ekc:${EKC[i]};color:${dark?'#111':'#fff'}" aria-hidden="true">${esc(cls)}</span>${cap?`<span class="ek-c">${esc(cap)}</span>`:''}</a>`}
+function ekDb(url,grp){return `<a class="ek-db" href="${esc(safeUrl(url)||EPREL+(grp||''))}" target="_blank" rel="noopener">Produktdatenblatt</a>`}
 const L=(sec,txt,qty,unit,price,vat)=>{vat=vat==null?VAT():vat;return {sec,txt,qty,unit,price:+price,vat,net:qty*price}};
 /* Arbeitszeit als eigene Position: Stunden × Stundensatz */
 function labour(sec,tasks,vat){const h=tasks.reduce((a,t)=>a+t[1],0);if(h<=0)return null;return L(sec,`Arbeitszeit Fachpersonal: ${tasks.filter(t=>t[1]>0).map(t=>t[0]).join(', ')}`,Math.round(h*4)/4,'Std.',RATE(),vat)}
@@ -4285,11 +4287,11 @@ function klCard(d,o){if(!d)return '';const img=d.bild?`<img src="${esc(d.bild)}"
   const opts=o.alts?`<label class="mc-sel"><span>Anderes Modell mit passender Leistung wählen (${o.alts.length} Modelle für ca. ${num(o.need,1)} kW)</span><select class="fld" data-room="${o.i}"><option value="">Empfehlung: ${esc(devName(o.rec||d))}</option>${o.alts.filter(x=>x!==o.rec).map(x=>{const diff=(x.preis-(o.rec?o.rec.preis:x.preis))*(1+VAT()/100);return `<option value="${esc(devName(x))}"${devName(x)===o.sel?' selected':''}>${esc(devName(x))} · ${num(+x.kw,1)} kW · ${x.klasse==='pre'?'Premium':'Standard'}${x.ek_kuehl?' · '+x.ek_kuehl:''} · ${diff>=0?'+':'−'} ${eur(Math.abs(diff))}</option>`}).join('')}</select></label>`:'';
   return `<article class="mcard"><div class="mc-img">${img}</div><div class="mc-b"><span class="mc-tag${o.sel&&devName(d)===o.sel?' own':''}">${o.tag}</span><h4>${esc(devName(d))}</h4><p class="mc-for">${esc(o.for)}</p>${o.need&&+d.kw<o.need?'<p class="mc-n" style="color:#b45309">Hinweis: Dieses Gerät ist für den Raum etwas knapp bemessen – an heißen Tagen kühlt es langsamer.</p>':''}${ek}<details class="mc-det"><summary>Technische Daten</summary>${klSpecs(d)}${d.datenblatt?'':'<p class="mc-n">Ausführliches Datenblatt auf Anfrage oder in der EU-Produktdatenbank EPREL.</p>'}${o.noEk?broLink(d).replace('ek-db mc-bro','mc-bro2'):''}</details>${opts}</div></article>`}
 /* Herstellerbroschüren: Links auf die offiziellen PDF-Kataloge der Hersteller */
-const BRO=()=>((C.klima&&C.klima.broschueren)||[]).filter(b=>b&&b.aktiv!==false&&b.url);
-function broLink(d){const b=d&&BRO().find(x=>x.hersteller===d.hersteller);return b?`<a class="ek-db mc-bro" href="${esc(b.url)}" target="_blank" rel="noopener">Broschüre ${esc(b.hersteller)}</a>`:''}
+const BRO=()=>((C.klima&&C.klima.broschueren)||[]).filter(b=>b&&b.aktiv!==false&&safeUrl(b.url));
+function broLink(d){const b=d&&BRO().find(x=>x.hersteller===d.hersteller);return b?`<a class="ek-db mc-bro" href="${esc(safeUrl(b.url))}" target="_blank" rel="noopener">Broschüre ${esc(b.hersteller)}</a>`:''}
 function klBro(brand){const el=$('#kl-bro');if(!el)return;const L=BRO();if(!L.length){el.hidden=true;return}
   const show=brand&&L.some(b=>b.hersteller===brand)?L.filter(b=>b.hersteller===brand):L;
-  el.hidden=false;el.innerHTML=`<h4>Herstellerbroschüren${brand&&show!==L?' – '+esc(brand):''}</h4><ul>${show.map(b=>`<li><a href="${esc(b.url)}" target="_blank" rel="noopener"><span class="bro-ic" aria-hidden="true">PDF</span><span><b>${esc(b.hersteller)}</b> · ${esc(b.titel||'Broschüre')}${b.info?`<small>${esc(b.info)}</small>`:''}</span></a></li>`).join('')}</ul><p class="help">Offizielle Unterlagen der Hersteller (öffnen sich in einem neuen Fenster). Maßgeblich für Ihr Angebot sind die Daten im Angebot und im Produktdatenblatt.</p>`}
+  el.hidden=false;el.innerHTML=`<h4>Herstellerbroschüren${brand&&show!==L?' – '+esc(brand):''}</h4><ul>${show.map(b=>`<li><a href="${esc(safeUrl(b.url))}" target="_blank" rel="noopener"><span class="bro-ic" aria-hidden="true">PDF</span><span><b>${esc(b.hersteller)}</b> · ${esc(b.titel||'Broschüre')}${b.info?`<small>${esc(b.info)}</small>`:''}</span></a></li>`).join('')}</ul><p class="help">Offizielle Unterlagen der Hersteller (öffnen sich in einem neuen Fenster). Maßgeblich für Ihr Angebot sind die Daten im Angebot und im Produktdatenblatt.</p>`}
 /* Passende Leistung: je Serie nur das kleinste Gerät, das den Bedarf des Raums deckt */
 const serie=d=>{const w=String(d.modell||'').replace(/\s*\(Multi\)/,'').split(/\s+/);const i=w.findIndex(x=>/^[A-Z]{2,}[-A-Z0-9]*\d/.test(x));const n=w.slice(0,i<0?w.length:i).join(' ');return (d.hersteller||'')+'|'+(n||(w[i]||'').replace(/\d.*$/,''))+'|'+(d.bauform||'wand')};
 function fitAlts(L,need,rec){const g={};L.forEach(x=>{if(+x.kw<need)return;const k=serie(x);if(!g[k]||+x.kw<+g[k].kw||(+x.kw===+g[k].kw&&x.preis<g[k].preis))g[k]=x});
